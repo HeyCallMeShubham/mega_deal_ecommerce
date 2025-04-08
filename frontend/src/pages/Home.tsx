@@ -3,6 +3,7 @@ import { CiSearch } from "react-icons/ci";
 import { IoPersonOutline } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import ProductListingSlide from '../components/home-page-components/ProductListingSlide';
+import ProductSlide from '../components/home-page-components/ProductSlide';
 
 const Home = () => {
 
@@ -109,7 +110,10 @@ const Home = () => {
     }
   ];
 
-  const heading_Title: any = document.querySelectorAll(".heading-title")
+
+  {/*
+    
+    const heading_Title: any = document.querySelectorAll(".heading-title")
  
 
     for (const content of heading_Title) {
@@ -117,14 +121,15 @@ const Home = () => {
       const words = content.textContent.split(" ")
   
        words[2] = `<span className='font-bold text-[3.5rem] text-secondaryBg'>${words[2]}</span>`
-  
+       
        content.textContent = words.join(" ");
 
      
   
-    }
- 
-
+      }
+      
+      
+  */}
 
 
 
@@ -132,7 +137,7 @@ const Home = () => {
 
     <>
 
-      <div className='w-screen min-h-screen max-h-[auto] grid grid-cols-[20rem_auto] px-4 '>
+      <div className='w-screen min-h-screen max-h-[auto] grid grid-cols-[20rem_auto] px-4 border border-green-500'>
 
         <div className='w-full h-10rem border border-black' id='col-1'>
 
@@ -215,7 +220,7 @@ const Home = () => {
          {/*product-listing-section-end*/}
 
 
-           <ProductListingSlide />
+           <ProductSlide />
     
 
         </div> {/*column-2 end*/}

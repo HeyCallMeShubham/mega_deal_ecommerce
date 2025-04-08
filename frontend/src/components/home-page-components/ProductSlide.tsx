@@ -5,7 +5,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
 
-const ProductSlides = () => {
+const ProductSlide = () => {
 
     const products = [
         {
@@ -51,7 +51,7 @@ const ProductSlides = () => {
             color: 'Black',
             percentOff: 10
         },
-
+ 
         {
             id: 1,
             name: 'Basic Tee',
@@ -62,7 +62,7 @@ const ProductSlides = () => {
             color: 'Black',
             percentOff: 10
         },
-
+ 
         {
             id: 1,
             name: 'Basic Tee',
@@ -73,7 +73,7 @@ const ProductSlides = () => {
             color: 'Black',
             percentOff: 10
         },
-
+ 
         {
             id: 1,
             name: 'Basic Tee',
@@ -84,7 +84,7 @@ const ProductSlides = () => {
             color: 'Black',
             percentOff: 10
         },
-
+ 
         {
             id: 1,
             name: 'Basic Tee',
@@ -95,7 +95,7 @@ const ProductSlides = () => {
             color: 'Black',
             percentOff: 10
         },
-
+ 
         {
             id: 1,
             name: 'Basic Tee',
@@ -106,7 +106,7 @@ const ProductSlides = () => {
             color: 'Black',
             percentOff: 10
         },
-
+ 
         {
             id: 1,
             name: 'Basic Tee',
@@ -117,7 +117,18 @@ const ProductSlides = () => {
             color: 'Black',
             percentOff: 10
         },
-
+ 
+        {
+            id: 1,
+            name: 'Basic Tee',
+            href: '#',
+            imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-01.jpg',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10
+        },
+ 
 
         // More products...
     ]
@@ -127,13 +138,11 @@ const ProductSlides = () => {
 
     return (
 
-        <div className="bg-white w-full h-full border border-red-500">
+        <div className="bg-white w-full h-[auto] border border-red-500">
 
-
-            <div className='w-[100%] h-[3rem] flex justify-between px-4 items-center'>
+            <div className='w-[100%] h-[2rem] flex justify-between px-4 items-center border border-blue-900'>
 
                 <span>Special Products</span>
-
 
                 <div className='flex w-[5rem] h-full gap-0.5 justify-between'>
 
@@ -150,20 +159,19 @@ const ProductSlides = () => {
             </div>
 
 
-            <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+            <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 border border-green-600">
+
                 <h2 className="text-2xl font-bold tracking-tight text-gray-900">Customers also purchased</h2>
 
-                <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                <div className="mt-6 flex flex-row gap-4 w-full overflow-x-scroll">
                     {products.map((product) => (
-                        <div key={product.id} className="group relative">
-
+                        <div key={product.id} className="group relative sm:min-h-[10rem]  lg:min-w-[17rem] max-w-[17rem] border border-blue-600 ">
                             <div className='aspect-square w-full relative rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80'>
                                 <img
                                     alt={product.imageAlt}
                                     src={product.imageSrc}
                                     className="w-full h-full"
                                 />
-
 
                                 <div className='hidden group-hover:flex w-auto z-[1] h-auto absolute bottom-0 right-0'>
 
@@ -216,4 +224,4 @@ const ProductSlides = () => {
     )
 }
 
-export default ProductSlides
+export default ProductSlide
