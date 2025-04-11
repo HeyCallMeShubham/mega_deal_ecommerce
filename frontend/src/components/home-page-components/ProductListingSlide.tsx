@@ -1,4 +1,4 @@
-import React from 'react'
+ 
 import { IoBagHandleOutline } from "react-icons/io5";
 import { IoMdEye } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";

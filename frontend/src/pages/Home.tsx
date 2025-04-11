@@ -1,7 +1,4 @@
-import React, { useEffect } from 'react';
-import { CiSearch } from "react-icons/ci";
-import { IoPersonOutline } from "react-icons/io5";
-import { GiHamburgerMenu } from "react-icons/gi";
+ 
 import ProductListingSlide from '../components/home-page-components/ProductListingSlide';
 import ProductSlide from '../components/home-page-components/ProductSlide';
 
@@ -68,46 +65,7 @@ const Home = () => {
         }
       ]
     },
-    {
-      id: 3,
-      name: "Electronics",
-      slug: "electronics",
-      icon: "📱",
-      description: "Latest gadgets and devices",
-      subCategories: [
-        {
-          id: 301,
-          name: "Smartphones",
-          slug: "smartphones",
-          icon: "📲",
-          description: "Latest mobile phones"
-        },
-        {
-          id: 302,
-          name: "Laptops",
-          slug: "laptops",
-          icon: "💻",
-          description: "Powerful computing devices"
-        },
-        {
-          id: 303,
-          name: "Headphones",
-          slug: "headphones",
-          icon: "🎧",
-          description: "Audio accessories"
-        }
-      ]
-    },
-    {
-      id: 4,
-      name: "Home & Living",
-      slug: "home-living",
-      icon: "🏠",
-      description: "Items for your home",
-      subCategories: [
-
-      ]
-    }
+  
   ];
 
 

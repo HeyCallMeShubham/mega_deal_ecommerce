@@ -15,13 +15,16 @@ function App() {
 
       <Routes>
 
-        <Route  element={<Footer />} >
-        <Route  element={<Header />} >
+        <Route path="/" element={<Header />} >
         
+{/*
+        <Route  element={<Footer />} >
+
          <Route index path="/" element={<Home />} />
          <Route path="/aboutpage" element={<ProductAbout />} />
+         </Route>
         
-        </Route>
+*/}
  
         </Route>
 
