@@ -15,20 +15,23 @@ function App() {
 
       <Routes>
 
-        <Route path="/" element={<Header />} >
+        <Route element={<Header />} >
         
-{/*
+        <Route index path="/" element={<Home />} />
+
+          
+        
         <Route  element={<Footer />} >
 
-         <Route index path="/" element={<Home />} />
          <Route path="/aboutpage" element={<ProductAbout />} />
-         </Route>
         
-*/}
- 
+         </Route>
+         
+         
+
         </Route>
 
-         <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
 
 
 

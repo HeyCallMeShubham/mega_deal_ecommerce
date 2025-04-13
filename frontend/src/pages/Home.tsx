@@ -1,13 +1,22 @@
- 
+
 import ProductListingSlide from '../components/home-page-components/ProductListingSlide';
 import ProductSlide from '../components/home-page-components/ProductSlide';
+import { useDispatch } from "react-redux";
+import { filterByCategory } from '../reduxjs/FilterProducts';
+import { useEffect, useState } from 'react';
+
+
 
 const Home = () => {
+
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
+
+  const dispatch = useDispatch();
 
   const categories = [
     {
       id: 1,
-      name: "Clothing",
+      name: "traditional",
       slug: "clothing",
       icon: "👕",
       description: "Browse our fashionable clothing collection",
@@ -36,74 +45,73 @@ const Home = () => {
       ]
     },
     {
-      id: 2,
-      name: "Accessories",
-      slug: "accessories",
-      icon: "👜",
-      description: "Complete your look with our accessories",
+      id: 1,
+      name: "accessories",
+      slug:"accessories",
+      icon: "👕",
+      description: "Browse our fashionable accessories  collection",
       subCategories: [
         {
-          id: 201,
-          name: "Bags",
-          slug: "bags",
-          icon: "🛍️",
-          description: "Various types of bags"
+          id: 101,
+          name: "Men's Wear",
+          slug: "mens-wear",
+          icon: "👔",
+          description: "Clothing for men"
         },
         {
-          id: 202,
-          name: "Wallets",
-          slug: "wallets",
-          icon: "💳",
-          description: "Leather and fabric wallets"
+          id: 102,
+          name: "Women's Wear",
+          slug: "womens-wear",
+          icon: "👗",
+          description: "Clothing for women"
         },
         {
-          id: 203,
-          name: "Belts",
-          slug: "belts",
-          icon: "⛓️",
-          description: "Fashionable belts"
+          id: 103,
+          name: "Kids' Wear",
+          slug: "kids-wear",
+          icon: "👶",
+          description: "Clothing for children"
         }
       ]
     },
+    {
+      id: 2,
+      name: "t-shirt",
+      slug: "t-shirt",
+      icon: "👜",
+      description: "Complete your look with our t-shirt",
+      subCategories: [
+      
+      ]
+},
   
+    
   ];
 
 
-  {/*
-    
-    const heading_Title: any = document.querySelectorAll(".heading-title")
+  useEffect(() => {
+
+
+    dispatch(filterByCategory({ prop: "selectedCategory", value: selectedCategory }));
+
+
+  }, [selectedCategory]);
  
-
-    for (const content of heading_Title) {
-  
-      const words = content.textContent.split(" ")
-  
-       words[2] = `<span className='font-bold text-[3.5rem] text-secondaryBg'>${words[2]}</span>`
-       
-       content.textContent = words.join(" ");
-
-     
-  
-      }
-      
-      
-  */}
-
 
 
   return (
 
     <>
 
-      <div className='w-screen min-h-screen max-h-[auto] grid grid-cols-[20rem_auto] px-4 border border-green-500'>
+      <div className='w-screen min-h-screen max-h-[auto] grid grid-cols-[20rem_auto] px-4 '>
 
-        <div className='w-full h-10rem border border-black' id='col-1'>
+        <div className='w-full h-10rem xsm:hidden md:hidden lg:block ' id='col-1'>
 
           <div className="max-w-md mx-auto  min-h-[20rem] max-h-[auto] border-[4px] border-primaryBg">
 
             <ul className="space-y-2">
               {categories.map((category, index) => (
-                <li key={index}>
+                <li key={index} onClick={()=> setSelectedCategory(category.name)}>
                   <a
                     href="#"
                     className="flex justify-between items-center p-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors duration-200"
@@ -141,19 +149,22 @@ const Home = () => {
 
         </div>
 
-        <div className='w-full h-20rem border flex flex-col items-center border-black' id='col-2'> {/*column-2 start*/}
 
-          <div className='border border-red-500  w-[95%] h-[35rem]' id="banner-container">
 
-            <div className='w-full h-full border bg-[url("https://demoprestashop.aeipix.com/AX02/megadeal23/modules/aei_imageslider/views/img/sample-1.jpg")] bg-cover bg-[100%] ' id='banner-slide-1'>
 
-              <div className='border border-black absolute top-[50%] right-[10rem] w-[30rem] min-h-[10rem] max-h-[auto] flex flex-col gap-2 justify-center items-center text-center'>
+        <div className='relative   w-full h-[30rem] xsm:h-auto md:h-auto border flex flex-col items-center xsm:col-span-2 md:col-span-2 lg:col-start-2 border-black' id='col-2'>
 
-                <span className='text-primaryBg text-[1.5rem]'>
+          <div className='border  lg:z-1 relative border-red-500 w-[98%] xsm:h-[18rem] md:h-[22rem] lg:h-[35rem]' id="banner-container">
+
+            <div className='absolute  flex flex-row xsm:items-end xsm:justify-end xsm:w-full md:w-full w-full h-full border bg-[url("https://demoprestashop.aeipix.com/AX02/megadeal23/modules/aei_imageslider/views/img/sample-1.jpg")] bg-cover bg-no-repeat bg-center   ' id='banner-slide-1'>
+
+              <div className='xsm:top-[50%] transform -translate-x-1/1 -translate-y-[2rem] lg:right-[10rem] lg:w-[30rem] xsm:w-[15rem] xsm:h-[auto] lg:min-h-[10rem] lg:max-h-[auto] flex flex-col gap-2 justify-center items-center text-center'>
+
+                <span className='text-primaryBg xsm:text-[13px] lg:text-[1.5rem]'>
                   Up To 30% Off
                 </span>
 
-                <h2 className='font-bold text-[3.5rem] heading-title'>Fashion Trends</h2>
+                <h2 className='font-bold xsm:text-[20px]  lg:text-[1.5rem] '>Fashion Trends</h2>
 
                 <p>
                   Designer Clothes Exlusive Online Store
@@ -168,21 +179,17 @@ const Home = () => {
           </div>
 
 
+          {/*product-listing-section-start*/}
+
+          <ProductListingSlide />
+
+          {/*product-listing-section-end*/}
 
 
-
-         {/*product-listing-section-start*/}
-
-           <ProductListingSlide />
-
-         {/*product-listing-section-end*/}
+          <ProductSlide />
 
 
-           <ProductSlide />
-    
-
-        </div> {/*column-2 end*/}
-
+        </div>
 
 
       </div>

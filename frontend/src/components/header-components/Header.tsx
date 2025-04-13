@@ -6,19 +6,32 @@ import { BsBagCheck } from "react-icons/bs";
 import { Outlet } from "react-router-dom"
 import { TbTruckDelivery } from "react-icons/tb";
 import { RxCross1 } from "react-icons/rx";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { filterByCategory } from '../../reduxjs/FilterProducts';
 const Header = () => {
 
-const [toggleSideBar, setToggleSideBar] = useState<boolean>(false);
+    const [toggleSideBar, setToggleSideBar] = useState<boolean>(false);
 
 
+    const [selectedCategory, setSelectedCategory] = useState<string>("");
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+
+        dispatch(filterByCategory({ prop: "selectedCategory", value: selectedCategory }));
+
+        setToggleSideBar(prevState => !prevState)
+
+
+    }, [selectedCategory]);
 
 
     const categories = [
         {
             id: 1,
-            name: "Clothing",
+            name: "traditional",
             slug: "clothing",
             icon: "👕",
             description: "Browse our fashionable clothing collection",
@@ -43,45 +56,15 @@ const [toggleSideBar, setToggleSideBar] = useState<boolean>(false);
                     slug: "kids-wear",
                     icon: "👶",
                     description: "Clothing for children"
-                }
-            ]
-        },
-        {
-            id: 2,
-            name: "Accessories",
-            slug: "accessories",
-            icon: "👜",
-            description: "Complete your look with our accessories",
-            subCategories: [
-                {
-                    id: 201,
-                    name: "Bags",
-                    slug: "bags",
-                    icon: "🛍️",
-                    description: "Various types of bags"
-                },
-                {
-                    id: 202,
-                    name: "Wallets",
-                    slug: "wallets",
-                    icon: "💳",
-                    description: "Leather and fabric wallets"
-                },
-                {
-                    id: 203,
-                    name: "Belts",
-                    slug: "belts",
-                    icon: "⛓️",
-                    description: "Fashionable belts"
                 }
             ]
         },
         {
             id: 1,
-            name: "Clothing",
-            slug: "clothing",
+            name: "accessories",
+            slug: "accessories",
             icon: "👕",
-            description: "Browse our fashionable clothing collection",
+            description: "Browse our fashionable accessories  collection",
             subCategories: [
                 {
                     id: 101,
@@ -108,407 +91,26 @@ const [toggleSideBar, setToggleSideBar] = useState<boolean>(false);
         },
         {
             id: 2,
-            name: "Accessories",
-            slug: "accessories",
+            name: "t-shirt",
+            slug: "t-shirt",
             icon: "👜",
-            description: "Complete your look with our accessories",
+            description: "Complete your look with our t-shirt",
             subCategories: [
-                {
-                    id: 201,
-                    name: "Bags",
-                    slug: "bags",
-                    icon: "🛍️",
-                    description: "Various types of bags"
-                },
-                {
-                    id: 202,
-                    name: "Wallets",
-                    slug: "wallets",
-                    icon: "💳",
-                    description: "Leather and fabric wallets"
-                },
-                {
-                    id: 203,
-                    name: "Belts",
-                    slug: "belts",
-                    icon: "⛓️",
-                    description: "Fashionable belts"
-                }
+
             ]
         },
-        {
-            id: 1,
-            name: "Clothing",
-            slug: "clothing",
-            icon: "👕",
-            description: "Browse our fashionable clothing collection",
-            subCategories: [
-                {
-                    id: 101,
-                    name: "Men's Wear",
-                    slug: "mens-wear",
-                    icon: "👔",
-                    description: "Clothing for men"
-                },
-                {
-                    id: 102,
-                    name: "Women's Wear",
-                    slug: "womens-wear",
-                    icon: "👗",
-                    description: "Clothing for women"
-                },
-                {
-                    id: 103,
-                    name: "Kids' Wear",
-                    slug: "kids-wear",
-                    icon: "👶",
-                    description: "Clothing for children"
-                }
-            ]
-        },
-        {
-            id: 2,
-            name: "Accessories",
-            slug: "accessories",
-            icon: "👜",
-            description: "Complete your look with our accessories",
-            subCategories: [
-                {
-                    id: 201,
-                    name: "Bags",
-                    slug: "bags",
-                    icon: "🛍️",
-                    description: "Various types of bags"
-                },
-                {
-                    id: 202,
-                    name: "Wallets",
-                    slug: "wallets",
-                    icon: "💳",
-                    description: "Leather and fabric wallets"
-                },
-                {
-                    id: 203,
-                    name: "Belts",
-                    slug: "belts",
-                    icon: "⛓️",
-                    description: "Fashionable belts"
-                }
-            ]
-        },
-        {
-            id: 1,
-            name: "Clothing",
-            slug: "clothing",
-            icon: "👕",
-            description: "Browse our fashionable clothing collection",
-            subCategories: [
-                {
-                    id: 101,
-                    name: "Men's Wear",
-                    slug: "mens-wear",
-                    icon: "👔",
-                    description: "Clothing for men"
-                },
-                {
-                    id: 102,
-                    name: "Women's Wear",
-                    slug: "womens-wear",
-                    icon: "👗",
-                    description: "Clothing for women"
-                },
-                {
-                    id: 103,
-                    name: "Kids' Wear",
-                    slug: "kids-wear",
-                    icon: "👶",
-                    description: "Clothing for children"
-                }
-            ]
-        },
-        {
-            id: 2,
-            name: "Accessories",
-            slug: "accessories",
-            icon: "👜",
-            description: "Complete your look with our accessories",
-            subCategories: [
-                {
-                    id: 201,
-                    name: "Bags",
-                    slug: "bags",
-                    icon: "🛍️",
-                    description: "Various types of bags"
-                },
-                {
-                    id: 202,
-                    name: "Wallets",
-                    slug: "wallets",
-                    icon: "💳",
-                    description: "Leather and fabric wallets"
-                },
-                {
-                    id: 203,
-                    name: "Belts",
-                    slug: "belts",
-                    icon: "⛓️",
-                    description: "Fashionable belts"
-                }
-            ]
-        },
-        {
-            id: 1,
-            name: "Clothing",
-            slug: "clothing",
-            icon: "👕",
-            description: "Browse our fashionable clothing collection",
-            subCategories: [
-                {
-                    id: 101,
-                    name: "Men's Wear",
-                    slug: "mens-wear",
-                    icon: "👔",
-                    description: "Clothing for men"
-                },
-                {
-                    id: 102,
-                    name: "Women's Wear",
-                    slug: "womens-wear",
-                    icon: "👗",
-                    description: "Clothing for women"
-                },
-                {
-                    id: 103,
-                    name: "Kids' Wear",
-                    slug: "kids-wear",
-                    icon: "👶",
-                    description: "Clothing for children"
-                }
-            ]
-        },
-        {
-            id: 2,
-            name: "Accessories",
-            slug: "accessories",
-            icon: "👜",
-            description: "Complete your look with our accessories",
-            subCategories: [
-                {
-                    id: 201,
-                    name: "Bags",
-                    slug: "bags",
-                    icon: "🛍️",
-                    description: "Various types of bags"
-                },
-                {
-                    id: 202,
-                    name: "Wallets",
-                    slug: "wallets",
-                    icon: "💳",
-                    description: "Leather and fabric wallets"
-                },
-                {
-                    id: 203,
-                    name: "Belts",
-                    slug: "belts",
-                    icon: "⛓️",
-                    description: "Fashionable belts"
-                }
-            ]
-        },
-        {
-            id: 1,
-            name: "Clothing",
-            slug: "clothing",
-            icon: "👕",
-            description: "Browse our fashionable clothing collection",
-            subCategories: [
-                {
-                    id: 101,
-                    name: "Men's Wear",
-                    slug: "mens-wear",
-                    icon: "👔",
-                    description: "Clothing for men"
-                },
-                {
-                    id: 102,
-                    name: "Women's Wear",
-                    slug: "womens-wear",
-                    icon: "👗",
-                    description: "Clothing for women"
-                },
-                {
-                    id: 103,
-                    name: "Kids' Wear",
-                    slug: "kids-wear",
-                    icon: "👶",
-                    description: "Clothing for children"
-                }
-            ]
-        },
-        {
-            id: 2,
-            name: "Accessories",
-            slug: "accessories",
-            icon: "👜",
-            description: "Complete your look with our accessories",
-            subCategories: [
-                {
-                    id: 201,
-                    name: "Bags",
-                    slug: "bags",
-                    icon: "🛍️",
-                    description: "Various types of bags"
-                },
-                {
-                    id: 202,
-                    name: "Wallets",
-                    slug: "wallets",
-                    icon: "💳",
-                    description: "Leather and fabric wallets"
-                },
-                {
-                    id: 203,
-                    name: "Belts",
-                    slug: "belts",
-                    icon: "⛓️",
-                    description: "Fashionable belts"
-                }
-            ]
-        },
-        {
-            id: 1,
-            name: "Clothing",
-            slug: "clothing",
-            icon: "👕",
-            description: "Browse our fashionable clothing collection",
-            subCategories: [
-                {
-                    id: 101,
-                    name: "Men's Wear",
-                    slug: "mens-wear",
-                    icon: "👔",
-                    description: "Clothing for men"
-                },
-                {
-                    id: 102,
-                    name: "Women's Wear",
-                    slug: "womens-wear",
-                    icon: "👗",
-                    description: "Clothing for women"
-                },
-                {
-                    id: 103,
-                    name: "Kids' Wear",
-                    slug: "kids-wear",
-                    icon: "👶",
-                    description: "Clothing for children"
-                }
-            ]
-        },
-        {
-            id: 2,
-            name: "Accessories",
-            slug: "accessories",
-            icon: "👜",
-            description: "Complete your look with our accessories",
-            subCategories: [
-                {
-                    id: 201,
-                    name: "Bags",
-                    slug: "bags",
-                    icon: "🛍️",
-                    description: "Various types of bags"
-                },
-                {
-                    id: 202,
-                    name: "Wallets",
-                    slug: "wallets",
-                    icon: "💳",
-                    description: "Leather and fabric wallets"
-                },
-                {
-                    id: 203,
-                    name: "Belts",
-                    slug: "belts",
-                    icon: "⛓️",
-                    description: "Fashionable belts"
-                }
-            ]
-        },
-        {
-            id: 1,
-            name: "Clothing",
-            slug: "clothing",
-            icon: "👕",
-            description: "Browse our fashionable clothing collection",
-            subCategories: [
-                {
-                    id: 101,
-                    name: "Men's Wear",
-                    slug: "mens-wear",
-                    icon: "👔",
-                    description: "Clothing for men"
-                },
-                {
-                    id: 102,
-                    name: "Women's Wear",
-                    slug: "womens-wear",
-                    icon: "👗",
-                    description: "Clothing for women"
-                },
-                {
-                    id: 103,
-                    name: "Kids' Wear",
-                    slug: "kids-wear",
-                    icon: "👶",
-                    description: "Clothing for children"
-                }
-            ]
-        },
-        {
-            id: 2,
-            name: "Accessories",
-            slug: "accessories",
-            icon: "👜",
-            description: "Complete your look with our accessories",
-            subCategories: [
-                {
-                    id: 201,
-                    name: "Bags",
-                    slug: "bags",
-                    icon: "🛍️",
-                    description: "Various types of bags"
-                },
-                {
-                    id: 202,
-                    name: "Wallets",
-                    slug: "wallets",
-                    icon: "💳",
-                    description: "Leather and fabric wallets"
-                },
-                {
-                    id: 203,
-                    name: "Belts",
-                    slug: "belts",
-                    icon: "⛓️",
-                    description: "Fashionable belts"
-                }
-            ]
-        },
+
 
     ];
-
 
 
     return (
         <>
 
-            <header className='w-screen min-h-[10rem] max-h-[auto] flex xsm:flex-col xsm:justify-center text-center relative border border-black'>
+            <header className='md:min-w-screen lg:min-w-screen md:max-w-screen lg:max-w-screen xsm:min-w-[24rem] min-h-[10rem] max-h-[auto] flex xsm:flex-col xsm:justify-center text-center relative border border-black'>
 
 
-                <div className='xsm:hidden md:hidden lg:flex w-full h-[2rem] text-white flex flex-row lg:justify-between bg-black px-4'>{/*this
-                 component must be hidden in small and medium screens*/}
+                <div className='xsm:hidden md:hidden lg:flex w-full h-[2rem] text-white flex flex-row lg:justify-between bg-black px-4'>{/*this component must be hidden in small and medium screens*/}
 
                     <div className=''>
 
@@ -703,64 +305,61 @@ const [toggleSideBar, setToggleSideBar] = useState<boolean>(false);
 
                 </nav>
 
+ 
+                    <div className={`${toggleSideBar ? `hidden` : `flex z-1`} xsm:fixed md:fixed animate-slide-in-left  flex-col  min-h-screen max-h-screen overflow-y-scroll z-1 xsm:w-full md:w-[25rem] top-0 border-[6px] border-primaryBg bg-secondaryBg p-1`}>
 
-{toggleSideBar ? <>
+                        <div className="xsm:flex xsm:items-center xsm:w-full xsm:h-10 md:h-10 md:flex flex-col items-center text-center justify-center px-1">
 
-    <div className="flex flex-col absolute min-h-screen max-h-screen overflow-y-scroll xsm:w-full md:w-[25rem] top-0 border-[6px] border-primaryBg bg-secondaryBg p-1">
+                            <span className="text-[1.5rem] font-bold self-end" onClick={() => setToggleSideBar((prevstate) => !prevstate)}><RxCross1 /></span>
 
-<div className="xsm:flex xsm:items-center xsm:w-full xsm:h-10 md:h-10 md:flex flex-col items-center text-center justify-center px-1">
+                        </div>
 
-    <span className="text-[1.5rem] font-bold self-end" onClick={()=> setToggleSideBar((prevstate) => !prevstate)}><RxCross1 /></span>
+                        <div className="mx-auto w-full items-start overflow-y-scroll ">
 
-</div>
+                            <ul className="space-y-4 w-full xsm:min-h-full xsm:max-h-full flex flex-col overflow-y-scroll">
 
-<div className="mx-auto w-full items-start overflow-y-scroll ">
+                                {categories.map((category, index) => (
+                                    <li key={index} onClick={() => setSelectedCategory(category.name)}>
+                                        <a
+                                            href="#"
+                                            className="flex justify-between items-center p-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors duration-200"
+                                        >
+                                            <span className="font-medium">{category.name}</span>
 
-    <ul className="space-y-4 w-full xsm:min-h-full xsm:max-h-full flex flex-col overflow-y-scroll">
+                                            {category.subCategories.length ?
 
-        {categories.map((category, index) => (
-            <li key={index}>
-                <a
-                    href="#"
-                    className="flex justify-between items-center p-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors duration-200"
-                >
-                    <span className="font-medium">{category.name}</span>
+                                                <span className="mr-2 text-gray-500">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        className="h-5 w-5"
+                                                        viewBox="0 0 20 20"
+                                                        fill="currentColor"
+                                                    >
+                                                        <path
+                                                            fillRule="evenodd"
+                                                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                                            clipRule="evenodd"
+                                                        />
+                                                    </svg>
+                                                </span>
 
-                    {category.subCategories.length ?
+                                                : ""}
 
-                        <span className="mr-2 text-gray-500">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                    clipRule="evenodd"
-                                />
-                            </svg>
-                        </span>
+                                        </a>
 
-                        : ""}
+                                    </li>
 
-                </a>
+                                ))}
 
-            </li>
+                            </ul>
 
-        ))}
-
-    </ul>
-
-</div>
+                        </div>
 
 
-</div>
+                    </div>
 
 
-</> : ""}
-               
+             
 
             </header>
 

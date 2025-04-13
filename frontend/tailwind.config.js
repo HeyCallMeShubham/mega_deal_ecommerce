@@ -1,3 +1,5 @@
+import { transform } from 'typescript';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -8,7 +10,7 @@ export default {
 
     screens: {
 
-      xsm: "320px",
+      xsm: "300px",
       sm: "640px",
       md: "768px",
       lg: "1024px",
@@ -26,7 +28,18 @@ export default {
         textHoverPrimary: "#f68b1f",
         textHoverSecondary: "#36526b",
 
-      }
+      },
+
+  
+      keyframes: {
+        'slide-in-left': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+      },
+      animation: {
+        'slide-in-left': 'slide-in-left 0.5s ease-out',
+      },
 
     },
 
