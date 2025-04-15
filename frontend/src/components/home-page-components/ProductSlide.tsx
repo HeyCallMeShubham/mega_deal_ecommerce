@@ -4,9 +4,9 @@ import { IoMdEye } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import { useEffect, useState } from "react";
-import {useSelector} from "react-redux"
+import { useSelector } from "react-redux"
 
-const ProductSlide = () => {
+const ProductSlide = ({ toggleBar }: any) => {
 
     const selectedCategory = useSelector((state: any) => state.filterProducts.selectedCategory);
 
@@ -18,26 +18,131 @@ const ProductSlide = () => {
 
         {
             id: 1,
+            name: 'kurta pajama',
+            imageSrc: 'https://th.bing.com/th/id/OIP.5CyrA0AVoYoTVukd3VLS8wHaNK?w=187&h=333&c=7&r=0&o=5&pid=1.7',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "traditional",
+            category: "clothing"
+        },
+
+        {
+            id: 1,
             name: 'Basic Tee',
             imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-01.jpg',
             imageAlt: "Front of men's Basic Tee in black.",
             price: '$35',
             color: 'Black',
             percentOff: 10,
-            category: "t-shirt"
+            category: "clothing",
+            subCategory: "t-shirt",
         },
+
+        {
+            id: 1,
+            name: 'Basic Tee',
+            imageSrc: 'https://th.bing.com/th/id/OIP.kmGnlLezWd1NKPY5LZlYpwHaHa?w=196&h=196&c=7&r=0&o=5&pid=1.7',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            category: "clothing",
+            subCategory: "t-shirt",
+        },
+
+        {
+            id: 1,
+            name: 'Basic Tee',
+            imageSrc: 'https://th.bing.com/th/id/OIP.xU1B1N4yNIitYKdy61_5RgHaIC?w=181&h=196&c=7&r=0&o=5&pid=1.7',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            category: "clothing",
+            subCategory: "t-shirt",
+        },
+
+
+
+
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://cdn.shopify.com/s/files/1/0948/4808/products/s-l1600_2_956eaeec-b4d9-4c29-8882-fe74b2bb45eb.jpg?v=1572182257',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "chain",
+            category: "accessories"
+        },
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://files.sophie.co.ke/2023/05/1955044573_8664-1_9826.jpg',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "watch",
+            category: "accessories"
+        },
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://files.sophie.co.ke/2023/05/1955044573_8664-1_9826.jpg',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "watch",
+            category: "accessories"
+        },
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://www.watchtime.com/wp-content/uploads/2022/09/Zenith-A277-Chronograph.jpg',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "watch",
+            category: "accessories"
+        },
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://files.sophie.co.ke/2023/05/1955044573_8664-1_9826.jpg',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "watch",
+            category: "accessories"
+        },
+
 
         {
             id: 1,
             name: 'kurta pajama',
-            imageSrc: 'data:image/jpeg;base64,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',
+            imageSrc: 'https://th.bing.com/th/id/OIP.5CyrA0AVoYoTVukd3VLS8wHaNK?w=187&h=333&c=7&r=0&o=5&pid=1.7',
             imageAlt: "kurta pajama for mens tradional wedding outfit",
             price: '$35',
             color: 'Black',
             percentOff: 10,
             gender: "male",
-            category: "traditional"
+            subCategory: "traditional",
+            category: "clothing"
         },
+
         {
             id: 1,
             name: 'Basic Tee',
@@ -46,20 +151,112 @@ const ProductSlide = () => {
             price: '$35',
             color: 'Black',
             percentOff: 10,
-            category: "t-shirt"
+            category: "clothing",
+            subCategory: "t-shirt",
         },
+
+        {
+            id: 1,
+            name: 'Basic Tee',
+            imageSrc: 'https://th.bing.com/th/id/OIP.kmGnlLezWd1NKPY5LZlYpwHaHa?w=196&h=196&c=7&r=0&o=5&pid=1.7',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            category: "clothing",
+            subCategory: "t-shirt",
+        },
+
+        {
+            id: 1,
+            name: 'Basic Tee',
+            imageSrc: 'https://th.bing.com/th/id/OIP.xU1B1N4yNIitYKdy61_5RgHaIC?w=181&h=196&c=7&r=0&o=5&pid=1.7',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            category: "clothing",
+            subCategory: "t-shirt",
+        },
+
+
+
+
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://cdn.shopify.com/s/files/1/0948/4808/products/s-l1600_2_956eaeec-b4d9-4c29-8882-fe74b2bb45eb.jpg?v=1572182257',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "chain",
+            category: "accessories"
+        },
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://files.sophie.co.ke/2023/05/1955044573_8664-1_9826.jpg',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "watch",
+            category: "accessories"
+        },
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://files.sophie.co.ke/2023/05/1955044573_8664-1_9826.jpg',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "watch",
+            category: "accessories"
+        },
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://www.watchtime.com/wp-content/uploads/2022/09/Zenith-A277-Chronograph.jpg',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "watch",
+            category: "accessories"
+        },
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://files.sophie.co.ke/2023/05/1955044573_8664-1_9826.jpg',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "watch",
+            category: "accessories"
+        },
+
 
         {
             id: 1,
             name: 'kurta pajama',
-            imageSrc: 'data:image/jpeg;base64,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',
+            imageSrc: 'https://th.bing.com/th/id/OIP.5CyrA0AVoYoTVukd3VLS8wHaNK?w=187&h=333&c=7&r=0&o=5&pid=1.7',
             imageAlt: "kurta pajama for mens tradional wedding outfit",
             price: '$35',
             color: 'Black',
             percentOff: 10,
             gender: "male",
-            category: "traditional"
+            subCategory: "traditional",
+            category: "clothing"
         },
+
         {
             id: 1,
             name: 'Basic Tee',
@@ -68,141 +265,555 @@ const ProductSlide = () => {
             price: '$35',
             color: 'Black',
             percentOff: 10,
-            category: "t-shirt"
+            category: "clothing",
+            subCategory: "t-shirt",
         },
 
         {
             id: 1,
+            name: 'Basic Tee',
+            imageSrc: 'https://th.bing.com/th/id/OIP.kmGnlLezWd1NKPY5LZlYpwHaHa?w=196&h=196&c=7&r=0&o=5&pid=1.7',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            category: "clothing",
+            subCategory: "t-shirt",
+        },
+
+        {
+            id: 1,
+            name: 'Basic Tee',
+            imageSrc: 'https://th.bing.com/th/id/OIP.xU1B1N4yNIitYKdy61_5RgHaIC?w=181&h=196&c=7&r=0&o=5&pid=1.7',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            category: "clothing",
+            subCategory: "t-shirt",
+        },
+
+
+
+
+        {
+            id: 1,
             name: 'rolex daytona',
-            imageSrc: 'https://th.bing.com/th/id/OIP.hcZIrU9dJGzJd2ITrk57qAHaE8?w=280&h=187&c=7&r=0&o=5&pid=1.7',
+            imageSrc: 'https://cdn.shopify.com/s/files/1/0948/4808/products/s-l1600_2_956eaeec-b4d9-4c29-8882-fe74b2bb45eb.jpg?v=1572182257',
             imageAlt: "kurta pajama for mens tradional wedding outfit",
             price: '$35',
             color: 'Black',
             percentOff: 10,
             gender: "male",
+            subCategory: "chain",
             category: "accessories"
         },
-
         {
             id: 1,
             name: 'rolex daytona',
-            imageSrc: 'https://th.bing.com/th/id/OIP.hcZIrU9dJGzJd2ITrk57qAHaE8?w=280&h=187&c=7&r=0&o=5&pid=1.7',
+            imageSrc: 'https://files.sophie.co.ke/2023/05/1955044573_8664-1_9826.jpg',
             imageAlt: "kurta pajama for mens tradional wedding outfit",
             price: '$35',
             color: 'Black',
             percentOff: 10,
             gender: "male",
+            subCategory: "watch",
             category: "accessories"
         },
-
         {
             id: 1,
             name: 'rolex daytona',
-            imageSrc: 'https://th.bing.com/th/id/OIP.hcZIrU9dJGzJd2ITrk57qAHaE8?w=280&h=187&c=7&r=0&o=5&pid=1.7',
+            imageSrc: 'https://files.sophie.co.ke/2023/05/1955044573_8664-1_9826.jpg',
             imageAlt: "kurta pajama for mens tradional wedding outfit",
             price: '$35',
             color: 'Black',
             percentOff: 10,
             gender: "male",
+            subCategory: "watch",
             category: "accessories"
         },
-
         {
             id: 1,
             name: 'rolex daytona',
-            imageSrc: 'https://th.bing.com/th/id/OIP.hcZIrU9dJGzJd2ITrk57qAHaE8?w=280&h=187&c=7&r=0&o=5&pid=1.7',
+            imageSrc: 'https://www.watchtime.com/wp-content/uploads/2022/09/Zenith-A277-Chronograph.jpg',
             imageAlt: "kurta pajama for mens tradional wedding outfit",
             price: '$35',
             color: 'Black',
             percentOff: 10,
             gender: "male",
+            subCategory: "watch",
             category: "accessories"
         },
-
         {
             id: 1,
             name: 'rolex daytona',
-            imageSrc: 'https://th.bing.com/th/id/OIP.MDrLs9d-f87UxETBdmGNtAHaHa?w=206&h=206&c=7&r=0&o=5&pid=1.7',
+            imageSrc: 'https://files.sophie.co.ke/2023/05/1955044573_8664-1_9826.jpg',
             imageAlt: "kurta pajama for mens tradional wedding outfit",
             price: '$35',
             color: 'Black',
             percentOff: 10,
             gender: "male",
+            subCategory: "watch",
             category: "accessories"
         },
 
+
         {
             id: 1,
-            name: 'rolex daytona',
-            imageSrc: 'https://thegoldgods.com/cdn/shop/products/solid-rope-chain-mens-10k-14k-6mm-22-inch-the-gold-gods_c70c20b7-1754-44ec-913a-cfc3cf72f514_1800x1800.jpg?v=1671641276',
+            name: 'kurta pajama',
+            imageSrc: 'https://th.bing.com/th/id/OIP.5CyrA0AVoYoTVukd3VLS8wHaNK?w=187&h=333&c=7&r=0&o=5&pid=1.7',
             imageAlt: "kurta pajama for mens tradional wedding outfit",
             price: '$35',
             color: 'Black',
             percentOff: 10,
             gender: "male",
-            category: "accessories"
+            subCategory: "traditional",
+            category: "clothing"
         },
 
         {
             id: 1,
+            name: 'Basic Tee',
+            imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-01.jpg',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            category: "clothing",
+            subCategory: "t-shirt",
+        },
+
+        {
+            id: 1,
+            name: 'Basic Tee',
+            imageSrc: 'https://th.bing.com/th/id/OIP.kmGnlLezWd1NKPY5LZlYpwHaHa?w=196&h=196&c=7&r=0&o=5&pid=1.7',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            category: "clothing",
+            subCategory: "t-shirt",
+        },
+
+        {
+            id: 1,
+            name: 'Basic Tee',
+            imageSrc: 'https://th.bing.com/th/id/OIP.xU1B1N4yNIitYKdy61_5RgHaIC?w=181&h=196&c=7&r=0&o=5&pid=1.7',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            category: "clothing",
+            subCategory: "t-shirt",
+        },
+
+
+
+
+        {
+            id: 1,
             name: 'rolex daytona',
-            imageSrc: 'https://thegoldgods.com/cdn/shop/products/solid-rope-chain-mens-10k-14k-6mm-22-inch-the-gold-gods_c70c20b7-1754-44ec-913a-cfc3cf72f514_1800x1800.jpg?v=1671641276',
+            imageSrc: 'https://cdn.shopify.com/s/files/1/0948/4808/products/s-l1600_2_956eaeec-b4d9-4c29-8882-fe74b2bb45eb.jpg?v=1572182257',
             imageAlt: "kurta pajama for mens tradional wedding outfit",
             price: '$35',
             color: 'Black',
             percentOff: 10,
             gender: "male",
+            subCategory: "chain",
             category: "accessories"
         },
-
         {
             id: 1,
             name: 'rolex daytona',
-            imageSrc: 'https://thegoldgods.com/cdn/shop/products/solid-rope-chain-mens-10k-14k-6mm-22-inch-the-gold-gods_c70c20b7-1754-44ec-913a-cfc3cf72f514_1800x1800.jpg?v=1671641276',
+            imageSrc: 'https://files.sophie.co.ke/2023/05/1955044573_8664-1_9826.jpg',
             imageAlt: "kurta pajama for mens tradional wedding outfit",
             price: '$35',
             color: 'Black',
             percentOff: 10,
             gender: "male",
+            subCategory: "watch",
             category: "accessories"
         },
-
         {
             id: 1,
             name: 'rolex daytona',
-            imageSrc: 'https://thegoldgods.com/cdn/shop/products/solid-rope-chain-mens-10k-14k-6mm-22-inch-the-gold-gods_c70c20b7-1754-44ec-913a-cfc3cf72f514_1800x1800.jpg?v=1671641276',
+            imageSrc: 'https://files.sophie.co.ke/2023/05/1955044573_8664-1_9826.jpg',
             imageAlt: "kurta pajama for mens tradional wedding outfit",
             price: '$35',
             color: 'Black',
             percentOff: 10,
             gender: "male",
+            subCategory: "watch",
             category: "accessories"
         },
-
         {
             id: 1,
             name: 'rolex daytona',
-            imageSrc: 'https://thegoldgods.com/cdn/shop/products/solid-rope-chain-mens-10k-14k-6mm-22-inch-the-gold-gods_c70c20b7-1754-44ec-913a-cfc3cf72f514_1800x1800.jpg?v=1671641276',
+            imageSrc: 'https://www.watchtime.com/wp-content/uploads/2022/09/Zenith-A277-Chronograph.jpg',
             imageAlt: "kurta pajama for mens tradional wedding outfit",
             price: '$35',
             color: 'Black',
             percentOff: 10,
             gender: "male",
+            subCategory: "watch",
             category: "accessories"
         },
-
         {
             id: 1,
             name: 'rolex daytona',
-            imageSrc: 'https://th.bing.com/th/id/OIP.Av2GEn26Jeo5IqrgPUaJZgHaHa?w=209&h=209&c=7&r=0&o=5&pid=1.7',
+            imageSrc: 'https://files.sophie.co.ke/2023/05/1955044573_8664-1_9826.jpg',
             imageAlt: "kurta pajama for mens tradional wedding outfit",
             price: '$35',
             color: 'Black',
             percentOff: 10,
             gender: "male",
+            subCategory: "watch",
             category: "accessories"
         },
- 
+
+
+        {
+            id: 1,
+            name: 'kurta pajama',
+            imageSrc: 'https://th.bing.com/th/id/OIP.5CyrA0AVoYoTVukd3VLS8wHaNK?w=187&h=333&c=7&r=0&o=5&pid=1.7',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "traditional",
+            category: "clothing"
+        },
+
+        {
+            id: 1,
+            name: 'Basic Tee',
+            imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-01.jpg',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            category: "clothing",
+            subCategory: "t-shirt",
+        },
+
+        {
+            id: 1,
+            name: 'Basic Tee',
+            imageSrc: 'https://th.bing.com/th/id/OIP.kmGnlLezWd1NKPY5LZlYpwHaHa?w=196&h=196&c=7&r=0&o=5&pid=1.7',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            category: "clothing",
+            subCategory: "t-shirt",
+        },
+
+        {
+            id: 1,
+            name: 'Basic Tee',
+            imageSrc: 'https://th.bing.com/th/id/OIP.xU1B1N4yNIitYKdy61_5RgHaIC?w=181&h=196&c=7&r=0&o=5&pid=1.7',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            category: "clothing",
+            subCategory: "t-shirt",
+        },
+
+
+
+
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://cdn.shopify.com/s/files/1/0948/4808/products/s-l1600_2_956eaeec-b4d9-4c29-8882-fe74b2bb45eb.jpg?v=1572182257',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "chain",
+            category: "accessories"
+        },
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://files.sophie.co.ke/2023/05/1955044573_8664-1_9826.jpg',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "watch",
+            category: "accessories"
+        },
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://files.sophie.co.ke/2023/05/1955044573_8664-1_9826.jpg',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "watch",
+            category: "accessories"
+        },
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://www.watchtime.com/wp-content/uploads/2022/09/Zenith-A277-Chronograph.jpg',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "watch",
+            category: "accessories"
+        },
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://files.sophie.co.ke/2023/05/1955044573_8664-1_9826.jpg',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "watch",
+            category: "accessories"
+        },
+
+
+        {
+            id: 1,
+            name: 'kurta pajama',
+            imageSrc: 'https://th.bing.com/th/id/OIP.5CyrA0AVoYoTVukd3VLS8wHaNK?w=187&h=333&c=7&r=0&o=5&pid=1.7',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "traditional",
+            category: "clothing"
+        },
+
+        {
+            id: 1,
+            name: 'Basic Tee',
+            imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-01.jpg',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            category: "clothing",
+            subCategory: "t-shirt",
+        },
+
+        {
+            id: 1,
+            name: 'Basic Tee',
+            imageSrc: 'https://th.bing.com/th/id/OIP.kmGnlLezWd1NKPY5LZlYpwHaHa?w=196&h=196&c=7&r=0&o=5&pid=1.7',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            category: "clothing",
+            subCategory: "t-shirt",
+        },
+
+        {
+            id: 1,
+            name: 'Basic Tee',
+            imageSrc: 'https://th.bing.com/th/id/OIP.xU1B1N4yNIitYKdy61_5RgHaIC?w=181&h=196&c=7&r=0&o=5&pid=1.7',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            category: "clothing",
+            subCategory: "t-shirt",
+        },
+
+
+
+
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://cdn.shopify.com/s/files/1/0948/4808/products/s-l1600_2_956eaeec-b4d9-4c29-8882-fe74b2bb45eb.jpg?v=1572182257',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "chain",
+            category: "accessories"
+        },
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://files.sophie.co.ke/2023/05/1955044573_8664-1_9826.jpg',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "watch",
+            category: "accessories"
+        },
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://files.sophie.co.ke/2023/05/1955044573_8664-1_9826.jpg',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "watch",
+            category: "accessories"
+        },
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://www.watchtime.com/wp-content/uploads/2022/09/Zenith-A277-Chronograph.jpg',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "watch",
+            category: "accessories"
+        },
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://files.sophie.co.ke/2023/05/1955044573_8664-1_9826.jpg',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "watch",
+            category: "accessories"
+        },
+
+
+        {
+            id: 1,
+            name: 'kurta pajama',
+            imageSrc: 'https://th.bing.com/th/id/OIP.5CyrA0AVoYoTVukd3VLS8wHaNK?w=187&h=333&c=7&r=0&o=5&pid=1.7',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "traditional",
+            category: "clothing"
+        },
+
+        {
+            id: 1,
+            name: 'Basic Tee',
+            imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-01.jpg',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            category: "clothing",
+            subCategory: "t-shirt",
+        },
+
+        {
+            id: 1,
+            name: 'Basic Tee',
+            imageSrc: 'https://th.bing.com/th/id/OIP.kmGnlLezWd1NKPY5LZlYpwHaHa?w=196&h=196&c=7&r=0&o=5&pid=1.7',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            category: "clothing",
+            subCategory: "t-shirt",
+        },
+
+        {
+            id: 1,
+            name: 'Basic Tee',
+            imageSrc: 'https://th.bing.com/th/id/OIP.xU1B1N4yNIitYKdy61_5RgHaIC?w=181&h=196&c=7&r=0&o=5&pid=1.7',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            category: "clothing",
+            subCategory: "t-shirt",
+        },
+
+
+
+
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://cdn.shopify.com/s/files/1/0948/4808/products/s-l1600_2_956eaeec-b4d9-4c29-8882-fe74b2bb45eb.jpg?v=1572182257',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "chain",
+            category: "accessories"
+        },
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://files.sophie.co.ke/2023/05/1955044573_8664-1_9826.jpg',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "watch",
+            category: "accessories"
+        },
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://files.sophie.co.ke/2023/05/1955044573_8664-1_9826.jpg',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "watch",
+            category: "accessories"
+        },
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://www.watchtime.com/wp-content/uploads/2022/09/Zenith-A277-Chronograph.jpg',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "watch",
+            category: "accessories"
+        },
+        {
+            id: 1,
+            name: 'rolex daytona',
+            imageSrc: 'https://files.sophie.co.ke/2023/05/1955044573_8664-1_9826.jpg',
+            imageAlt: "kurta pajama for mens tradional wedding outfit",
+            price: '$35',
+            color: 'Black',
+            percentOff: 10,
+            gender: "male",
+            subCategory: "watch",
+            category: "accessories"
+        },
+
+
 
 
 
@@ -212,19 +823,21 @@ const ProductSlide = () => {
     ]
 
 
- 
+
+
+
     useEffect(() => {
-        
+
         if (selectedCategory) {
 
             const filtered = products.filter(product => product.category === selectedCategory);
-            
+
             setAllProducts(filtered);
-     
+
         } else {
-        
+
             setAllProducts(products); // Show all products if no category is selected
-        
+
         }
 
     }, [selectedCategory]);
@@ -234,10 +847,10 @@ const ProductSlide = () => {
 
     return (
 
- 
-            
-            
-            <div className="bg-white w-full min-h-[40rem] h-[auto] relative ">
+
+
+
+        <div className="bg-white w-full min-h-[40rem] h-[auto] relative ">
 
             <div className='w-[100%] h-[2rem] flex justify-between px-4 items-center border border-blue-900'>
 
@@ -254,7 +867,7 @@ const ProductSlide = () => {
                     </span>
 
                 </div>
-                
+
             </div>
 
 
@@ -278,20 +891,22 @@ const ProductSlide = () => {
                                     className="w-full h-full"
                                 />
 
-                                <div className='lg:hidden xsm:flex md:flex lg:group-hover:flex w-auto z-[1] h-auto absolute gap-1 bottom-0 right-0'>
+                                <div className={`lg:hidden ${toggleBar ? "hidden" : "xsm:flex"} md:flex lg:group-hover:flex w-auto z-[1] h-auto absolute gap-1 bottom-0 right-0`}>
 
                                     <span className='text-white bg-secondaryBg hover:bg-primaryBg text-[1.5rem] font-bold'>
                                         <IoBagHandleOutline />
                                     </span>
-                                    
+
+
+
                                     <span className='text-white bg-secondaryBg hover:bg-primaryBg text-[1.5rem] font-bold'>
                                         <IoMdEye />
-                                        </span>
-                                        
-                                        </div>
+                                    </span>
+
+                                </div>
 
                             </div>
-                            
+
 
                             <div className="mt-4 flex justify-between">
                                 <div>
@@ -299,11 +914,11 @@ const ProductSlide = () => {
                                     <span></span>
 
                                     <h3 className="text-sm text-gray-700">
-                                    
+
                                         <a href={product.href}>
 
                                             <span aria-hidden="true" className="absolute inset-0" />
-                                            
+
                                             {product.name}
 
                                         </a>
@@ -324,21 +939,21 @@ const ProductSlide = () => {
 
 
 
-                            
-                            
+
+
                         </div>
                     ))}
 
-                    
-                    
-                    </div>
-                    </div>
-                    
-                    
-                    
-                    
-                    
- 
+
+
+                </div>
+            </div>
+
+
+
+
+
+
 
         </div>
 

@@ -6,6 +6,10 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+
+
+  
+
   theme: {
 
     screens: {
@@ -27,6 +31,8 @@ export default {
         secondaryBg: "#36526b",
         textHoverPrimary: "#f68b1f",
         textHoverSecondary: "#36526b",
+        textPrimary: "#f68b1f",
+        textSecondary: "#36526b",
 
       },
 

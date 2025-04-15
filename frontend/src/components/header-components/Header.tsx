@@ -22,10 +22,15 @@ const Header = () => {
 
         dispatch(filterByCategory({ prop: "selectedCategory", value: selectedCategory }));
 
-        setToggleSideBar(prevState => !prevState)
+
+        setToggleSideBar(prevState => !prevState);
 
 
     }, [selectedCategory]);
+
+
+
+
 
 
     const categories = [
@@ -104,10 +109,11 @@ const Header = () => {
     ];
 
 
+
     return (
         <>
 
-            <header className='md:min-w-screen lg:min-w-screen md:max-w-screen lg:max-w-screen xsm:min-w-[24rem] min-h-[10rem] max-h-[auto] flex xsm:flex-col xsm:justify-center text-center relative border border-black'>
+            <header className={`md:min-w-screen lg:min-w-screen md:max-w-screen lg:max-w-screen xsm:min-w-[24rem]  min-h-[10rem] max-h-[auto] flex xsm:flex-col xsm:justify-center text-center relative border border-black`}>
 
 
                 <div className='xsm:hidden md:hidden lg:flex w-full h-[2rem] text-white flex flex-row lg:justify-between bg-black px-4'>{/*this component must be hidden in small and medium screens*/}
@@ -165,8 +171,8 @@ const Header = () => {
 
                         <img src='https://demoprestashop.aeipix.com/AX02/megadeal23/img/kenzy-fashion-logo-1542786700.jpg' alt='https://demoprestashop.aeipix.com/AX02/megadeal23/img/kenzy-fashion-logo-1542786700.jpg' className="lg:hidden xsm:max-h-[50px] xsm:max-w-[100%]" />
 
-
                         <div className='flex justify-between h-full w-[6rem] border items-center gap-2'>
+
 
 
                             <span className='flex justify-center h-10 font-bold text-[1.5rem] w-20 border border-black items-center text-white text-center bg-secondaryBg '>
@@ -305,66 +311,64 @@ const Header = () => {
 
                 </nav>
 
- 
-                    <div className={`${toggleSideBar ? `hidden` : `flex z-1`} xsm:fixed md:fixed animate-slide-in-left  flex-col  min-h-screen max-h-screen overflow-y-scroll z-1 xsm:w-full md:w-[25rem] top-0 border-[6px] border-primaryBg bg-secondaryBg p-1`}>
 
-                        <div className="xsm:flex xsm:items-center xsm:w-full xsm:h-10 md:h-10 md:flex flex-col items-center text-center justify-center px-1">
+                <div className={`${toggleSideBar === true ? `hidden` : `flex z-[1]`} xsm:fixed md:fixed animate-slide-in-left flex-col md:max-h-screen md:min-h-screen xsm:max-h-[100%] xsm:min-h-[100%] overflow-y-scroll z-1 xsm:w-full md:w-[25rem] top-0 border-[6px] border-primaryBg bg-secondaryBg p-1`}>
 
-                            <span className="text-[1.5rem] font-bold self-end" onClick={() => setToggleSideBar((prevstate) => !prevstate)}><RxCross1 /></span>
+                    <div className="xsm:flex xsm:items-center xsm:w-full xsm:h-10 md:h-10 md:flex flex-col items-center text-center justify-center px-1">
 
-                        </div>
+                        <span className="text-[1.5rem] font-bold self-end" onClick={() => setToggleSideBar((prevstate) => !prevstate)}><RxCross1 /></span>
 
-                        <div className="mx-auto w-full items-start overflow-y-scroll ">
+                    </div>
 
-                            <ul className="space-y-4 w-full xsm:min-h-full xsm:max-h-full flex flex-col overflow-y-scroll">
+                    <div className="mx-auto w-full items-start overflow-y-scroll ">
 
-                                {categories.map((category, index) => (
-                                    <li key={index} onClick={() => setSelectedCategory(category.name)}>
-                                        <a
-                                            href="#"
-                                            className="flex justify-between items-center p-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors duration-200"
-                                        >
-                                            <span className="font-medium">{category.name}</span>
+                        <ul className="space-y-4 w-full xsm:min-h-full xsm:max-h-full flex flex-col overflow-y-scroll">
 
-                                            {category.subCategories.length ?
+                            {categories.map((category, index) => (
+                                <li key={index} onClick={() => setSelectedCategory(category.name)}>
+                                    <a
+                                        href="#"
+                                        className="flex justify-between items-center p-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors duration-200"
+                                    >
+                                        <span className="font-medium">{category.name}</span>
 
-                                                <span className="mr-2 text-gray-500">
-                                                    <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        className="h-5 w-5"
-                                                        viewBox="0 0 20 20"
-                                                        fill="currentColor"
-                                                    >
-                                                        <path
-                                                            fillRule="evenodd"
-                                                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                                            clipRule="evenodd"
-                                                        />
-                                                    </svg>
-                                                </span>
+                                        {category.subCategories.length ?
 
-                                                : ""}
+                                            <span className="mr-2 text-gray-500">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    className="h-5 w-5"
+                                                    viewBox="0 0 20 20"
+                                                    fill="currentColor"
+                                                >
+                                                    <path
+                                                        fillRule="evenodd"
+                                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                                        clipRule="evenodd"
+                                                    />
+                                                </svg>
+                                            </span>
 
-                                        </a>
+                                            : ""}
 
-                                    </li>
+                                    </a>
 
-                                ))}
+                                </li>
 
-                            </ul>
+                            ))}
 
-                        </div>
-
+                        </ul>
 
                     </div>
 
 
-             
+                </div>
+
 
             </header>
 
 
-            <Outlet />
+            <Outlet context={[toggleSideBar]} />
 
 
         </>

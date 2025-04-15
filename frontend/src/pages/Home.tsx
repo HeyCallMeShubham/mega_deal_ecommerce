@@ -4,8 +4,8 @@ import ProductSlide from '../components/home-page-components/ProductSlide';
 import { useDispatch } from "react-redux";
 import { filterByCategory } from '../reduxjs/FilterProducts';
 import { useEffect, useState } from 'react';
-
-
+import { IoIosArrowForward } from "react-icons/io";
+import { useOutletContext } from 'react-router-dom';
 
 const Home = () => {
 
@@ -13,90 +13,66 @@ const Home = () => {
 
   const dispatch = useDispatch();
 
+
+
+
   const categories = [
     {
       id: 1,
-      name: "traditional",
-      slug: "clothing",
-      icon: "👕",
-      description: "Browse our fashionable clothing collection",
+      name: "clothing",
       subCategories: [
         {
-          id: 101,
-          name: "Men's Wear",
-          slug: "mens-wear",
-          icon: "👔",
-          description: "Clothing for men"
+          id: 1,
+          name: "t-shirt"
         },
+
         {
-          id: 102,
-          name: "Women's Wear",
-          slug: "womens-wear",
-          icon: "👗",
-          description: "Clothing for women"
+          id: 3,
+          name: "t-shirt"
         },
-        {
-          id: 103,
-          name: "Kids' Wear",
-          slug: "kids-wear",
-          icon: "👶",
-          description: "Clothing for children"
-        }
-      ]
-    },
-    {
-      id: 1,
-      name: "accessories",
-      slug:"accessories",
-      icon: "👕",
-      description: "Browse our fashionable accessories  collection",
-      subCategories: [
-        {
-          id: 101,
-          name: "Men's Wear",
-          slug: "mens-wear",
-          icon: "👔",
-          description: "Clothing for men"
-        },
-        {
-          id: 102,
-          name: "Women's Wear",
-          slug: "womens-wear",
-          icon: "👗",
-          description: "Clothing for women"
-        },
-        {
-          id: 103,
-          name: "Kids' Wear",
-          slug: "kids-wear",
-          icon: "👶",
-          description: "Clothing for children"
-        }
+
       ]
     },
     {
       id: 2,
-      name: "t-shirt",
-      slug: "t-shirt",
-      icon: "👜",
-      description: "Complete your look with our t-shirt",
+      name: "accessories",
       subCategories: [
-      
+
+        { id: 1, name: "belts" },
+        { id: 2, name: "belts" },
+        { id: 3, name: "gloves" },
+        { id: 4, name: "scarves" },
+        { id: 5, name: "scarves" },
+        { id: 6, name: "gloves" },
+
       ]
-},
-  
-    
+    },
+
+
+
+
+
   ];
+
 
 
   useEffect(() => {
 
+    console.log(selectedCategory, 'se')
 
     dispatch(filterByCategory({ prop: "selectedCategory", value: selectedCategory }));
 
 
   }, [selectedCategory]);
- 
+
+
+
+
+
+  const [toggleSideBar]: any = useOutletContext()
+
+
+  console.log(toggleSideBar, 'toggle')
 
 
   return (
@@ -110,89 +86,169 @@ const Home = () => {
           <div className="max-w-md mx-auto  min-h-[20rem] max-h-[auto] border-[4px] border-primaryBg">
 
             <ul className="space-y-2">
+
               {categories.map((category, index) => (
-                <li key={index} onClick={()=> setSelectedCategory(category.name)}>
+
+                <li key={index} onClick={() => setSelectedCategory(category.name)} className=' group relative '>
+
                   <a
                     href="#"
                     className="flex justify-between items-center p-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors duration-200"
                   >
+
                     <span className="font-medium">{category.name}</span>
 
                     {category.subCategories.length ?
 
                       <span className="mr-2 text-gray-500">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                        <IoIosArrowForward />
                       </span>
 
                       : ""}
 
                   </a>
 
+
+
+                  <div className=" group-hover:block min-h-[4rem] max-h-[auto] min-w-[6rem] max-w-[20rem] hidden absolute z-[1] left-full top-4 w-[10rem] flex-wrap bg-white">
+
+                    <ul className='group-hover:flex justify-between items-center gap-3 px-4 lg:min-h-10 lg:max-h-auto w-full h-full flex-wrap text-black'>
+
+                      {category.subCategories.map((subCategory, index) => (
+
+                        <li key={index} className='flex flex-col' id={`${subCategory.id}`} onClick={() => setSelectedCategory(subCategory.name)}>
+
+                          <span className='hover:text-textHoverPrimary group-hover:cursor-pointer' >{subCategory.name}</span>
+
+                        </li>
+
+                      ))}
+
+                    </ul>
+
+                  </div>
+
                 </li>
 
               ))}
 
+
             </ul>
 
           </div>
+
 
         </div>
 
 
 
 
-        <div className='relative   w-full h-[30rem] xsm:h-auto md:h-auto border flex flex-col items-center xsm:col-span-2 md:col-span-2 lg:col-start-2 border-black' id='col-2'>
 
-          <div className='border  lg:z-1 relative border-red-500 w-[98%] xsm:h-[18rem] md:h-[22rem] lg:h-[35rem]' id="banner-container">
+        <div className='relative w-full h-[30rem] xsm:h-auto md:h-auto border flex flex-col items-center xsm:col-span-2 md:col-span-2 lg:col-start-2 border-black' id='col-2'>
 
-            <div className='absolute  flex flex-row xsm:items-end xsm:justify-end xsm:w-full md:w-full w-full h-full border bg-[url("https://demoprestashop.aeipix.com/AX02/megadeal23/modules/aei_imageslider/views/img/sample-1.jpg")] bg-cover bg-no-repeat bg-center   ' id='banner-slide-1'>
+          <div className='lg:-z-10  relative w-[98%] xsm:h-[18rem] md:h-[22rem] lg:h-[35rem]' id="banner-container">
 
-              <div className='xsm:top-[50%] transform -translate-x-1/1 -translate-y-[2rem] lg:right-[10rem] lg:w-[30rem] xsm:w-[15rem] xsm:h-[auto] lg:min-h-[10rem] lg:max-h-[auto] flex flex-col gap-2 justify-center items-center text-center'>
 
-                <span className='text-primaryBg xsm:text-[13px] lg:text-[1.5rem]'>
-                  Up To 30% Off
+            <ul className='w-full h-full relative overflow-hidden '>
+
+              <li className='w-full h-full flex flex-col items-center justify-center text-center float-left absolute'>
+                <img
+                  src="https://demoprestashop.aeipix.com/AX02/megadeal23/modules/aei_imageslider/views/img/sample-1.jpg"
+                  alt="https://demoprestashop.aeipix.com/AX02/megadeal23/modules/aei_imageslider/views/img/sample-1.jpg"
+                  className='w-full h-full align-middle self-center' />
+
+                <span className={` xsm:hidden lg:block absolute left-auto right-[35px] top-[20%] ${toggleSideBar ? "xsm:z-[1]" : "xsm:-z-10  md:-z-10"
+                  } lg:z-[2] text-center w-auto border border-black `}>
+
+                  <h2 className='align-top inline-block text-textPrimary text-[20px] font-[400] tracking-[0.4px] capitalize leading-[28px] after:content-["Up To 45% Off"] '></h2>
+
+                  <div className="block isolate">
+
+                    <div className="text-[64px] leading-[28px] font-medium text-black tracking-[1.79px] capitalize py-[40px]">
+                      Fashion
+
+                      <span className='text-textSecondary'> Trends</span>
+                    </div>
+
+                    <div className="text-base font-normal capitalize text-black leading-[25px] tracking-[2.24px]">
+                      Designer Clothes Exlusive Online Store
+                    </div>
+
+                    <p className="text-black font-[400] ">
+
+                      <span className="text-[15px]  font-normal capitalize text-center mt-[10px] tracking-[0.56px] inline-block text-white bg-primaryBg align-top transition-all duration-500 py-[7px] px-[25px] ">
+                        shop now
+                      </span>
+
+                    </p>
+
+                  </div>
+
                 </span>
 
-                <h2 className='font-bold xsm:text-[20px]  lg:text-[1.5rem] '>Fashion Trends</h2>
 
-                <p>
-                  Designer Clothes Exlusive Online Store
-                </p>
 
-                <button className='border text-lg border-black w-[7rem] h-[2.5rem] bg-primaryBg'>Shop Now</button>
+                {/* for mobile screen */}
 
-              </div>
 
-            </div>
+                <span className={`lg:hidden absolute left-auto right-0 top-[8%] ${toggleSideBar ? "xsm:z-[1]" : "xsm:-z-10  md:-z-10"
+                  } lg:z-[2] text-right w-auto `}>
+
+                  <h2 className='align-top inline-block text-textPrimary text-[20px] font-[400] tracking-[0.4px] capitalize leading-[28px] after:content-["Up To 45% Off"] '></h2>
+
+                  <div className="block isolate">
+
+                    <div className="text-[24px] leading-[28px] font-medium text-black tracking-[1.79px] capitalize py-[40px]">
+                      Fashion
+
+                      <span className='text-textSecondary'> Trends</span>
+                    </div>
+
+                    <div className="text-base font-normal capitalize text-black leading-[25px] tracking-[1.24px]">
+                      Designer Clothes <br/> Exlusive Online Store
+                    </div>
+
+                    <p className="text-black font-[400] ">
+
+                      <span className="text-[15px]  font-normal capitalize text-center mt-[10px] tracking-[0.56px] inline-block text-white bg-primaryBg align-top transition-all duration-500 py-[7px] px-[25px] ">
+                        shop now
+                      </span>
+
+                    </p>
+
+                  </div>
+
+                </span>
+
+
+
+              </li>
+
+
+            </ul>
+
 
           </div>
 
 
           {/*product-listing-section-start*/}
 
-          <ProductListingSlide />
+          <ProductListingSlide toggleBar={toggleSideBar} />
 
           {/*product-listing-section-end*/}
 
 
-          <ProductSlide />
+          <ProductSlide toggleBar={toggleSideBar} />
 
 
         </div>
 
 
       </div>
+
+
+
+
 
     </>
 
