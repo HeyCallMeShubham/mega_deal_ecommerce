@@ -5,9 +5,10 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux"
+import { useOutletContext } from "react-router-dom";
 
 
-const ProductListingSlide = ({toggleBar}:any) => {
+const ProductListingSlide = () => {
 
     const selectedCategory = useSelector((state: any) => state.filterProducts.selectedCategory);
 
@@ -29,7 +30,7 @@ const ProductListingSlide = ({toggleBar}:any) => {
             subCategory: "traditional",
             category: "clothing"
         },
-        
+
         {
             id: 1,
             name: 'Basic Tee',
@@ -143,7 +144,7 @@ const ProductListingSlide = ({toggleBar}:any) => {
             subCategory: "traditional",
             category: "clothing"
         },
-        
+
         {
             id: 1,
             name: 'Basic Tee',
@@ -257,7 +258,7 @@ const ProductListingSlide = ({toggleBar}:any) => {
             subCategory: "traditional",
             category: "clothing"
         },
-        
+
         {
             id: 1,
             name: 'Basic Tee',
@@ -371,7 +372,7 @@ const ProductListingSlide = ({toggleBar}:any) => {
             subCategory: "traditional",
             category: "clothing"
         },
-        
+
         {
             id: 1,
             name: 'Basic Tee',
@@ -485,7 +486,7 @@ const ProductListingSlide = ({toggleBar}:any) => {
             subCategory: "traditional",
             category: "clothing"
         },
-        
+
         {
             id: 1,
             name: 'Basic Tee',
@@ -599,7 +600,7 @@ const ProductListingSlide = ({toggleBar}:any) => {
             subCategory: "traditional",
             category: "clothing"
         },
-        
+
         {
             id: 1,
             name: 'Basic Tee',
@@ -713,7 +714,7 @@ const ProductListingSlide = ({toggleBar}:any) => {
             subCategory: "traditional",
             category: "clothing"
         },
-        
+
         {
             id: 1,
             name: 'Basic Tee',
@@ -844,7 +845,7 @@ const ProductListingSlide = ({toggleBar}:any) => {
 
 
 
-
+    const [toggleSideBar]: any = useOutletContext()
 
 
     return (
@@ -906,7 +907,7 @@ const ProductListingSlide = ({toggleBar}:any) => {
                                     />
 
 
-                                    <div className={`xsm:flex md:flex lg:hidden lg:group-hover:flex w-auto gap-1 ${toggleBar ? "-z-[20]" : "z-[1]"} h-auto absolute bottom-0 right-0`}>
+                                    <div className={`xsm:flex md:flex lg:hidden lg:group-hover:flex w-auto gap-1 ${toggleSideBar ? "z-[1]" : "-z-[20]"} h-auto absolute bottom-0 right-0`}>
 
                                         <span className='text-white bg-secondaryBg text-[1.6rem] font-bold'>
                                             <IoBagHandleOutline />

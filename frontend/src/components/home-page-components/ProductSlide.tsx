@@ -5,6 +5,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux"
+import { useOutletContext } from "react-router-dom";
 
 const ProductSlide = ({ toggleBar }: any) => {
 
@@ -843,7 +844,7 @@ const ProductSlide = ({ toggleBar }: any) => {
     }, [selectedCategory]);
 
 
-
+    const [toggleSideBar]: any = useOutletContext()
 
     return (
 
@@ -891,7 +892,7 @@ const ProductSlide = ({ toggleBar }: any) => {
                                     className="w-full h-full"
                                 />
 
-                                <div className={`lg:hidden ${toggleBar ? "hidden" : "xsm:flex"} md:flex lg:group-hover:flex w-auto z-[1] h-auto absolute gap-1 bottom-0 right-0`}>
+                                <div className={`lg:hidden  xsm:flex md:flex lg:group-hover:flex w-auto ${toggleSideBar ? "z-[1]" : "-z-[20]"}  h-auto absolute gap-1 bottom-0 right-0`}>
 
                                     <span className='text-white bg-secondaryBg hover:bg-primaryBg text-[1.5rem] font-bold'>
                                         <IoBagHandleOutline />

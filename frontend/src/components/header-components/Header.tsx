@@ -9,6 +9,8 @@ import { RxCross1 } from "react-icons/rx";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { filterByCategory } from '../../reduxjs/FilterProducts';
+import Footer from "../footer-components/Footer";
+ 
 const Header = () => {
 
     const [toggleSideBar, setToggleSideBar] = useState<boolean>(false);
@@ -369,6 +371,9 @@ const Header = () => {
 
 
             <Outlet context={[toggleSideBar]} />
+
+
+ 
 
 
         </>

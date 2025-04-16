@@ -233,12 +233,12 @@ const Home = () => {
 
           {/*product-listing-section-start*/}
 
-          <ProductListingSlide toggleBar={toggleSideBar} />
+          <ProductListingSlide   />
 
           {/*product-listing-section-end*/}
 
 
-          <ProductSlide toggleBar={toggleSideBar} />
+          <ProductSlide   />
 
 
         </div>

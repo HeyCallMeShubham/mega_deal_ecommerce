@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom"
 import Home from "./pages/Home"
 import Header from "./components/header-components/Header"
-import Footer from "./components/footer-components/Footer"
+ 
 import ProductAbout from "./pages/ProductAbout"
 import CheckoutPage from "./pages/checkout/CheckoutPage"
 
@@ -15,19 +15,17 @@ function App() {
 
       <Routes>
 
+ 
+        
         <Route element={<Header />} >
         
+
         <Route index path="/" element={<Home />} />
 
-          
-        
-        <Route  element={<Footer />} >
 
          <Route path="/aboutpage" element={<ProductAbout />} />
-        
-         </Route>
-         
-         
+
+ 
 
         </Route>
 
