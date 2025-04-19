@@ -34,7 +34,7 @@ const Home = () => {
 
       ]
     },
-    
+
     {
       id: 2,
       name: "men",
@@ -164,7 +164,7 @@ const Home = () => {
 
     <>
 
-      <div className='w-screen min-h-screen max-h-[auto] grid grid-cols-[20rem_auto] px-4 '>
+      <div className='w-[100vw] min-h-screen max-h-[auto] grid grid-cols-[22rem_auto] px-4 border border-black  '>
 
         <div className='w-full h-10rem xsm:hidden md:hidden lg:block ' id='col-1'>
 
@@ -229,7 +229,7 @@ const Home = () => {
 
 
 
-        <div className='relative w-full h-[30rem] xsm:h-auto md:h-auto   flex flex-col items-center xsm:col-span-2 md:col-span-2 lg:col-start-2' id='col-2'>
+        <div className='relative min-w-full max-w-full h-[30rem] xsm:h-auto md:h-auto flex flex-col items-center xsm:col-span-2 md:col-span-2 lg:col-start-2' id='col-2'>
 
           <div className='lg:-z-10  relative w-[98%] xsm:h-[18rem] md:h-[22rem] lg:h-[35rem]' id="banner-container">
 
@@ -242,7 +242,7 @@ const Home = () => {
                   alt="https://demoprestashop.aeipix.com/AX02/megadeal23/modules/aei_imageslider/views/img/sample-1.jpg"
                   className='w-full h-full align-middle self-center' />
 
-                <span className={`  lg:block absolute left-auto right-[35px] top-[20%] ${toggleSideBar ? "xsm:z-[1]" : "xsm:-z-10  md:-z-10"
+                <span className={` xsm:hidden md:hidden lg:block absolute left-auto right-[35px] top-[20%] ${toggleSideBar ? "xsm:z-[1]" : "xsm:-z-10  md:-z-10"
                   } lg:z-[2] text-center w-auto   `}>
 
                   <h2 className='align-top inline-block text-textPrimary text-[20px] font-[400] tracking-[0.4px] capitalize leading-[28px] after:content-["Up To 45% Off"] '></h2>
@@ -272,9 +272,7 @@ const Home = () => {
                 </span>
 
 
-
-                {/* for mobile screen 
-                
+ 
                 <span className={`lg:hidden absolute left-auto right-0 top-[8%] ${toggleSideBar ? "xsm:z-[1]" : "xsm:-z-10  md:-z-10"
                   } lg:z-[2] text-right w-auto `}>
 
@@ -303,7 +301,7 @@ const Home = () => {
                   </div>
 
                 </span>
-                */}
+              
 
 
 

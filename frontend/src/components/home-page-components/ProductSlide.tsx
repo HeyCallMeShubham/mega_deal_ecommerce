@@ -41,7 +41,6 @@ const ProductSlide = () => {
             category: "clothing",
             subCategory: "t-shirt",
         },
-
         {
             id: 1,
             name: 'Basic Tee',
@@ -117,6 +116,7 @@ const ProductSlide = () => {
             subCategory: "watch",
             category: "accessories"
         },
+ 
         {
             id: 1,
             name: 'rolex daytona',
@@ -815,8 +815,7 @@ const ProductSlide = () => {
         },
 
 
-
-
+ 
 
 
         // More products...
@@ -844,16 +843,21 @@ const ProductSlide = () => {
     }, [selectedCategory]);
 
 
-    const [toggleSideBar]: any = useOutletContext()
+    const [toggleSideBar]: any = useOutletContext();
+
+
+    
+
+
 
     return (
 
 
 
 
-        <div className="bg-white w-full min-h-[40rem] h-[auto] relative ">
+        <div className="bg-white min-w-full max-w-full min-h-[40rem] h-[auto] flex flex-col relative  ">
 
-            <div className='w-[100%] h-[2rem] flex justify-between px-4 items-center border border-blue-900'>
+            <div className='w-[100%] h-[2rem] flex justify-between px-4 items-center  '>
 
                 <span>Special Products</span>
 
@@ -874,15 +878,18 @@ const ProductSlide = () => {
 
 
 
-            <div className="mx-auto xsm:w-full md:w-full px-4 py-16 xsm:px-6 xsm:py-24 lg:max-w-7xl lg:px-8  flex flex-col items-center">
+
+ 
+
+            <div className="mx-auto xsm:w-full md:w-full px-4 py-16 xsm:px-6 xsm:py-24 lg:max-w-7xl lg:px-8  flex flex-col items-center  ">
 
                 <h2 className="xsm:text-[15px] md:text-1xl lg:text-2xl font-bold tracking-tight self-start border border=black text-gray-900">Customers also purchased</h2>
 
-                <div className="flex xsm:min-w-[18rem] xsm:max-w-[18rem] md:min-w-[40rem] md:max-w-[50rem] lg:min-full lg:max-w-full xsm:min-h-[22rem] xsm:max-h-[22rem] md:min-h-[26rem] md:max-h-[28rem] xsm:justify-center mt-6 xsm:flex-row md:flex-row lg:flex-row gap-4 overflow-x-scroll ">
+                <div className="flex xsm:min-w-[18rem] xsm:max-w-[18rem] md:min-w-[40rem] md:max-w-[50rem] lg:min-full lg:max-w-full xsm:min-h-[22rem] xsm:max-h-[22rem] md:min-h-[24rem] md:max-h-[26rem] xsm:justify-center mt-6 xsm:flex-row md:flex-row lg:flex-row gap-4 overflow-x-scroll border border-black">
 
                     {allProducts.map((product) => (
 
-                        <div key={product.id} className="group relative xsm:h-[18rem] md:h-full lg:w-[17rem] xsm:w-full md:min-w-[18rem] md:max-w-[18rem]  " >
+                        <div key={product.id} className="group relative xsm:h-[18rem] md:h-[20em] lg:w-[17rem] xsm:w-full md:min-w-[18rem] md:max-w-[18rem]  " >
 
                             <div className='aspect-square h-full w-full relative rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80'>
 
@@ -892,7 +899,7 @@ const ProductSlide = () => {
                                     className="w-full h-full"
                                 />
 
-                                <div className={`lg:hidden  xsm:flex md:flex lg:group-hover:flex w-auto ${toggleSideBar ? "z-[1]" : "-z-[20]"}  h-auto absolute gap-1 bottom-0 right-0`}>
+                                <div className={`lg:hidden xsm:flex md:flex lg:group-hover:flex w-auto ${toggleSideBar ? "z-[1]" : "-z-[20]"}  h-auto absolute gap-1 bottom-0 right-0`}>
 
                                     <span className='text-white bg-secondaryBg hover:bg-primaryBg text-[1.5rem] font-bold'>
                                         <IoBagHandleOutline />
@@ -949,10 +956,6 @@ const ProductSlide = () => {
 
                 </div>
             </div>
-
-
-
-
 
 
 
