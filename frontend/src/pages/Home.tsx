@@ -16,6 +16,7 @@ const Home = () => {
 
 
 
+
   const categories = [
     {
       id: 1,
@@ -33,26 +34,110 @@ const Home = () => {
 
       ]
     },
+    
     {
       id: 2,
+      name: "men",
+      subCategories: [
+        {
+          id: 1,
+          name: "t-shirt"
+        },
+
+        {
+          id: 3,
+          name: "t-shirt"
+        },
+
+      ]
+    },
+
+    {
+      id: 3,
+      name: "woman",
+      subCategories: [
+        {
+          id: 1,
+          name: "t-shirt"
+        },
+
+        {
+          id: 3,
+          name: "t-shirt"
+        },
+
+      ]
+    },
+    {
+      id: 4,
+      name: "footwear",
+      subCategories: [
+        {
+          id: 1,
+          name: "shoes"
+        },
+
+        {
+          id: 3,
+          name: "slipers"
+        },
+
+      ]
+    },
+    {
+      id: 5,
+      name: "winter wear",
+      subCategories: [
+        {
+          id: 1,
+          name: "sweater"
+        },
+
+        {
+          id: 3,
+          name: "jackets"
+        },
+
+      ]
+    },
+    {
+      id: 6,
+      name: "activewear/sportswear",
+      subCategories: [
+        {
+          id: 1,
+          name: "shoes"
+        },
+
+        {
+          id: 3,
+          name: "jersey"
+        },
+
+      ]
+    },
+
+    {
+      id: 7,
       name: "accessories",
       subCategories: [
 
         { id: 1, name: "belts" },
-        { id: 2, name: "belts" },
+        { id: 2, name: "ear ring" },
         { id: 3, name: "gloves" },
         { id: 4, name: "scarves" },
-        { id: 5, name: "scarves" },
-        { id: 6, name: "gloves" },
+        { id: 5, name: "chain" },
+        { id: 6, name: "necklace" },
 
       ]
     },
 
 
 
-
-
   ];
+
+
+
 
 
 
@@ -144,7 +229,7 @@ const Home = () => {
 
 
 
-        <div className='relative w-full h-[30rem] xsm:h-auto md:h-auto border flex flex-col items-center xsm:col-span-2 md:col-span-2 lg:col-start-2 border-black' id='col-2'>
+        <div className='relative w-full h-[30rem] xsm:h-auto md:h-auto   flex flex-col items-center xsm:col-span-2 md:col-span-2 lg:col-start-2' id='col-2'>
 
           <div className='lg:-z-10  relative w-[98%] xsm:h-[18rem] md:h-[22rem] lg:h-[35rem]' id="banner-container">
 
@@ -157,14 +242,14 @@ const Home = () => {
                   alt="https://demoprestashop.aeipix.com/AX02/megadeal23/modules/aei_imageslider/views/img/sample-1.jpg"
                   className='w-full h-full align-middle self-center' />
 
-                <span className={` xsm:hidden lg:block absolute left-auto right-[35px] top-[20%] ${toggleSideBar ? "xsm:z-[1]" : "xsm:-z-10  md:-z-10"
-                  } lg:z-[2] text-center w-auto border border-black `}>
+                <span className={`  lg:block absolute left-auto right-[35px] top-[20%] ${toggleSideBar ? "xsm:z-[1]" : "xsm:-z-10  md:-z-10"
+                  } lg:z-[2] text-center w-auto   `}>
 
                   <h2 className='align-top inline-block text-textPrimary text-[20px] font-[400] tracking-[0.4px] capitalize leading-[28px] after:content-["Up To 45% Off"] '></h2>
 
                   <div className="block isolate">
 
-                    <div className="text-[64px] leading-[28px] font-medium text-black tracking-[1.79px] capitalize py-[40px]">
+                    <div className="text-[clamp(1.5rem, 3vw, 4rem)] leading-[28px] font-medium text-black tracking-[1.79px] capitalize py-[40px]">
                       Fashion
 
                       <span className='text-textSecondary'> Trends</span>
@@ -188,9 +273,8 @@ const Home = () => {
 
 
 
-                {/* for mobile screen */}
-
-
+                {/* for mobile screen 
+                
                 <span className={`lg:hidden absolute left-auto right-0 top-[8%] ${toggleSideBar ? "xsm:z-[1]" : "xsm:-z-10  md:-z-10"
                   } lg:z-[2] text-right w-auto `}>
 
@@ -219,6 +303,9 @@ const Home = () => {
                   </div>
 
                 </span>
+                */}
+
+
 
 
 
@@ -233,12 +320,12 @@ const Home = () => {
 
           {/*product-listing-section-start*/}
 
-          <ProductListingSlide   />
+          <ProductListingSlide />
 
           {/*product-listing-section-end*/}
 
 
-          <ProductSlide   />
+          <ProductSlide />
 
 
         </div>

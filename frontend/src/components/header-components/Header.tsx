@@ -9,8 +9,8 @@ import { RxCross1 } from "react-icons/rx";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { filterByCategory } from '../../reduxjs/FilterProducts';
-import Footer from "../footer-components/Footer";
- 
+import { IoIosArrowForward } from "react-icons/io";
+
 const Header = () => {
 
     const [toggleSideBar, setToggleSideBar] = useState<boolean>(false);
@@ -35,80 +35,203 @@ const Header = () => {
 
 
 
+
     const categories = [
         {
             id: 1,
-            name: "traditional",
-            slug: "clothing",
-            icon: "👕",
-            description: "Browse our fashionable clothing collection",
+            name: "clothing",
             subCategories: [
                 {
-                    id: 101,
-                    name: "Men's Wear",
-                    slug: "mens-wear",
-                    icon: "👔",
-                    description: "Clothing for men"
+                    id: 1,
+                    name: "t-shirt"
                 },
+
                 {
-                    id: 102,
-                    name: "Women's Wear",
-                    slug: "womens-wear",
-                    icon: "👗",
-                    description: "Clothing for women"
+                    id: 3,
+                    name: "t-shirt"
                 },
-                {
-                    id: 103,
-                    name: "Kids' Wear",
-                    slug: "kids-wear",
-                    icon: "👶",
-                    description: "Clothing for children"
-                }
-            ]
-        },
-        {
-            id: 1,
-            name: "accessories",
-            slug: "accessories",
-            icon: "👕",
-            description: "Browse our fashionable accessories  collection",
-            subCategories: [
-                {
-                    id: 101,
-                    name: "Men's Wear",
-                    slug: "mens-wear",
-                    icon: "👔",
-                    description: "Clothing for men"
-                },
-                {
-                    id: 102,
-                    name: "Women's Wear",
-                    slug: "womens-wear",
-                    icon: "👗",
-                    description: "Clothing for women"
-                },
-                {
-                    id: 103,
-                    name: "Kids' Wear",
-                    slug: "kids-wear",
-                    icon: "👶",
-                    description: "Clothing for children"
-                }
-            ]
-        },
-        {
-            id: 2,
-            name: "t-shirt",
-            slug: "t-shirt",
-            icon: "👜",
-            description: "Complete your look with our t-shirt",
-            subCategories: [
 
             ]
         },
+
+        {
+            id: 2,
+            name: "men",
+            subCategories: [
+                {
+                    id: 1,
+                    name: "t-shirt"
+                },
+
+                {
+                    id: 3,
+                    name: "t-shirt"
+                },
+
+            ]
+        },
+
+        {
+            id: 3,
+            name: "woman",
+            subCategories: [
+                {
+                    id: 1,
+                    name: "t-shirt"
+                },
+
+                {
+                    id: 3,
+                    name: "t-shirt"
+                },
+
+            ]
+        },
+
+        {
+            id: 7,
+            name: "accessories",
+            subCategories: [
+
+                { id: 1, name: "belts" },
+                { id: 2, name: "ear ring" },
+                { id: 3, name: "gloves" },
+                { id: 4, name: "scarves" },
+                { id: 5, name: "chain" },
+                { id: 6, name: "necklace" },
+
+            ]
+        },
+
+    ];
+
+
+
+
+
+
+
+    const sidebarCategories = [
+        {
+            id: 1,
+            name: "clothing",
+            subCategories: [
+                {
+                    id: 1,
+                    name: "t-shirt"
+                },
+
+                {
+                    id: 3,
+                    name: "t-shirt"
+                },
+
+            ]
+        },
+
+        {
+            id: 2,
+            name: "men",
+            subCategories: [
+                {
+                    id: 1,
+                    name: "t-shirt"
+                },
+
+                {
+                    id: 3,
+                    name: "t-shirt"
+                },
+
+            ]
+        },
+
+        {
+            id: 3,
+            name: "woman",
+            subCategories: [
+                {
+                    id: 1,
+                    name: "t-shirt"
+                },
+
+                {
+                    id: 3,
+                    name: "t-shirt"
+                },
+
+            ]
+        },
+        {
+            id: 4,
+            name: "footwear",
+            subCategories: [
+                {
+                    id: 1,
+                    name: "shoes"
+                },
+
+                {
+                    id: 3,
+                    name: "slipers"
+                },
+
+            ]
+        },
+        {
+            id: 5,
+            name: "winter wear",
+            subCategories: [
+                {
+                    id: 1,
+                    name: "sweater"
+                },
+
+                {
+                    id: 3,
+                    name: "jackets"
+                },
+
+            ]
+        },
+        {
+            id: 6,
+            name: "activewear/sportswear",
+            subCategories: [
+                {
+                    id: 1,
+                    name: "shoes"
+                },
+
+                {
+                    id: 3,
+                    name: "jersey"
+                },
+
+            ]
+        },
+
+        {
+            id: 7,
+            name: "accessories",
+            subCategories: [
+
+                { id: 1, name: "belts" },
+                { id: 2, name: "ear ring" },
+                { id: 3, name: "gloves" },
+                { id: 4, name: "scarves" },
+                { id: 5, name: "chain" },
+                { id: 6, name: "necklace" },
+
+            ]
+        },
+
 
 
     ];
+
+
+
 
 
 
@@ -177,7 +300,7 @@ const Header = () => {
 
 
 
-                            <span className='flex justify-center h-10 font-bold text-[1.5rem] w-20 border border-black items-center text-white text-center bg-secondaryBg '>
+                            <span className='flex justify-center h-10 font-bold text-[1.5rem] w-20  items-center text-white text-center bg-secondaryBg '>
 
                                 <IoPersonOutline />
 
@@ -185,9 +308,11 @@ const Header = () => {
 
 
 
-                            <span className='flex justify-center h-10 font-bold text-[1.5rem] w-20 border border-black items-center text-white text-center bg-secondaryBg '>
+                            <span className='flex justify-center relative h-10 font-bold text-[1.5rem] w-20 hover:cursor-pointer hover:text-textHoverPrimary items-center text-white text-center bg-secondaryBg '>
 
                                 <BsBagCheck />
+
+                                <span className="absolute top-[0] left-[1.4rem] text-[clamp(0.9rem,0.8vw,1rem)] border rounded-full p-[min(0.1em)] border-black bg-black">0</span>
 
                             </span>
 
@@ -280,12 +405,40 @@ const Header = () => {
 
                             <ul className='w-[28rem] flex flex-row items-center justify-between'>
 
-                                <li className='hover:cursor-pointer text-white  hover:text-textHoverPrimary '>Clothes</li>
-                                <li className='hover:cursor-pointer text-white  hover:text-textHoverPrimary '>Clothes</li>
-                                <li className='hover:cursor-pointer text-white  hover:text-textHoverPrimary '>Clothes</li>
-                                <li className='hover:cursor-pointer text-white  hover:text-textHoverPrimary '>Clothes</li>
-                                <li className='hover:cursor-pointer text-white  hover:text-textHoverPrimary '>Clothes</li>
-                                <li className='hover:cursor-pointer text-white  hover:text-textHoverPrimary '>Clothes</li>
+                                {categories.map((category: any) => (
+
+
+
+
+                                    <li className='hover:cursor-pointer flex justify-between items-center p-3 rounded-lg transition-colors duration-20 text-white  hover:text-textHoverPrimary group relative'>
+
+                                        <span className="font-medium">{category.name}</span>
+
+
+                                        <div className="group-hover:block min-h-[4rem] max-h-[auto] min-w-[6rem] max-w-[20rem] hidden absolute z-[1] top-full w-[10rem] flex-wrap bg-white">
+
+                                            <ul className='group-hover:flex justify-between items-center gap-3 px-4 lg:min-h-10 lg:max-h-auto w-full h-full flex-wrap text-black'>
+
+                                                {category.subCategories.map((subCategory: any, index: number) => (
+
+                                                    <li key={index} className='flex flex-col' id={`${subCategory.id}`} onClick={() => setSelectedCategory(subCategory.name)}>
+
+                                                        <span className='hover:text-textHoverPrimary group-hover:cursor-pointer' >{subCategory.name}</span>
+
+                                                    </li>
+
+                                                ))}
+
+                                            </ul>
+
+                                        </div>
+
+
+                                    </li>
+
+                                ))}
+
+
 
                             </ul>
 
@@ -296,16 +449,19 @@ const Header = () => {
 
                     <div className='flex justify-between h-full w-[6rem] items-center gap-2'>
 
-                        <span className='flex justify-center h-12 font-bold text-[1.5rem] w-20 hover:cursor-pointer hover:text-textHoverPrimary  border border-black items-center text-white text-center bg-secondaryBg '>
+                        <span className='flex justify-center h-12 font-bold text-[1.5rem] w-20 hover:cursor-pointer hover:text-textHoverPrimary items-center text-white text-center bg-secondaryBg '>
 
                             <IoPersonOutline />
 
                         </span>
 
 
-                        <span className='flex justify-center h-12 font-bold text-[1.5rem] w-20 hover:cursor-pointer hover:text-textHoverPrimary  border border-black items-center text-white text-center bg-secondaryBg '>
+                        <span className='flex justify-center relative h-12 font-bold text-[1.5rem] w-20 hover:cursor-pointer hover:text-textHoverPrimary items-center text-white text-center bg-secondaryBg '>
 
                             <BsBagCheck />
+
+
+                            <span className="absolute top-[0] left-[1.4rem] text-[clamp(0.9rem,0.8vw,1rem)] border rounded-full p-[min(0.1em)] border-black bg-black">0</span>
 
                         </span>
 
@@ -326,8 +482,10 @@ const Header = () => {
 
                         <ul className="space-y-4 w-full xsm:min-h-full xsm:max-h-full flex flex-col overflow-y-scroll">
 
-                            {categories.map((category, index) => (
+                            {sidebarCategories.map((category, index) => (
+
                                 <li key={index} onClick={() => setSelectedCategory(category.name)}>
+
                                     <a
                                         href="#"
                                         className="flex justify-between items-center p-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors duration-200"
@@ -373,7 +531,7 @@ const Header = () => {
             <Outlet context={[toggleSideBar]} />
 
 
- 
+
 
 
         </>

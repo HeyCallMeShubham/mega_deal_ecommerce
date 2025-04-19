@@ -4,6 +4,7 @@ import Header from "./components/header-components/Header"
  
 import ProductAbout from "./pages/ProductAbout"
 import CheckoutPage from "./pages/checkout/CheckoutPage"
+import Footer from "./components/footer-components/Footer"
 
 
 
@@ -17,16 +18,15 @@ function App() {
 
  
         
-        <Route element={<Header />} >
+        <Route element={<Footer />} >
         
+        <Route element={<Header />} >
 
         <Route index path="/" element={<Home />} />
 
-
          <Route path="/aboutpage" element={<ProductAbout />} />
-
  
-
+        </Route>
         </Route>
 
         <Route path="/checkout" element={<CheckoutPage />} />

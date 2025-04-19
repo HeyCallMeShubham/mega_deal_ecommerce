@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux"
 import { useOutletContext } from "react-router-dom";
 
-const ProductSlide = ({ toggleBar }: any) => {
+const ProductSlide = () => {
 
     const selectedCategory = useSelector((state: any) => state.filterProducts.selectedCategory);
 
