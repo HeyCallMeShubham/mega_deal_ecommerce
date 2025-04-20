@@ -242,20 +242,20 @@ const Home = () => {
                   alt="https://demoprestashop.aeipix.com/AX02/megadeal23/modules/aei_imageslider/views/img/sample-1.jpg"
                   className='w-full h-full align-middle self-center' />
 
-                <span className={` xsm:hidden md:hidden lg:block absolute left-auto right-[35px] top-[20%] ${toggleSideBar ? "xsm:z-[1]" : "xsm:-z-10  md:-z-10"
-                  } lg:z-[2] text-center w-auto   `}>
+                <span className={` lg:block xsm:flex md:flex absolute left-auto right-[35px] lg:top-[20%] md:top-[20%] xsm:top-[-8%] ${toggleSideBar ? "xsm:z-[1]" : "xsm:-z-10  md:-z-10"
+                  } lg:z-[2] text-center xsm:text-right md:text-right w-auto   `}>
 
                   <h2 className='align-top inline-block text-textPrimary text-[20px] font-[400] tracking-[0.4px] capitalize leading-[28px] after:content-["Up To 45% Off"] '></h2>
 
                   <div className="block isolate">
 
-                    <div className="text-[clamp(1.5rem, 3vw, 4rem)] leading-[28px] font-medium text-black tracking-[1.79px] capitalize py-[40px]">
+                    <div className="text-[clamp(1.5rem,3vw,4rem)] leading-[28px] font-medium text-black tracking-[1.79px] capitalize py-[40px]">
                       Fashion
 
                       <span className='text-textSecondary'> Trends</span>
                     </div>
 
-                    <div className="text-base font-normal capitalize text-black leading-[25px] tracking-[2.24px]">
+                    <div className="text-base font-normal text-[clamp(1rem,1.1vw,1.2rem)] xsm:w-[14rem] md:w-[28rem] lg:w-[30rem] capitalize text-black leading-[25px] tracking-[2.24px]">
                       Designer Clothes Exlusive Online Store
                     </div>
 
@@ -271,8 +271,9 @@ const Home = () => {
 
                 </span>
 
-
- 
+                {/*for mobile and tablets
+                
+                
                 <span className={`lg:hidden absolute left-auto right-0 top-[8%] ${toggleSideBar ? "xsm:z-[1]" : "xsm:-z-10  md:-z-10"
                   } lg:z-[2] text-right w-auto `}>
 
@@ -287,7 +288,7 @@ const Home = () => {
                     </div>
 
                     <div className="text-base font-normal capitalize text-black leading-[25px] tracking-[1.24px]">
-                      Designer Clothes <br/> Exlusive Online Store
+                      Designer Clothes <br /> Exlusive Online Store
                     </div>
 
                     <p className="text-black font-[400] ">
@@ -301,7 +302,9 @@ const Home = () => {
                   </div>
 
                 </span>
-              
+                */}
+
+
 
 
 

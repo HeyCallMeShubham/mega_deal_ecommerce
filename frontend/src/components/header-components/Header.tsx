@@ -9,7 +9,7 @@ import { RxCross1 } from "react-icons/rx";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { filterByCategory } from '../../reduxjs/FilterProducts';
-import { IoIosArrowForward } from "react-icons/io";
+ 
 
 const Header = () => {
 
