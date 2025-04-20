@@ -48,7 +48,7 @@ const Footer = () => {
 
             <Outlet />
 
-            <footer className="bg-secondaryBg md:min-w-full md:max-w-full  lg:min-w-full lg:max-w-full xsm:w-[24rem]">
+            <footer className="bg-secondaryBg md:min-w-full md:max-w-full  lg:min-w-full lg:max-w-full xsm:min-w-[24rem] xsm:max-w-auto">
                 <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                     <div className="md:flex md:justify-between">
                         <div className="mb-6 md:mb-0 ">

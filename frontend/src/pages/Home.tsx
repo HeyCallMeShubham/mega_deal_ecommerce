@@ -271,7 +271,7 @@ const Home = () => {
 
                 </span>
 
-                {/*for mobile and tablets
+                {/*for mobile and tablets optional code to uncomment
                 
                 
                 <span className={`lg:hidden absolute left-auto right-0 top-[8%] ${toggleSideBar ? "xsm:z-[1]" : "xsm:-z-10  md:-z-10"
@@ -302,6 +302,9 @@ const Home = () => {
                   </div>
 
                 </span>
+
+
+
                 */}
 
 
