@@ -1,13 +1,13 @@
 
-import ProductListingSlide from '../components/home-page-components/ProductListingSlide';
-import ProductSlide from '../components/home-page-components/ProductSlide';
-import { useDispatch } from "react-redux";
-import { filterByCategory } from '../reduxjs/FilterProducts';
-import { useEffect, useState } from 'react';
-import { IoIosArrowForward } from "react-icons/io";
-import { useOutletContext } from 'react-router-dom';
-
+ 
+import {useState} from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import CategoryCards from '../components/home-page-components/CategoryCards';
+import TrendingProducts from "../components/home-page-components/TrendingProducts";
+import CustomerReviews from "../components/home-page-components/CustomerReview";
+import FeaturedCollection from "../components/home-page-components/FeaturedCollection";
 const Home = () => {
+  {/*
 
   const [selectedCategory, setSelectedCategory] = useState<string>("");
 
@@ -159,187 +159,208 @@ const Home = () => {
 
   console.log(toggleSideBar, 'toggle')
 
+*/}
+
+
+
+
+
+
+
+
+  const slides = [
+    {
+      title: "Women Summer Trend Style",
+      subtitle: "Introducing the Ambuz women’s autumn / summer Fashion",
+      image:
+        "https://nmquritpryrthvxcvkxi.supabase.co/storage/v1/object/sign/clothes/women.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjbG90aGVzL3dvbWVuLnBuZyIsImlhdCI6MTc0Mzc2NTI1MSwiZXhwIjoxNzc1MzAxMjUxfQ.frrCVfGi2TRwAiWPW70Far-Bfgy6dKAegR3uzsgx0rk",
+    },
+    {
+      title: "Fresh Looks for Every Season",
+      subtitle: "Discover styles that match your vibe and your wardrobe.",
+      image:
+        "https://nmquritpryrthvxcvkxi.supabase.co/storage/v1/object/sign/clothes/shopping.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjbG90aGVzL3Nob3BwaW5nLnBuZyIsImlhdCI6MTc0Mzc2NTk0NSwiZXhwIjoxNzc1MzAxOTQ1fQ._EnPMFECfBjd65hux_MIjwoSrQOcr2ejXwBONU0vUxk",
+    },
+    {
+      title: "Elegant & Cool",
+      subtitle: "Chic styles, perfect for sunny days and warm nights.",
+      image:
+        "https://nmquritpryrthvxcvkxi.supabase.co/storage/v1/object/sign/clothes/sale.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjbG90aGVzL3NhbGUucG5nIiwiaWF0IjoxNzQzNzY1ODMzLCJleHAiOjE3NzUzMDE4MzN9.y_wwG-Iw6cVutq7kOEeYJ7eEOkgQBvN-6IqWq7fuqa4",
+    },
+  ];
+
+  // Animation variants for images
+  const imageVariants = {
+    initial: { opacity: 0, scale: 2.0 },
+    animate: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
+    exit: { opacity: 0, scale: 0.9, transition: { duration: 0.3, ease: "easeIn" } },
+  };
+
+  // Animation variants for descriptions
+  const textVariants = {
+    initial: { opacity: 0, x: 50 },
+    animate: { opacity: 1, x: 0, transition: { duration: 1.2, ease: "easeOut" } },
+    exit: { opacity: 0, x: -50, transition: { duration: 0.9, ease: "easeIn" } },
+  };
+
+
+  const [current, setCurrent] = useState<number>(0);
+
+  const nextSlide = () => setCurrent((prev:any) => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrent((prev:any) => (prev - 1 + slides.length) % slides.length);
+
+
+
+
+  const features = [
+    {
+      title: "Worldwide Shipping",
+      subtitle: "World Wide Free Shipping.",
+      icon: "🌍",
+    },
+    {
+      title: "Secured Payment",
+      subtitle: "Safe & Secured Payments",
+      icon: "💳",
+    },
+    {
+      title: "30-Days Free Returns",
+      subtitle: "Within 30 Days for an Exchange",
+      icon: "🔄",
+    },
+    {
+      title: "Surprise Gift",
+      subtitle: "Free gift cards & vouchers",
+      icon: "🎁",
+    },
+  ];
+
+  const cardVariant = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i: any) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.5,
+        duration: 0.9,
+        ease: "easeOut",
+      },
+    }),
+  };
+
+
+
+
 
   return (
 
     <>
 
-      <div className='w-[100vw] min-h-screen max-h-[auto] grid grid-cols-[22rem_auto] px-4 border border-black  '>
+      <div className="relative h-[500px] bg-white overflow-hidden flex items-center justify-center xsm:min-w-[24rem] xsm:max-w-auto border border-black">
+        {/* Slides */}
+        <div
+          className="flex transition-transform duration-700 ease-in-out h-full"
+          style={{ transform: `translateX(-${current * 100}%)` }}
+        >
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              className="min-w-full h-full flex items-center px-4 sm:px-6 md:px-10"
+            >
+              <div className="max-w-6xl w-full flex flex-col md:grid md:grid-cols-2 items-center gap-6 text-center md:text-left">
+                {/* Image with Animation */}
+                <div className="flex justify-center">
+                  <AnimatePresence mode="wait">
+                    {index === current && (
+                      <motion.img
+                        key={slide.image}
+                        src={slide.image}
+                        alt={slide.title}
+                        className="w-[90%] max-h-[200px] sm:max-h-[250px] md:max-h-[350px] object-contain"
+                        variants={imageVariants}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
+                      />
+                    )}
+                  </AnimatePresence>
+                </div>
 
-        <div className='w-full h-10rem xsm:hidden md:hidden lg:block ' id='col-1'>
-
-          <div className="max-w-md mx-auto  min-h-[20rem] max-h-[auto] border-[4px] border-primaryBg">
-
-            <ul className="space-y-2">
-
-              {categories.map((category, index) => (
-
-                <li key={index} onClick={() => setSelectedCategory(category.name)} className=' group relative '>
-
-                  <a
-                    href="#"
-                    className="flex justify-between items-center p-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors duration-200"
-                  >
-
-                    <span className="font-medium">{category.name}</span>
-
-                    {category.subCategories.length ?
-
-                      <span className="mr-2 text-gray-500">
-                        <IoIosArrowForward />
-                      </span>
-
-                      : ""}
-
-                  </a>
-
-
-
-                  <div className=" group-hover:block min-h-[4rem] max-h-[auto] min-w-[6rem] max-w-[20rem] hidden absolute z-[1] left-full top-4 w-[10rem] flex-wrap bg-white">
-
-                    <ul className='group-hover:flex justify-between items-center gap-3 px-4 lg:min-h-10 lg:max-h-auto w-full h-full flex-wrap text-black'>
-
-                      {category.subCategories.map((subCategory, index) => (
-
-                        <li key={index} className='flex flex-col' id={`${subCategory.id}`} onClick={() => setSelectedCategory(subCategory.name)}>
-
-                          <span className='hover:text-textHoverPrimary group-hover:cursor-pointer' >{subCategory.name}</span>
-
-                        </li>
-
-                      ))}
-
-                    </ul>
-
-                  </div>
-
-                </li>
-
-              ))}
-
-
-            </ul>
-
-          </div>
-
-
+                {/* Description with Animation */}
+                <motion.div
+                  variants={textVariants}
+                  initial="initial"
+                  animate={index === current ? "animate" : "initial"}
+                  exit="exit"
+                >
+                  <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
+                    {slide.title.split(" ").slice(0, 2).join(" ")} <br />
+                    <span className="block">{slide.title.split(" ").slice(2).join(" ")}</span>
+                  </h1>
+                  <p className="text-sm sm:text-base text-gray-600 mt-3">{slide.subtitle}</p>
+                  <button className="mt-5 bg-black text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full hover:bg-gray-800 transition">
+                    Shop Collection →
+                  </button>
+                </motion.div>
+              </div>
+            </div>
+          ))}
         </div>
 
+        {/* Arrows */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 bg-black text-white shadow p-2 sm:p-3 rounded-full hover:bg-gray-800 transition"
+        >
+          &lt;
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 bg-black text-white shadow p-2 sm:p-3 rounded-full hover:bg-gray-800 transition"
+        >
+          &gt;
+        </button>
 
-
-
-
-        <div className='relative min-w-full max-w-full h-[30rem] xsm:h-auto md:h-auto flex flex-col items-center xsm:col-span-2 md:col-span-2 lg:col-start-2' id='col-2'>
-
-          <div className='lg:-z-10  relative w-[98%] xsm:h-[18rem] md:h-[22rem] lg:h-[35rem]' id="banner-container">
-
-
-            <ul className='w-full h-full relative overflow-hidden '>
-
-              <li className='w-full h-full flex flex-col items-center justify-center text-center float-left absolute'>
-                <img
-                  src="https://demoprestashop.aeipix.com/AX02/megadeal23/modules/aei_imageslider/views/img/sample-1.jpg"
-                  alt="https://demoprestashop.aeipix.com/AX02/megadeal23/modules/aei_imageslider/views/img/sample-1.jpg"
-                  className='w-full h-full align-middle self-center' />
-
-                <span className={` lg:block xsm:flex md:flex absolute left-auto right-[35px] lg:top-[20%] md:top-[20%] xsm:top-[-8%] ${toggleSideBar ? "xsm:z-[1]" : "xsm:-z-10  md:-z-10"
-                  } lg:z-[2] text-center xsm:text-right md:text-right w-auto   `}>
-
-                  <h2 className='align-top inline-block text-textPrimary text-[20px] font-[400] tracking-[0.4px] capitalize leading-[28px] after:content-["Up To 45% Off"] '></h2>
-
-                  <div className="block isolate">
-
-                    <div className="text-[clamp(1.5rem,3vw,4rem)] leading-[28px] font-medium text-black tracking-[1.79px] capitalize py-[40px]">
-                      Fashion
-
-                      <span className='text-textSecondary'> Trends</span>
-                    </div>
-
-                    <div className="text-base font-normal text-[clamp(1rem,1.1vw,1.2rem)] xsm:w-[14rem] md:w-[28rem] lg:w-[30rem] capitalize text-black leading-[25px] tracking-[2.24px]">
-                      Designer Clothes Exlusive Online Store
-                    </div>
-
-                    <p className="text-black font-[400] ">
-
-                      <span className="text-[15px]  font-normal capitalize text-center mt-[10px] tracking-[0.56px] inline-block text-white bg-primaryBg align-top transition-all duration-500 py-[7px] px-[25px] ">
-                        shop now
-                      </span>
-
-                    </p>
-
-                  </div>
-
-                </span>
-
-                {/*for mobile and tablets optional code to uncomment
-                
-                
-                <span className={`lg:hidden absolute left-auto right-0 top-[8%] ${toggleSideBar ? "xsm:z-[1]" : "xsm:-z-10  md:-z-10"
-                  } lg:z-[2] text-right w-auto `}>
-
-                  <h2 className='align-top inline-block text-textPrimary text-[20px] font-[400] tracking-[0.4px] capitalize leading-[28px] after:content-["Up To 45% Off"] '></h2>
-
-                  <div className="block isolate">
-
-                    <div className="text-[24px] leading-[28px] font-medium text-black tracking-[1.79px] capitalize py-[40px]">
-                      Fashion
-
-                      <span className='text-textSecondary'> Trends</span>
-                    </div>
-
-                    <div className="text-base font-normal capitalize text-black leading-[25px] tracking-[1.24px]">
-                      Designer Clothes <br /> Exlusive Online Store
-                    </div>
-
-                    <p className="text-black font-[400] ">
-
-                      <span className="text-[15px]  font-normal capitalize text-center mt-[10px] tracking-[0.56px] inline-block text-white bg-primaryBg align-top transition-all duration-500 py-[7px] px-[25px] ">
-                        shop now
-                      </span>
-
-                    </p>
-
-                  </div>
-
-                </span>
-
-
-
-                */}
-
-
-
-
-
-
-
-              </li>
-
-
-            </ul>
-
-
-          </div>
-
-
-          {/*product-listing-section-start*/}
-
-          <ProductListingSlide />
-
-          {/*product-listing-section-end*/}
-
-
-          <ProductSlide />
-
-
+        {/* Dots */}
+        <div className="absolute bottom-5 flex gap-2 justify-center w-full">
+          {slides.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrent(idx)}
+              className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${idx === current ? "bg-black scale-110" : "bg-gray-300"
+                }`}
+            ></button>
+          ))}
         </div>
+      </div>
 
+      <div className="bg-white py-10 px-4 md:px-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center border-t border-gray-200 xsm:min-w-[24rem] xsm:max-w-auto">
+        {features.map((feature, index) => (
+          <motion.div
+            key={index}
+            className="flex flex-col items-center space-y-3"
+            custom={index}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={cardVariant}
+          >
+            <motion.div className="text-4xl">{feature.icon}</motion.div>
+            <h3 className="font-semibold text-lg">{feature.title}</h3>
+            <p className="text-gray-500 text-sm">{feature.subtitle}</p>
+          </motion.div>
+        
+        ))}
 
       </div>
 
+      <CategoryCards />
 
+      <TrendingProducts />
 
+      <CustomerReviews />
 
+      <FeaturedCollection />
 
     </>
 
