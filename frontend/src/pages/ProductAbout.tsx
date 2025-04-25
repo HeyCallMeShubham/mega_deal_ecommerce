@@ -7,9 +7,9 @@ const ProductAbout = () => {
         <>
 
             <div className="bg-white text-black border xsm:items-center xsm:min-w-[24rem] xsm:max-w-auto min-h-screen max-h-auto border-black py-8 ">
-                <div className="max-w-6xl mx-auto  xsm:px-6 lg:px-8 ">
-                    <div className="flex flex-col md:flex-row -mx-4">
-                        <div className="md:flex-1 px-4">
+                <div className="max-w-6xl mx-auto  xsm:px-6 lg:px-8">
+                    <div className="flex flex-col md:flex-row -mx-4 ">
+                        <div className="flex flex-col gap-2 md:flex-1 px-4  ">
                             <div className="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
                                 <img
                                     className="w-full h-full object-cover"
@@ -17,14 +17,127 @@ const ProductAbout = () => {
                                     alt="Product Image"
                                 />
                             </div>
+
+                            <div className="flex lg:min-w-[35rem] lg:max-w-[35rem] h-[5rem] border border-black gap-1 overflow-x-scroll">
+
+                                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
+
+                                    <img className="w-full h-full" src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" />
+
+                                </div>
+
+                                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
+
+                                    <img className="w-full h-full" src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" />
+
+                                </div>
+
+                                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
+
+                                    <img className="w-full h-full" src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" />
+
+                                </div>
+                                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
+
+                                    <img className="w-full h-full" src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" />
+
+                                </div>
+
+                                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
+
+                                    <img className="w-full h-full" src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" />
+
+                                </div>
+                                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
+
+                                    <img className="w-full h-full" src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" />
+
+                                </div>
+
+                                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
+
+                                    <img className="w-full h-full" src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" />
+
+                                </div>
+                                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
+
+                                    <img className="w-full h-full" src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" />
+
+                                </div>
+
+                                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
+
+                                    <img className="w-full h-full" src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" />
+
+                                </div>
+                                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
+
+                                    <img className="w-full h-full" src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" />
+
+                                </div>
+
+                                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
+
+                                    <img className="w-full h-full" src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" />
+
+                                </div>
+                                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
+
+                                    <img className="w-full h-full" src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" />
+
+                                </div>
+
+                                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
+
+                                    <img className="w-full h-full" src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" />
+
+                                </div>
+                                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
+
+                                    <img className="w-full h-full" src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" />
+
+                                </div>
+
+                                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
+
+                                    <img className="w-full h-full" src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" />
+
+                                </div>
+                                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
+
+                                    <img className="w-full h-full" src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" />
+
+                                </div>
+
+                                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
+
+                                    <img className="w-full h-full" src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" />
+
+                                </div>
+                                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
+
+                                    <img className="w-full h-full" src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" />
+
+                                </div>
+
+                                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
+
+                                    <img className="w-full h-full" src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" />
+
+                                </div>
+
+
+
+                            </div>
+
                             <div className="flex -mx-2 mb-4">
                                 <div className="w-1/2 px-2">
-                                    <button className="w-full sm:bg-secondaryBg lg:bg-primaryBg text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">
+                                    <button className="w-full xsm:bg-secondaryBg lg:bg-primaryBg text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">
                                         Add to Cart
                                     </button>
                                 </div>
                                 <div className="w-1/2 px-2">
-                                    <button className="w-full sm:bg-primaryBg  lg:bg-secondaryBg text-white dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600">
+                                    <button className="w-full xsm:bg-primaryBg  lg:bg-secondaryBg text-white dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600">
                                         Add to Wishlist
                                     </button>
                                 </div>
@@ -43,17 +156,17 @@ const ProductAbout = () => {
                                     <span className="font-bold text-black">
                                         Price:
                                     </span>
-                                    <span className="text-black">$29.99</span>
+                                    <span className="text-black">₹29.99</span>
                                 </div>
                                 <div className=" flex gap-1">
                                     <span className="font-bold text-black">
                                         Availability:
                                     </span>
 
-                                    {true ? 
-                                    <span className="bg-green-600 p-[2px] rounded">In Stock</span>
-                                    : 
-                                    <span className="bg-red-600 p-[2px] rounded">out of Stock</span>
+                                    {true ?
+                                        <span className="bg-green-600 p-[2px] rounded">In Stock</span>
+                                        :
+                                        <span className="bg-red-600 p-[2px] rounded">out of Stock</span>
                                     }
                                 </div>
                             </div>
@@ -134,14 +247,15 @@ const ProductAbout = () => {
                                 <span className="font-bold text-black">
                                     Select Color:
                                 </span>
-                                <div className="flex items-center mt-2">
-                                    <button className="w-6 h-6 rounded-full bg-gray-800 dark:bg-gray-200 mr-2" />
-                                    <button className="w-6 h-6 rounded-full bg-red-500 dark:bg-red-700 mr-2" />
-                                    <button className="w-6 h-6 rounded-full bg-blue-500 dark:bg-blue-700 mr-2" />
-                                    <button className="w-6 h-6 rounded-full bg-yellow-500 dark:bg-yellow-700 mr-2" />
+                                <div className="flex items-center mt-2  relative min-h-[5rem] gap-[6px]">
+
+                                    <button className="w-6 h-6 rounded-full after:absolute after:items-center after:top-0 after:flex hover:after:content-[attr(color)] border border-black bg-gray-800 dark:bg-gray-200 mr-2" color={"color"} />
+                                    <button className="w-6 h-6 rounded-full after:absolute after:items-center after:top-0 after:flex hover:after:content-[attr(color)] border border-black bg-red-500 dark:bg-red-700 mr-2" color={"color"} />
+                                    <button className="w-6 h-6 rounded-full after:absolute after:items-center after:top-0 after:flex hover:after:content-[attr(color)] border border-black bg-blue-500 dark:bg-blue-700 mr-2" color={"color"} />
+                                    <button className="w-6 h-6 rounded-full after:absolute after:items-center after:top-0 after:flex hover:after:content-[attr(color)] border border-black bg-yellow-500 dark:bg-yellow-700 mr-2" color={"color"} />
                                 </div>
                             </div>
-                            <div className="mb-4">
+                            <div className="mb-4 flex flex-col gap-2">
                                 <span className="font-bold text-black">
                                     Select Size:
                                 </span>
@@ -162,6 +276,41 @@ const ProductAbout = () => {
                                         XXL
                                     </button>
                                 </div>
+
+
+                                {true ?
+
+                                    <span className=" font-lighter text-[1.1rem] flex gap-1.5 text-green-800">
+                                        size
+
+                                        <span className="font-bold">
+
+                                            {"Medium"}
+
+                                        </span>
+
+                                        is in stock
+
+                                    </span>
+
+                                    :
+
+                                    <span className=" font-lighter text-[1.1rem] flex gap-1.5 text-red-800 ">
+                                        size
+
+                                        <s className="font-bold">
+
+                                            {"Large"}
+
+                                        </s>
+
+                                        is out Of stock
+
+                                    </span>
+
+                                }
+
+
                             </div>
                             <div>
                                 <span className="font-bold text-black">

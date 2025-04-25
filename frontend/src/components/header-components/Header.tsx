@@ -3,7 +3,7 @@ import { IoMdSearch } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaCaretDown, FaBars, FaTimes } from "react-icons/fa";
 import DarkMode from "./DarkMode";
-
+import { PiShippingContainerBold } from "react-icons/pi";
 import { Outlet } from 'react-router-dom';
 
 const Menu = [
@@ -68,10 +68,18 @@ const Header = () => {
                             </div>
 
                             <button
-                                onClick={() => alert("Ordering not available yet")}
+
                                 className="bg-gradient-to-r from-primary to-secondary transition-all duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3 group"
                             >
-                                <span className="group-hover:block hidden transition-all duration-200">Order</span>
+                                <span className="group-hover:block hidden transition-all duration-200">My Orders</span>
+                                <PiShippingContainerBold className="text-xl text-white drop-shadow-sm cursor-pointer" />
+                            </button>
+
+                            <button
+
+                                className="bg-gradient-to-r from-primary to-secondary transition-all duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3 group"
+                            >
+                                <span className="group-hover:block hidden transition-all duration-200">Cart</span>
                                 <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
                             </button>
 
@@ -161,7 +169,7 @@ const Header = () => {
                         </li>
 
                         {/* Mobile Order Button */}
-                        
+
                         <li className="md:hidden px-4 py-2">
                             <button
                                 onClick={() => {
@@ -171,10 +179,26 @@ const Header = () => {
                                 }}
                                 className="bg-gradient-to-r from-primary to-secondary w-full text-white py-2 px-4 rounded-full flex items-center justify-center gap-3"
                             >
-                                <span>Order</span>
+                                <span>Cart</span>
                                 <FaCartShopping className="text-xl" />
                             </button>
                         </li>
+
+                        <li className="md:hidden px-4 py-2">
+                            <button
+                                onClick={() => {
+                                    alert("Ordering not available yet");
+                                    setIsOpen(false);
+                                    setIsDropdownOpen(false); // Close dropdown when ordering
+                                }}
+                                className="bg-gradient-to-r from-primary to-secondary w-full text-white py-2 px-4 rounded-full flex items-center justify-center gap-3"
+                            >
+                                <span>My Orders</span>
+                                <PiShippingContainerBold className="text-xl" />
+                            </button>
+                        </li>
+
+
                     </ul>
                 </div>
             </div>
