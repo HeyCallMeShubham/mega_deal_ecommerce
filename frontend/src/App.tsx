@@ -5,6 +5,7 @@ import Header from "./components/header-components/Header"
 import ProductAbout from "./pages/ProductAbout"
 import CheckoutPage from "./pages/checkout/CheckoutPage"
 import Footer from "./components/footer-components/Footer"
+import UserCart from "./pages/cart/UserCart"
 
 
 
@@ -25,6 +26,7 @@ function App() {
         <Route index path="/" element={<Home />} />
 
          <Route path="/aboutpage" element={<ProductAbout />} />
+         <Route path="/usercart" element={<UserCart />} />
  
         </Route>
         </Route>

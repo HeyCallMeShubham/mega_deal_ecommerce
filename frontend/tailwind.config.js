@@ -14,11 +14,11 @@ export default {
 
     screens: {
 
-      xsm: "150px",
-      sm: "640px",
-      md: "968px",
+      xsm: "200px",
+      sm: "440px",
+      md: "718px",
       lg: "1024px",
-      xl: "1280px",
+      xl: "1380px",
       xl: "1536px"
 
 
