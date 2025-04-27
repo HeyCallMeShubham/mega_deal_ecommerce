@@ -4,13 +4,16 @@ import { IoHeartSharp } from "react-icons/io5";
 const UserCart = () => {
   return (
     <>
-      <div className="min-w-screen max-w-screen min-h-screen max-h-auto xsm:min-w-[24rem] xsm:w-max-auto  grid grid-cols-[repeat(3,minmax(1fr,1fr))] bg-white text-black border border-yellow-600">
-        <div className="h-full flex lg:flex-row md:flex-row xsm:flex-col lg:col-start-2 lg:col-end-2 lg:w-[70rem] md:col-start-1 md:col-span-3 min-w-full max-w-full border border-black">
+      <div className="min-w-screen max-w-screen min-h-screen max-h-auto xsm:min-w-[24rem] xsm:w-max-auto py-3  grid grid-cols-[repeat(3,minmax(1fr,1fr))] bg-white text-black  ">
+        <div className="h-full flex lg:flex-row md:flex-row xsm:flex-col lg:col-start-2 lg:col-end-2 lg:w-[70rem] md:col-start-1 md:col-span-3 min-w-full max-w-full  ">
           <div className="flex flex-col lg:w-[45rem] md:w-[40rem]  ">
             <div className="flex justify-between w-full p-4">
               {/*this div contains user deliver address info*/}
 
               <div className="flex flex-col">
+
+                 <span className="font-bold text-[1rem]">Items {6}</span>      
+
                 <span className="flex gap-x-1 font-lighter">
                   Deliver to:<span className="font-bold">Shubham</span>,
                   <span className="font-bold">23131</span>
@@ -516,8 +519,10 @@ const UserCart = () => {
             </div>
           </div>
 
-          <div className="lg:min-w-[23rem] lg:max-w-[23rem] md:w-full xsm:w-full relative border flex xsm:items-center xsm:text-center xsm:justify-center border-red-500  ">
+          <div className="lg:min-w-[23rem] lg:max-w-[23rem] md:w-full xsm:w-full relative flex xsm:items-center xsm:text-center xsm:justify-center ">
             <div className="lg:min-w-full lg:max-w-full md:min-w-full md:max-w-full xsm:min-w-[20rem] xsm:max-w-[24rem] min-h-[28rem]  max-h-[28rem] p-3 bg-secondaryBg flex flex-col gap-3 lg:absolute lg:top-28 rounded-[0.60rem] ">
+              
+              
               <h2 className="font-bold lg:text-[1.4rem] md:text-[1.2rem] xsm:text-[1rem] text-white">
                 Order Summary
               </h2>

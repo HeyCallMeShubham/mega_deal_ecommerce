@@ -170,7 +170,7 @@ const Header = () => {
 
                         {/* Mobile Order Button */}
 
-                        <li className="md:hidden px-4 py-2">
+                        <li className="md:hidden px-4 py-2 flex">
                             <button
                                 onClick={() => {
                                     alert("Ordering not available yet");
@@ -182,9 +182,7 @@ const Header = () => {
                                 <span>Cart</span>
                                 <FaCartShopping className="text-xl" />
                             </button>
-                        </li>
-
-                        <li className="md:hidden px-4 py-2">
+                            
                             <button
                                 onClick={() => {
                                     alert("Ordering not available yet");
@@ -197,6 +195,8 @@ const Header = () => {
                                 <PiShippingContainerBold className="text-xl" />
                             </button>
                         </li>
+
+                  
 
 
                     </ul>
