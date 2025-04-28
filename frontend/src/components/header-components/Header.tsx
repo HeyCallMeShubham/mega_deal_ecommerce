@@ -35,7 +35,7 @@ const Header = () => {
 
     return (
         <>
-            <div className='shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200 relative z-40 min-w-[24rem] max-w-auto '>
+            <div className='shadow-md bg-white border border-black duration-200 relative z-40 min-w-[24rem] max-w-auto '>
                 {/* Upper Navbar */}
                 <div className='bg-primary/40 py-3'>
 
@@ -62,33 +62,33 @@ const Header = () => {
                                 <input
                                     type="text"
                                     placeholder="Search"
-                                    className="w-[200px] group-hover:w-[250px] transition-all duration-300 rounded-full border border-gray-300 px-3 py-1 focus:outline-none focus:border-1 focus:border-primary dark:border-gray-500 dark:bg-gray-800"
+                                    className="w-[200px] group-hover:w-[250px] transition-all duration-300 rounded-full border border-gray-700 px-3 py-1 focus:outline-none focus:border-1 focus:border-primary"
                                 />
                                 <IoMdSearch className="text-gray-500 group-hover:text-primary absolute top-1/2 -translate-y-1/2 right-3" />
                             </div>
 
                             <button
 
-                                className="bg-gradient-to-r from-primary to-secondary transition-all duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3 group"
+                                className="bg-gradient-to-r from-primary to-secondary transition-all duration-200 text-black py-1 px-4 rounded-full flex items-center gap-3 group"
                             >
                                 <span className="group-hover:block hidden transition-all duration-200">My Orders</span>
-                                <PiShippingContainerBold className="text-xl text-white drop-shadow-sm cursor-pointer" />
+                                <PiShippingContainerBold className="text-xl text-black drop-shadow-sm cursor-pointer" />
                             </button>
 
                             <button
 
-                                className="bg-gradient-to-r from-primary to-secondary transition-all duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3 group"
+                                className="bg-gradient-to-r from-primary to-secondary transition-all duration-200 text-black py-1 px-4 rounded-full flex items-center gap-3 group"
                             >
                                 <span className="group-hover:block hidden transition-all duration-200">Cart</span>
-                                <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
+                                <FaCartShopping className="text-xl text-black drop-shadow-sm cursor-pointer" />
                             </button>
 
-                            <DarkMode />
+                        
                         </div>
 
                         {/* Mobile Menu Button */}
                         <div className='md:hidden flex items-center gap-4 '>
-                            <DarkMode />
+                            
                             <button onClick={toggleMenu} className="text-2xl">
                                 {isOpen ? <FaTimes /> : <FaBars />}
                             </button>
@@ -102,7 +102,7 @@ const Header = () => {
                         <input
                             type="text"
                             placeholder="Search"
-                            className="w-full transition-all duration-300 rounded-full border border-gray-300 px-3 py-1 focus:outline-none focus:border-1 focus:border-primary dark:border-gray-500 dark:bg-gray-800"
+                            className="w-full transition-all duration-300 rounded-full border border-gray-300 px-3 py-1 focus:outline-none focus:border-1 focus:border-primary "
                         />
                         <IoMdSearch className="text-gray-500 absolute top-1/2 -translate-y-1/2 right-3" />
                     </div>
@@ -111,7 +111,7 @@ const Header = () => {
                 {/* Navigation Menu */}
 
                 <div className={`${isOpen ? 'block' : 'hidden'} md:block`}>
-                    <ul className='md:flex md:items-center justify-center flex-col md:flex-row bg-white dark:bg-gray-900 w-full'>
+                    <ul className='md:flex md:items-center justify-center flex-col md:flex-row bg-white  w-full'>
                         {Menu.map((data) => (
                             <li key={data.id} className="md:inline-block">
                                 <a
@@ -146,7 +146,7 @@ const Header = () => {
                                 </span>
                             </a>
                             <div
-                                className={`md:absolute md:z-[9999] w-full md:w-[200px] rounded-md bg-white dark:bg-gray-900 md:p-2 text-black dark:text-white shadow-md md:shadow-lg ${isDropdownOpen ? 'block' : 'hidden'
+                                className={`md:absolute md:z-[9999] w-full md:w-[200px] rounded-md bg-white  text-black shadow-md md:shadow-lg ${isDropdownOpen ? 'block' : 'hidden'
                                     } md:hidden md:group-hover:block`}
                             >
                                 <ul>
@@ -177,7 +177,7 @@ const Header = () => {
                                     setIsOpen(false);
                                     setIsDropdownOpen(false); // Close dropdown when ordering
                                 }}
-                                className="bg-gradient-to-r from-primary to-secondary w-full text-white py-2 px-4 rounded-full flex items-center justify-center gap-3"
+                                className="bg-gradient-to-r from-primary to-secondary w-full text-black py-2 px-4 rounded-full flex items-center justify-center gap-3"
                             >
                                 <span>Cart</span>
                                 <FaCartShopping className="text-xl" />
@@ -189,14 +189,12 @@ const Header = () => {
                                     setIsOpen(false);
                                     setIsDropdownOpen(false); // Close dropdown when ordering
                                 }}
-                                className="bg-gradient-to-r from-primary to-secondary w-full text-white py-2 px-4 rounded-full flex items-center justify-center gap-3"
+                                className="bg-gradient-to-r from-primary to-secondary w-full text-black py-2 px-4 rounded-full flex items-center justify-center gap-3"
                             >
                                 <span>My Orders</span>
                                 <PiShippingContainerBold className="text-xl" />
                             </button>
                         </li>
-
-                  
 
 
                     </ul>
