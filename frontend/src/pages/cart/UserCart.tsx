@@ -7,7 +7,7 @@ const UserCart = () => {
       <section className="xsm:min-w-[24rem] xsm:max-w-auto py-8 antialiased  md:py-16">
         <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
           <h2 className="text-xl font-semibold text-black sm:text-2xl">
-            Shopping Cart
+            My Cart
           </h2>
           <div className="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
             <div className="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
@@ -16,25 +16,22 @@ const UserCart = () => {
 
                 
 
-                <div className="rounded-lg border border-gray-700 bg-white p-1 shadow-sm  md:p-4"> {/* product card start*/}
-                  <div className="space-y-1 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
-                    <div className="shrink-0 md:order-1 w-[8rem] h-[8rem] ">
+                <div className="rounded-lg border border-gray-700 xsm:min-h-[12rem] xsm:max-h-[12rem] bg-white p-1 shadow-sm  md:p-4"> {/* product card start*/}
+                  <div className="space-y-1 xsm:min-h-[10rem] xsm:max-h-auto xsm:flex xsm:flex-row lg:flex md:flex md:items-center md:justify-between md:gap-6 xsm:gap-4 md:space-y-0">
+                    <div className="shrink-0 md:order-1 w-[8rem] h-[8rem] xsm:flex xsm:flex-col justify-between xsm:h-[9rem] xsm:gap-3">
+
                       <img
                         className="h-full w-full"
                         src="https://image.hm.com/assets/hm/e4/60/e46048d47ddb03740cfd48d9c49f0e796fb6f2f6.jpg?imwidth=1260"
                         alt="https://image.hm.com/assets/hm/e4/60/e46048d47ddb03740cfd48d9c49f0e796fb6f2f6.jpg?imwidth=1260"
                       />
-                    </div>
-                    <label htmlFor="counter-input" className="sr-only">
-                      Choose quantity:
-                    </label>
-                    <div className="flex items-center justify-between md:order-3 md:justify-end">
-                      <div className="flex items-center">
+                   
+                      <div className="lg:hidden md:hidden xsm:flex items-center justify-between">
                         <button
                           type="button"
                           id="decrement-button"
                           data-input-counter-decrement="counter-input"
-                          className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+                          className="inline-flex h-5 w-5 hover:h-7 hover:w-7 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
                         >
                           <svg
                             className="h-2.5 w-2.5 text-gray-900 dark:text-white"
@@ -64,7 +61,7 @@ const UserCart = () => {
                           type="button"
                           id="increment-button"
                           data-input-counter-increment="counter-input"
-                          className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+                          className="inline-flex h-5 w-5 hover:h-7 hover:w-7 shrink-0 items-center  justify-center rounded-md border  border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
                         >
                           <svg
                             className="h-2.5 w-2.5 text-gray-900 dark:text-white"
@@ -83,32 +80,230 @@ const UserCart = () => {
                           </svg>
                         </button>
                       </div>
-                      <div className="text-end md:order-4 md:w-32">
+                      
+                 
+                    
+
+
+
+
+
+                    </div>
+                    <label htmlFor="counter-input" className="sr-only">
+                      Choose quantity:
+                    </label>
+
+
+                    <div className="lg:flex md:flex xsm:hidden items-center justify-between md:order-3  md:justify-end ">
+                      <div className="flex items-center">
+                        <button
+                          type="button"
+                          id="decrement-button"
+                          data-input-counter-decrement="counter-input"
+                          className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300  focus:outline-none focus:ring-2  bg-gray-700 hover:bg-gray-800 focus:ring-gray-700"
+                        >
+                          <svg
+                            className="h-2.5 w-2.5 text-gray-900 dark:text-white"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 18 2"
+                          >
+                            <path
+                              stroke="currentColor"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M1 1h16"
+                            />
+                          </svg>
+                        </button>
+                        <input
+                          type="text"
+                          id="counter-input"
+                          data-input-counter=""
+                          className="w-10 shrink-0 bg-transparent text-center text-sm font-medium text-black border border-black rounded"
+                          placeholder=""
+                          defaultValue={2}
+                        />
+                        <button
+                          type="button"
+                          id="increment-button"
+                          data-input-counter-increment="counter-input"
+                          className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300  focus:outline-none focus:ring-2  bg-gray-700 hover:bg-gray-800 focus:ring-gray-700"
+                        >
+                          <svg
+                            className="h-2.5 w-2.5 text-gray-900 dark:text-white"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 18 18"
+                          >
+                            <path
+                              stroke="currentColor"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 1v16M1 9h16"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                      
+                      <div className="text-end md:order-4  md:w-32">
                         <p className="text-base font-bold text-black">
                           $1,499
                         </p>
                       </div>
                     </div>
-                    <div className="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
-                      <a
-                        href="#"
-                        className="text-base font-medium text-black"
+
+
+
+
+                    <div className="w-full lg:flex md:flex xsm:flex xsm:flex-col justify-between min-w-0 flex-1 space-y-4 md:order-2 xsm:xsm:order-2 md:max-w-md gap-2 ">
+                      <span
+                        className="text-base font-medium text-black border  xsm:min-h-[5rem] xsm:max-h-[5rem] md:min-h-[5rem] md:max-h-[6rem] lg:min-h-[5rem] lg:max-h-[8rem] overflow-y-hidden"
                       >
                         PC system All in One APPLE iMac (2023) mqrq3ro/a, Apple
                         M3, 24" Retina 4.5K, 8GB, SSD 256GB, 10-core GPU,
                         Keyboard layout INT
-                      </a>
+                      </span>
 
-                      <div className="flex items-center gap-8">
+                      
+
+
+
+
+
+
+
+
+                      <div className="flex items-center">
+  <svg
+    className="w-4 h-4 text-yellow-300 ms-1"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 22 20"
+  >
+    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+  </svg>
+  <svg
+    className="w-4 h-4 text-yellow-300 ms-1"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 22 20"
+  >
+    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+  </svg>
+  <svg
+    className="w-4 h-4 text-yellow-300 ms-1"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 22 20"
+  >
+    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+  </svg>
+  <svg
+    className="w-4 h-4 text-yellow-300 ms-1"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 22 20"
+  >
+    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+  </svg>
+  <svg
+    className="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 22 20"
+  >
+    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+  </svg>
+</div>
+
+
+
+
+
+
+
+
+                      
+
+                      <div className="text-end hidden xsm:flex w-full items-left justify-between self-end ">
+
+                        <div className="hidden items-center gap-8 xsm:flex">
+                        {false ? (
+                          <button
+                            type="button"
+                            className="inline-flex items-center text-sm font-medium text-black hover:text-black hover:underline "
+                          >
+                            <span className="text-[1.3rem] flex items-center hover:text-[1.4rem]">
+                              <FaRegHeart /> 
+                              <span className="text-[1rem] xsm:hidden lg:block md:block">
+                                add to wishlist
+                                </span>
+                            </span>
+                          </button>
+                        ) : (
+                          <button
+                            type="button"
+                            className="inline-flex items-center text-sm font-medium text-black hover:text-black hover:underline "
+                          >
+                            <span className="text-[1.3rem] text-red-500 flex items-center hover:text-[1.4rem] justify-center gap-1">
+                              <IoHeartSharp className="" /> 
+                              <span className="text-[1rem] text-black xsm:hidden lg:block md:block">
+                                remove from wishlist
+                                </span>
+                            </span>
+                          </button>
+                        )}
+
+                        <button
+                          type="button"
+                          className="inline-flex items-center text-sm font-medium text-black hover:underline"
+                        >
+                          <span className="text-[1.3rem] text-black hover:text-[1.4rem] flex gap-1">
+
+                            <RiDeleteBin6Line className="" />
+                          
+                              <span className="text-[1rem] xsm:hidden lg:block md:block">
+                                delete item
+                                </span>
+                          </span>
+                        </button>
+                      </div>
+
+
+
+                        <p className="text-base font-bold text-black self-start lg:hidden md:hidden xsm:block">
+                          $1,499
+                        </p>
+
+
+
+
+
+
+
+                      </div>
+
+
+
+                      <div className="flex items-center gap-8 xsm:hidden">
+{/*its for desktop and tablet screens*/}
                         {false ? (
                           <button
                             type="button"
                             className="inline-flex items-center text-sm font-medium text-black hover:text-black hover:underline "
                           >
                             <span className="text-[1.3rem]">
-                          
                               <FaRegHeart />
-                          
                             </span>
                           </button>
                         ) : (
@@ -117,9 +312,7 @@ const UserCart = () => {
                             className="inline-flex items-center text-sm font-medium text-black hover:text-black hover:underline "
                           >
                             <span className="text-[1.3rem] text-red-500 ">
-                          
                               <IoHeartSharp className="" />
-                          
                             </span>
                           </button>
                         )}
@@ -135,27 +328,17 @@ const UserCart = () => {
                           </span>
                         </button>
                       </div>
+
+
                     </div>
                   </div>
                 </div> {/*product card end*/}
 
 
 
-
-
-
-
-
-
-
-
-                
-
-
-
               </div>
             </div>
-            <div className="mx-auto mt-6 max-w-4xl flex-1 space-y-6 lg:mt-0 lg:w-full ">
+            <div className="mx-auto mt-6 min-w-3xl max-w-4xl flex-1 space-y-6 lg:mt-0 lg:min-w-[] ">
               <div className="space-y-4 rounded-lg border border-gray-800 bg-white p-4 shadow-sm sm:p-6">
                 <p className="text-xl font-semibold text-black">
                   Order summary

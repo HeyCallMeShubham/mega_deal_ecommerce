@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { IoMdSearch } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaCaretDown, FaBars, FaTimes } from "react-icons/fa";
-import DarkMode from "./DarkMode";
 import { PiShippingContainerBold } from "react-icons/pi";
 import { Outlet } from 'react-router-dom';
 
