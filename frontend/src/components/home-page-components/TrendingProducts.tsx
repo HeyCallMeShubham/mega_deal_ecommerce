@@ -27,6 +27,29 @@ const products = [
     discount: "-22%",
     image: "https://nmquritpryrthvxcvkxi.supabase.co/storage/v1/object/sign/trendingproduct/shopping.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg3MDU3MDllLWJlYjUtNDNhNy04YWQ4LTZkNWU5NDU4MmI5NiJ9.eyJ1cmwiOiJ0cmVuZGluZ3Byb2R1Y3Qvc2hvcHBpbmcud2VicCIsImlhdCI6MTc0NTMxMzEyNywiZXhwIjoxNzc2ODQ5MTI3fQ.XG-CvYY_Sc88w4jz7srhbe9oWM1gLZMZLAaISVy5zQo",
   },
+
+  {
+    title: "Trendy Denim Jacket with Patches",
+    price: 70,
+    image: "https://nmquritpryrthvxcvkxi.supabase.co/storage/v1/object/sign/trendingproduct/Front_68230255-8dde-494d-8b8e-f9b21aba14fd.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg3MDU3MDllLWJlYjUtNDNhNy04YWQ4LTZkNWU5NDU4MmI5NiJ9.eyJ1cmwiOiJ0cmVuZGluZ3Byb2R1Y3QvRnJvbnRfNjgyMzAyNTUtOGRkZS00OTRkLThiOGUtZjliMjFhYmExNGZkLndlYnAiLCJpYXQiOjE3NDUzMTMwNzMsImV4cCI6MTc3Njg0OTA3M30._NdUkIUtv4gX3LK_HjUNjKLEil2J1mK80tV-emgiFcE",
+  },
+  {
+    title: "Statement Geometric Print Scarf",
+    price: 50,
+    image: "https://nmquritpryrthvxcvkxi.supabase.co/storage/v1/object/sign/trendingproduct/Shajar_Dress_-_Baise_Gaba-7491311.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg3MDU3MDllLWJlYjUtNDNhNy04YWQ4LTZkNWU5NDU4MmI5NiJ9.eyJ1cmwiOiJ0cmVuZGluZ3Byb2R1Y3QvU2hhamFyX0RyZXNzXy1fQmFpc2VfR2FiYS03NDkxMzExLndlYnAiLCJpYXQiOjE3NDUzMTMxMTAsImV4cCI6MTc3Njg0OTExMH0.aPsfu8fLwBulnCEW-odwLCvr7TKtaqtIuR2KwaBG01c",
+    from: true,
+  },
+  {
+    title: "Modern Slim Fit Suit",
+    price: 70,
+    originalPrice: 90,
+    discount: "-22%",
+    image: "https://nmquritpryrthvxcvkxi.supabase.co/storage/v1/object/sign/trendingproduct/shopping.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg3MDU3MDllLWJlYjUtNDNhNy04YWQ4LTZkNWU5NDU4MmI5NiJ9.eyJ1cmwiOiJ0cmVuZGluZ3Byb2R1Y3Qvc2hvcHBpbmcud2VicCIsImlhdCI6MTc0NTMxMzEyNywiZXhwIjoxNzc2ODQ5MTI3fQ.XG-CvYY_Sc88w4jz7srhbe9oWM1gLZMZLAaISVy5zQo",
+  },
+
+ 
+
+
 ];
 
 const TrendingProducts = () => {
@@ -37,7 +60,7 @@ const TrendingProducts = () => {
   };
 
   return (
-    <div className="px-6 py-10 xsm:min-w-[24rem] xsm:max-w-auto">
+    <div className="px-6 py-10 xsm:min-w-[24rem] xsm:max-w-auto border border-black">
       <h2 className="text-3xl font-bold text-center mb-2">Trending product</h2>
       <p className="text-center mb-6 text-gray-500">
         Follow the most popular trends and get exclusive items from Foesta shop.
@@ -52,7 +75,7 @@ const TrendingProducts = () => {
         </button>
         <div
           ref={sliderRef}
-          className="flex overflow-x-auto gap-4 scroll-smooth pb-4 no-scrollbar"
+          className="flex overflow-x-auto gap-4 scroll-smooth pb-4 no-scrollbar border border-black"
         >
           {products.map((product, i) => (
             <div

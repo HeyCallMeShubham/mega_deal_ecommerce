@@ -1,3 +1,5 @@
+import TrendingProducts from "../components/home-page-components/TrendingProducts"
+import AlsoPurchasedSlide from "../components/productAboutPageComps/AlsoPurchasedSlide"
 import ReviewSection from "../components/productAboutPageComps/ReviewSection"
 
 
@@ -329,6 +331,8 @@ const ProductAbout = () => {
                         </div>
                     </div>
                 </div>
+
+                <AlsoPurchasedSlide />
 
                 <ReviewSection />
             </div>
