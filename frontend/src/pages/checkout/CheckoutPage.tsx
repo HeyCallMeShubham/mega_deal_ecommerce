@@ -1,9 +1,7 @@
- 
+
+
 
 const CheckoutPage = () => {
-
-
-
 
     const addresses = [
 
@@ -19,6 +17,17 @@ const CheckoutPage = () => {
 
         },
 
+        {
+
+            fName: "shubham",
+            lName: "kumar",
+            email: "user@gmail.com",
+            phone: 97898868,
+            city: "chandigarh",
+            state: "chandigarh",
+            address: '2nd floor near land mark hospital'
+
+        },
 
         {
 
@@ -32,7 +41,6 @@ const CheckoutPage = () => {
 
         },
 
-
         {
 
             fName: "shubham",
@@ -45,7 +53,6 @@ const CheckoutPage = () => {
 
         },
 
-
         {
 
             fName: "shubham",
@@ -57,23 +64,18 @@ const CheckoutPage = () => {
             address: '2nd floor near land mark hospital'
 
         },
-
-
-        {
-
-            fName: "shubham",
-            lName: "kumar",
-            email: "user@gmail.com",
-            phone: 97898868,
-            city: "chandigarh",
-            state: "chandigarh",
-            address: '2nd floor near land mark hospital'
-
-        },
-
-
 
     ]
+
+
+
+
+
+
+    
+
+
+
 
 
     return (

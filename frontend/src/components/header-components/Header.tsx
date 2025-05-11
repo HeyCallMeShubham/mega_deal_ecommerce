@@ -1,209 +1,103 @@
-import { useState } from 'react';
+import { useState } from "react";
 import { IoMdSearch } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaCaretDown, FaBars, FaTimes } from "react-icons/fa";
 import { PiShippingContainerBold } from "react-icons/pi";
-import { Outlet } from 'react-router-dom';
-
-const Menu = [
-    { id: 1, name: "Home", link: "/#" },
-    { id: 2, name: "Top Rated", link: "/#services" },
-    { id: 3, name: "Kids Wear", link: "/#" },
-    { id: 4, name: "Mens Wear", link: "/#" },
-    { id: 5, name: "Electronics", link: "/#" },
-];
-
-const DropdownLinks = [
-    { id: 1, name: "Trending Products", link: "/#" },
-    { id: 2, name: "Best Selling", link: "/#" },
-    { id: 3, name: "Top Rated", link: "/#" },
-];
-
+import { IoIosHeartEmpty } from "react-icons/io";
+import { FaRegUserCircle } from "react-icons/fa";
+import { IoIosArrowDown } from "react-icons/io";
+import { Outlet } from "react-router-dom";
+import { TiThMenu } from "react-icons/ti";
 const Header = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false); // New state for dropdown
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-        if (isOpen) setIsDropdownOpen(false); // Close dropdown when menu closes
-    };
+  return (
+    <>
+      <header className="lg:h-[5rem] w-screen border border-green-500 xsm:px-4 md:px-10 lg:px-32  ">
+        <nav className="flex flex-row justify-between h-full items-center py-2">
+          <h2 className="text-lg font-bold">eMart</h2>
 
-    const toggleDropdown = () => {
-        setIsDropdownOpen(!isDropdownOpen);
-    };
+          {/* Hamburger Menu Icon */}
+          <div className="lg:hidden block">
+            <span onClick={() => setMenuOpen(!menuOpen)} className="text-2xl">
+            <TiThMenu />
+            </span>
+          </div>
 
-    return (
-        <>
-            <div className='shadow-md bg-white border border-black duration-200 relative z-40 min-w-[24rem] max-w-auto '>
-                {/* Upper Navbar */}
-                <div className='bg-primary/40 py-3'>
+          {/* Menu Items */}
+          <ul
+            className={`flex-col lg:flex-row lg:flex items-center gap-4 absolute lg:static bg-white  lg:bg-transparent left-0 top-full w-full lg:w-auto px-4 lg:px-0 transition-all duration-300 z-50 ${
+              menuOpen ? "flex" : "hidden"
+            }`}
+          >
+            <li className="mx-2 font-[400] hover:cursor-pointer">Home</li>
+            <li className="mx-2 font-[400] hover:cursor-pointer">Shop</li>
+            <li className="mx-2 font-[400] hover:cursor-pointer">About</li>
+            <li className="mx-2 font-[400] hover:cursor-pointer">Contact</li>
+            <li className="mx-2 font-[400] hover:cursor-pointer">Support</li>
+          </ul>
 
-                    <div className='container flex xsm:justify-between lg:items-center px-4 min-w-full max-w-full'>
-
-                        <div className='flex justify-between '>
-
-                            <a href="#" className='font-bold text-2xl sm:text-3xl flex gap-2 items-center '>
-                                <img
-                                    src="https://nmquritpryrthvxcvkxi.supabase.co/storage/v1/object/sign/clothes/logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjbG90aGVzL2xvZ28ucG5nIiwiaWF0IjoxNzQzNjc5MDkyLCJleHAiOjE3NzUyMTUwOTJ9.5iu3wayd4jpK-_qc58Cj5JQLe5peP8a5MnYX6VAWJMU"
-                                    alt="Logo"
-                                    className='w-10'
-                                />
-                                <span className="hidden xsm:block">Trend Zone</span>
-                                <span className="block xsm:hidden">Trend Zone</span>
-
-                            </a>
-
-                        </div>
-
-                        {/* Desktop Search and Buttons */}
-                        <div className='hidden md:flex items-between gap-4'>
-                            <div className="relative group flex items-center">
-                                <input
-                                    type="text"
-                                    placeholder="Search"
-                                    className="w-[200px] group-hover:w-[250px] transition-all duration-300 rounded-full border border-gray-700 px-3 py-1 focus:outline-none focus:border-1 focus:border-primary"
-                                />
-                                <IoMdSearch className="text-gray-500 group-hover:text-primary absolute top-1/2 -translate-y-1/2 right-3" />
-                            </div>
-
-                            <button
-
-                                className="bg-gradient-to-r from-primary to-secondary transition-all duration-200 text-black py-1 px-4 rounded-full flex items-center gap-3 group"
-                            >
-                                <span className="group-hover:block hidden transition-all duration-200">My Orders</span>
-                                <PiShippingContainerBold className="text-xl text-black drop-shadow-sm cursor-pointer" />
-                            </button>
-
-                            <button
-
-                                className="bg-gradient-to-r from-primary to-secondary transition-all duration-200 text-black py-1 px-4 rounded-full flex items-center gap-3 group"
-                            >
-                                <span className="group-hover:block hidden transition-all duration-200">Cart</span>
-                                <FaCartShopping className="text-xl text-black drop-shadow-sm cursor-pointer" />
-                            </button>
-
-                        
-                        </div>
-
-                        {/* Mobile Menu Button */}
-                        <div className='md:hidden flex items-center gap-4 '>
-                            
-                            <button onClick={toggleMenu} className="text-2xl">
-                                {isOpen ? <FaTimes /> : <FaBars />}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Mobile Search Bar */}
-                <div className="md:hidden px-4 py-2">
-                    <div className="relative flex items-center">
-                        <input
-                            type="text"
-                            placeholder="Search"
-                            className="w-full transition-all duration-300 rounded-full border border-gray-300 px-3 py-1 focus:outline-none focus:border-1 focus:border-primary "
-                        />
-                        <IoMdSearch className="text-gray-500 absolute top-1/2 -translate-y-1/2 right-3" />
-                    </div>
-                </div>
-
-                {/* Navigation Menu */}
-
-                <div className={`${isOpen ? 'block' : 'hidden'} md:block`}>
-                    <ul className='md:flex md:items-center justify-center flex-col md:flex-row bg-white  w-full'>
-                        {Menu.map((data) => (
-                            <li key={data.id} className="md:inline-block">
-                                <a
-                                    href={data.link}
-                                    className='block px-4 py-2 hover:text-primary duration-200 md:inline-block'
-                                    onClick={() => {
-                                        setIsOpen(false);
-                                        setIsDropdownOpen(false); // Close dropdown when clicking a menu item
-                                    }}
-                                >
-                                    {data.name}
-                                </a>
-                            </li>
-                        ))}
-
-                        {/* Dropdown */}
-                        <li className="group relative md:inline-block">
-                            <a
-                                href="#"
-                                className="flex items-center gap-[2px] px-4 py-2 hover:text-primary duration-200"
-                                onClick={(e) => {
-                                    e.preventDefault(); // Prevent default link behavior
-                                    toggleDropdown(); // Toggle dropdown in mobile view
-                                }}
-                            >
-                                Trending Products
-                                <span>
-                                    <FaCaretDown
-                                        className={`transition-all duration-200 ${isDropdownOpen ? 'rotate-180' : ''
-                                            } md:group-hover:rotate-180`}
-                                    />
-                                </span>
-                            </a>
-                            <div
-                                className={`md:absolute md:z-[9999] w-full md:w-[200px] rounded-md bg-white  text-black shadow-md md:shadow-lg ${isDropdownOpen ? 'block' : 'hidden'
-                                    } md:hidden md:group-hover:block`}
-                            >
-                                <ul>
-                                    {DropdownLinks.map((data) => (
-                                        <li key={data.id}>
-                                            <a
-                                                href={data.link}
-                                                className='block px-4 py-2 md:rounded-md hover:bg-primary/20'
-                                                onClick={() => {
-                                                    setIsOpen(false);
-                                                    setIsDropdownOpen(false); // Close dropdown and menu
-                                                }}
-                                            >
-                                                {data.name}
-                                            </a>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </li>
-
-                        {/* Mobile Order Button */}
-
-                        <li className="md:hidden px-4 py-2 flex">
-                            <button
-                                onClick={() => {
-                                    alert("Ordering not available yet");
-                                    setIsOpen(false);
-                                    setIsDropdownOpen(false); // Close dropdown when ordering
-                                }}
-                                className="bg-gradient-to-r from-primary to-secondary w-full text-black py-2 px-4 rounded-full flex items-center justify-center gap-3"
-                            >
-                                <span>Cart</span>
-                                <FaCartShopping className="text-xl" />
-                            </button>
-                            
-                            <button
-                                onClick={() => {
-                                    alert("Ordering not available yet");
-                                    setIsOpen(false);
-                                    setIsDropdownOpen(false); // Close dropdown when ordering
-                                }}
-                                className="bg-gradient-to-r from-primary to-secondary w-full text-black py-2 px-4 rounded-full flex items-center justify-center gap-3"
-                            >
-                                <span>My Orders</span>
-                                <PiShippingContainerBold className="text-xl" />
-                            </button>
-                        </li>
-
-
-                    </ul>
-                </div>
+          {/* Right Section */}
+          <div className="hidden h-full lg:flex   items-center gap-8">
+            {/* Search */}
+            <div className="flex border rounded-md  ">
+              <input
+                type="text"
+                placeholder="search item"
+                className="px-2 py-1 outline-none"
+              />
+              <button className="px-2 text-[1.3rem] ">
+                <IoMdSearch />
+              </button>
             </div>
 
-            <Outlet />
+            <span className="text-[1.3rem] relative after:content-['01'] after:text-[12px] after:rounded-full after:p-[4px]  after:text-center after:items-center after:content-center after:absolute after:bottom-[10%] after:left-full h-2 w-2 after:bg-red-500 cursor-pointer">
+              <IoIosHeartEmpty />
+            </span>
 
-        </>
-    );
+            <span className="text-[1.3rem] relative after:content-['01'] after:text-[12px] after:rounded-full after:p-[4px]  after:text-center after:items-center after:content-center after:absolute after:bottom-[10%] after:left-full h-2 w-2 after:bg-red-500 cursor-pointer">
+              <FaCartShopping />
+            </span>
+
+            {true ? (
+              <div className="group cursor-pointer relative flex flex-col items-center justify-center  ">
+                <span className="text-[1.8rem]">
+                  <FaRegUserCircle />
+                </span>
+
+                <div className="hidden group-hover:block border absolute min-h-[10rem] max-h-auto top-full w-[8rem] bg-white  ">
+       
+        
+                  <ul className="flex flex-col w-full text-center gap-y-1">
+                    
+                    <li className="text-[1.2rem] hover:text-blue-500 cursor-pointer">
+                      My Profile
+                    </li>
+                    
+                    <li className="text-[1.2rem] hover:text-blue-500 cursor-pointer">
+                      My Wishlist
+                    </li>
+
+                    <li className="text-[1.2rem] hover:text-blue-500 cursor-pointer">
+                      LogOut
+                    </li>
+
+                  </ul>
+                
+                </div>
+              </div>
+            ) : (
+              <div className="w-[5rem] h-full bg-red-500 text-center items-center font-[700] p-2 rounded-md">
+                <p className="text-sm">Sign In</p>
+              </div>
+            )}
+          </div>
+        </nav>
+      </header>
+
+      <Outlet />
+    </>
+  );
 };
 
 export default Header;
