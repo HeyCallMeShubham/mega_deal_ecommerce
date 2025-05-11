@@ -37,6 +37,17 @@ export default {
 
       },
 
+      fontFamily:{
+
+      cursiveGreatVibes:["Great Vibes", "cursive"]
+
+      },
+
+      fontStyle:{
+
+        italic:"italic"
+
+      },
   
       keyframes: {
         'slide-in-left': {
