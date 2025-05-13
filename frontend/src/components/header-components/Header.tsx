@@ -65,7 +65,7 @@ const Header = () => {
                   <FaRegUserCircle />
                 </span>
 
-                <div className="hidden group-hover:block border absolute min-h-[10rem] max-h-auto top-full w-[8rem] bg-white  ">
+                <div className="hidden group-hover:block border absolute z-[1] min-h-[10rem] max-h-auto top-full w-[8rem] bg-white  ">
        
         
                   <ul className="flex flex-col w-full text-center gap-y-1">
