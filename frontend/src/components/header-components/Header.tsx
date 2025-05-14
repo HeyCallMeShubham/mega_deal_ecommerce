@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { IoMdSearch } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
-import { FaCaretDown, FaBars, FaTimes } from "react-icons/fa";
-import { PiShippingContainerBold } from "react-icons/pi";
+ 
 import { IoIosHeartEmpty } from "react-icons/io";
 import { FaRegUserCircle } from "react-icons/fa";
-import { IoIosArrowDown } from "react-icons/io";
+ 
 import { Outlet } from "react-router-dom";
 import { TiThMenu } from "react-icons/ti";
 const Header = () => {
@@ -13,7 +12,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="lg:h-[5rem] w-screen border border-green-500 xsm:px-4 md:px-10 lg:px-32  ">
+      <header className="lg:h-[5rem] w-screen border border-black xsm:px-4 md:px-10 lg:px-32  ">
         <nav className="flex flex-row justify-between h-full items-center py-2">
           <h2 className="text-lg font-bold">eMart</h2>
 

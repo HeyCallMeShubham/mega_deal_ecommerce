@@ -1,6 +1,4 @@
-import AlsoPurchasedSlide from "../components/productAboutPageComps/AlsoPurchasedSlide";
-import ReviewSection from "../components/productAboutPageComps/ReviewSection";
-
+ 
 const ProductDetails = () => {
   return (
     <>
@@ -338,9 +336,7 @@ const ProductDetails = () => {
           </div>
         </div>
 
-        <AlsoPurchasedSlide />
-
-        <ReviewSection />
+  
       </div>
     </>
   );

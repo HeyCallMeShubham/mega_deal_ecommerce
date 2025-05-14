@@ -31,7 +31,7 @@ const WishListPage = () => {
 
             
         
-          <div className=" group rounded-lg relative p-4 xsm:p-1 shadow-sm lg:min-w-[20rem] lg:max-w-[20rem] md:min-w-[18rem] md:max-w-[18rem] xsm:min-w-[11rem] xsm:max-w-[11rem]  bg-white">
+          <div className=" group rounded-lg relative p-4 xsm:p-1 shadow-sm lg:min-w-[20rem] lg:max-w-[20rem] md:min-w-[18rem] md:max-w-[18rem] xsm:min-w-[11rem] xsm:max-w-[11rem] border border-black bg-white">
               
               <div className="hidden lg:group-hover:flex md:flex xsm:flex rounded-full w-6 h-6 items-center justify-center text-black bg-gray-200 absolute lg:left-[90%] md:left-[90%] xsm:left-[80%] top-[1rem]">
               <TbDotsVertical />
@@ -133,6 +133,16 @@ const WishListPage = () => {
 
             </div>
           </div>
+
+
+
+
+
+
+
+
+
+          
         
           <div className=" group rounded-lg relative p-4 xsm:p-1 shadow-sm lg:min-w-[20rem] lg:max-w-[20rem] md:min-w-[18rem] md:max-w-[18rem] xsm:min-w-[11rem] xsm:max-w-[11rem]  bg-white">
               
