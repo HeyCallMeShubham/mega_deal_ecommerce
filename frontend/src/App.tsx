@@ -7,6 +7,7 @@ import CheckoutPage from "./pages/checkout/CheckoutPage"
 import Footer from "./components/footer-components/Footer"
  
 import WishListPage from "./pages/wishlist/WishListPage"
+import ProductDetails from "./pages/ProductDetails"
 
 
 
@@ -24,6 +25,7 @@ function App() {
         <Route element={<Header />} >
 
         <Route index path="/" element={<Home />} />
+        <Route path="/productdetails" element={<ProductDetails />} />
 
         <Route path="/mywishlist" element={<WishListPage />} />
  

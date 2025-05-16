@@ -2,16 +2,27 @@
 const ProductDetails = () => {
   return (
     <>
-      <div className="bg-white text-black border xsm:items-center xsm:min-w-[24rem] xsm:max-w-auto min-h-screen max-h-auto   border-black py-8 ">
-        <div className=" flex justify-center items-center xl:max-w-6xl mx-auto  xsm:px-1 lg:px-8 ">
+      <div className="bg-white text-black border xsm:items-center xsm:min-w-[24rem] xsm:max-w-auto min-h-screen max-h-auto border-black py-8 ">
+        <div className=" flex justify-center items-center xl:max-w-7xl mx-auto  xsm:px-1 lg:px-4 border">
           <div className="flex flex-col md:flex-col lg:flex-row  -mx-4 border w-full">
-            <div className="flex flex-col w-full gap-2 md:flex-1 px-4">
-              <div className="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
+            <div className="flex flex-col w-full gap-2 md:flex-1 px-1 border border-black">
+              <div className="h-[clamp(40rem,2vh,46rem)] lg:grid lg:grid-cols-2 lg:grid-rows-2 rounded-lg  bg-gray-300 dark:bg-gray-700 mb-4 ">
                 <img
-                  className="w-full h-full object-cover"
-                  src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
+                  className="w-full h-full object-cover lg:col-span-2 lg:row-span-2"
+                  src="https://th.bing.com/th/id/OIP.8fUK2aanMigNbqqnu4TQCQHaJ-?cb=iwp2&rs=1&pid=ImgDetMain"
                   alt="Product Image"
                 />
+                <img
+                  className="w-full h-full object-cover"
+                  src="https://th.bing.com/th/id/OIP.8fUK2aanMigNbqqnu4TQCQHaJ-?cb=iwp2&rs=1&pid=ImgDetMain"
+                  alt="Product Image"
+                />
+                <img
+                  className="w-full h-full object-cover"
+                  src="https://th.bing.com/th/id/OIP.8fUK2aanMigNbqqnu4TQCQHaJ-?cb=iwp2&rs=1&pid=ImgDetMain"
+                  alt="Product Image"
+                />
+                
               </div>
 
               <div className="flex lg:min-w-[35rem] lg:max-w-[35rem] h-[5rem] border border-black gap-1 overflow-x-scroll">
@@ -38,127 +49,9 @@ const ProductDetails = () => {
                     alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
                   />
                 </div>
-                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
-                  <img
-                    className="w-full h-full"
-                    src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                    alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                  />
-                </div>
-
-                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
-                  <img
-                    className="w-full h-full"
-                    src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                    alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                  />
-                </div>
-                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
-                  <img
-                    className="w-full h-full"
-                    src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                    alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                  />
-                </div>
-
-                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
-                  <img
-                    className="w-full h-full"
-                    src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                    alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                  />
-                </div>
-                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
-                  <img
-                    className="w-full h-full"
-                    src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                    alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                  />
-                </div>
-
-                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
-                  <img
-                    className="w-full h-full"
-                    src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                    alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                  />
-                </div>
-                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
-                  <img
-                    className="w-full h-full"
-                    src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                    alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                  />
-                </div>
-
-                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
-                  <img
-                    className="w-full h-full"
-                    src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                    alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                  />
-                </div>
-                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
-                  <img
-                    className="w-full h-full"
-                    src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                    alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                  />
-                </div>
-
-                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
-                  <img
-                    className="w-full h-full"
-                    src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                    alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                  />
-                </div>
-                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
-                  <img
-                    className="w-full h-full"
-                    src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                    alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                  />
-                </div>
-
-                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
-                  <img
-                    className="w-full h-full"
-                    src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                    alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                  />
-                </div>
-                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
-                  <img
-                    className="w-full h-full"
-                    src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                    alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                  />
-                </div>
-
-                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
-                  <img
-                    className="w-full h-full"
-                    src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                    alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                  />
-                </div>
-                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
-                  <img
-                    className="w-full h-full"
-                    src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                    alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                  />
-                </div>
-
-                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
-                  <img
-                    className="w-full h-full"
-                    src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                    alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                  />
-                </div>
+             
               </div>
+              
 
               <div className="flex -mx-2 mb-4">
                 <div className="w-1/2 px-2">

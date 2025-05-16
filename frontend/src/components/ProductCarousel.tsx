@@ -138,7 +138,7 @@ const ProductCarousel = () => {
         {products.map((product) => (
           <div
             key={product.id}
-            className="flex-shrink-0 w-64 bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-300"
+            className="flex-shrink-0 w-64 bg-white rounded-lg hover:cursor-pointer shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-300"
           >
             <div className="relative">
               <img

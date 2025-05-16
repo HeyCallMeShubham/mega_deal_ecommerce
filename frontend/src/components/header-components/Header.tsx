@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="lg:h-[5rem] w-screen border border-black xsm:px-4 md:px-10 lg:px-32  ">
+      <header className="lg:h-[5rem] w-screen border border-black xsm:min-w-[24rem] xsm:max-w-auto xsm:px-4 md:px-10 lg:px-32  ">
         <nav className="flex flex-row justify-between h-full items-center py-2">
           <h2 className="text-lg font-bold">eMart</h2>
 

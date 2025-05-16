@@ -231,11 +231,11 @@ const Home = () => {
             } xsm:w-full md:w-[34rem] md:place-self-center items-center text-center `}
           >
             <ul className="font-medium w-full h-full items-center text-center justify-center gap-7">
-              <li className="hover:bg-gray-100">All</li>
-              <li className="hover:bg-gray-100">Men's</li>
-              <li className="hover:bg-gray-100">Woman's</li>
-              <li className="hover:bg-gray-100">FootWears</li>
-              <li className="hover:bg-gray-100">Accessories</li>
+              <li className="hover:bg-gray-200  hover:cursor-pointer">All</li>
+              <li className="hover:bg-gray-200  hover:cursor-pointer">Men's</li>
+              <li className="hover:bg-gray-200  hover:cursor-pointer">Woman's</li>
+              <li className="hover:bg-gray-200  hover:cursor-pointer">FootWears</li>
+              <li className="hover:bg-gray-200  hover:cursor-pointer">Accessories</li>
             </ul>
           </div>
 
@@ -243,7 +243,7 @@ const Home = () => {
             {/*products cards container*/}
 
             {products.map((product) => (
-              <div className="group rounded-lg relative p-5 px-4 xsm:p-1 shadow-sm lg:min-w-[16rem] lg:max-w-[16rem] md:min-w-[18rem] md:max-w-[18rem] xsm:w-[clamp(16rem,2vw,22rem)]  h-[clamp(24rem,2vw,26rem)]  border border-gray-300 bg-white">
+              <div className="group rounded-lg relative p-5 px-4 xsm:p-1 shadow-sm lg:min-w-[16rem] lg:max-w-[16rem] md:min-w-[18rem] md:max-w-[18rem] xsm:w-[clamp(16rem,2vw,22rem)]  h-[clamp(24rem,2vw,26rem)] hover:cursor-pointer border border-gray-300 bg-white">
                 <span className="hidden lg:group-hover:flex md:flex xsm:flex rounded-full w-10 h-10 font-semibold items-center justify-center text-black text-[clamp(0.64rem,2vw,0.68rem)] p-4 bg-red-300 absolute lg:left-right md:left-right xsm:left-right lg:top-[0.80rem]">
                   {product.percentOff}%off
                 </span>
