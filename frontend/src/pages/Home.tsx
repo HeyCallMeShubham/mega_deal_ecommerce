@@ -3,6 +3,7 @@ import { FaArrowDown } from "react-icons/fa6";
 
 import { FaChevronLeft } from "react-icons/fa6";
 import { FaChevronRight } from "react-icons/fa6";
+import ProductCarousel from "../components/ProductCarousel";
 
 const Home = () => {
   const [filterToggle, setFilterToggle] = useState<boolean>(false);
@@ -152,21 +153,29 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="w-full lg:min-h-[10rem] md:min-h-[10rem] xsm:min-h-[10rem] max-h-auto flex flex-wrap xsm:flex-col md:flex-row lg:flex-row lg:items-start lg:justify-center xsm:items-center xsm:justify-start gap-4 p-[clamp(1rem,2vw,1rem)] ">
+        <section className="w-full lg:min-h-[10rem] md:min-h-[10rem] xsm:min-h-[10rem] max-h-auto flex flex-wrap xsm:flex-col md:flex-row lg:flex-row lg:items-start lg:justify-center md:items-start md:justify-center xsm:items-center xsm:justify-start gap-4 p-[clamp(1rem,2vw,1rem)] ">
           {cards.map((card) =>
             !card ? (
+              
               <div
                 className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] text-black"
                 role="status"
               >
+
                 <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
                   Loading...
                 </span>
+
               </div>
-            ) : (
+            
+          ) : (
+              
               <>
-                <div className="flex lg:min-h-[10rem] lg:min-w-[18rem] md:min-h-[8rem] md:min-w-[16rem] xsm:h-[9rem] xsm:w-[clamp(16rem,2vw,16rem)] overflow-hidden  px-4">
+
+                <div className="flex lg:min-h-[10rem] lg:min-w-[18rem] md:min-h-[8rem] md:min-w-[16rem] xsm:h-[9rem] xsm:w-[clamp(16rem,2vw,16rem)] overflow-hidden px-4 border border-gray-300">
+                  
                   <div className="flex flex-col h-full w-[10rem]  items-left justify-center gap-3">
+                    
                     <span className="font-bold text-[clamp(0.80rem,2vw,1.3rem)]">
                       {card.title.split(" ")[0]}
                       <br />
@@ -176,6 +185,7 @@ const Home = () => {
                     <button className="w-[7rem] h-[2rem] p-1 text-[clamp(0.60rem,2vw,12px)] font-bold rounded-[1rem] bg-black text-white">
                       Sale Up To {card.percentOff}%
                     </button>
+
                   </div>
 
                   <img
@@ -189,7 +199,7 @@ const Home = () => {
           )}
         </section>
 
-        <section className="w-full min-h-[40rem] border border-black py-6 lg:px-[6rem] md:px-2 xsm:px-1 ">
+        <section className="w-full min-h-[40rem] border border-gray-300 py-6 lg:px-[6rem] md:px-2 xsm:px-1 ">
           {/*products slides section*/}
 
           <div className="xsm:px-2 flex justify-between items-center w-full min-h-[4rem] max-h-auto ">
@@ -207,15 +217,12 @@ const Home = () => {
               </ul>
             </div>
 
-
             <img
               className="lg:hidden xsm:block md:block w-[3rem] h-[3rem]"
               onClick={() => setFilterToggle((prevState) => !prevState)}
               src="https://th.bing.com/th/id/OIP.w4Qv-3xoZvrHCYWLKJQPDgHaHa?cb=iwp2&pid=ImgDet&w=201&h=201&c=7"
               alt="https://th.bing.com/th/id/OIP.w4Qv-3xoZvrHCYWLKJQPDgHaHa?cb=iwp2&pid=ImgDet&w=201&h=201&c=7"
             />
-
-
           </div>
 
           <div
@@ -385,6 +392,10 @@ const Home = () => {
             </div>
           </div>
         </section>
+
+      <ProductCarousel />
+
+
       </div>
     </>
   );
