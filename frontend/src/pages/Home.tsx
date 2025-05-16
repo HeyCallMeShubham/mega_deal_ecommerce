@@ -243,7 +243,7 @@ const Home = () => {
             {/*products cards container*/}
 
             {products.map((product) => (
-              <div className="group rounded-lg relative p-5 px-4 xsm:p-1 shadow-sm lg:min-w-[16rem] lg:max-w-[16rem] md:min-w-[18rem] md:max-w-[18rem] xsm:w-[clamp(16rem,2vw,22rem)]  h-[clamp(24rem,2vw,26rem)]  border border-black bg-white">
+              <div className="group rounded-lg relative p-5 px-4 xsm:p-1 shadow-sm lg:min-w-[16rem] lg:max-w-[16rem] md:min-w-[18rem] md:max-w-[18rem] xsm:w-[clamp(16rem,2vw,22rem)]  h-[clamp(24rem,2vw,26rem)]  border border-gray-300 bg-white">
                 <span className="hidden lg:group-hover:flex md:flex xsm:flex rounded-full w-10 h-10 font-semibold items-center justify-center text-black text-[clamp(0.64rem,2vw,0.68rem)] p-4 bg-red-300 absolute lg:left-right md:left-right xsm:left-right lg:top-[0.80rem]">
                   {product.percentOff}%off
                 </span>

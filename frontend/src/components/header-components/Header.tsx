@@ -50,11 +50,11 @@ const Header = () => {
               </button>
             </div>
 
-            <span className="text-[1.3rem] relative after:content-['01'] after:text-[12px] after:rounded-full after:p-[4px]  after:text-center after:items-center after:content-center after:absolute after:bottom-[10%] after:left-full h-2 w-2 after:bg-red-500 cursor-pointer">
+            <span className="text-[1.3rem] relative after:content-['01'] after:text-[13px] after:text-white after:rounded-full after:p-[4px]  after:text-center after:items-center after:content-center after:absolute after:bottom-[10%] after:left-full h-2 w-2 after:bg-red-500 cursor-pointer">
               <IoIosHeartEmpty />
             </span>
 
-            <span className="text-[1.3rem] relative after:content-['01'] after:text-[12px] after:rounded-full after:p-[4px]  after:text-center after:items-center after:content-center after:absolute after:bottom-[10%] after:left-full h-2 w-2 after:bg-red-500 cursor-pointer">
+            <span className="text-[1.3rem] relative after:content-['01'] after:text-[13px] after:text-white after:rounded-full after:p-[4px]  after:text-center after:items-center after:content-center after:absolute after:bottom-[10%] after:left-full h-2 w-2 after:bg-red-500 cursor-pointer">
               <FaCartShopping />
             </span>
 
