@@ -172,7 +172,7 @@ const ProductCarousel = () => {
                   </span>
                 )}
               </div>
-              <button className="w-full flex items-center justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white  bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              <button className="w-full flex items-center justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white  lg:bg-secondaryBg xsm:bg-primaryBg md:bg-primaryBg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                 <BsCartPlus className="mr-2" />
                 Add to Cart
               </button>

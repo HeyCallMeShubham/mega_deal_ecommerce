@@ -28,18 +28,17 @@ export default {
 
       colors: {
 
-        primaryBg: "#f68b1f",
-        secondaryBg: "#36526b",
-        textHoverPrimary: "#f68b1f",
-        textHoverSecondary: "#36526b",
-        textPrimary: "#f68b1f",
-        textSecondary: "#36526b",
+        primaryBg: "#7C1715",
+        secondaryBg: "#5A2555",
+   
 
       },
 
       fontFamily:{
 
-      cursiveGreatVibes:["Great Vibes", "cursive"]
+      cursiveGreatVibes:["Great Vibes", "cursive"],
+      allura:["Allura", "cursive"],
+      ancizar: ['"Ancizar Serif"', 'serif']
 
       },
 
