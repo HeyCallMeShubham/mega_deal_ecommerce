@@ -30,6 +30,7 @@ export default {
 
         primaryBg: "#7C1715",
         secondaryBg: "#5A2555",
+        hoverTextBg:"rgb(219 234 254)"
    
 
       },

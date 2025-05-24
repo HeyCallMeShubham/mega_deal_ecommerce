@@ -1,20 +1,23 @@
 import { useState } from "react";
 
 const ProductDetails = () => {
+  
   const [showMore, setToggleShowMore] = useState<boolean>(false);
 
   return (
     <>
       <div className="bg-white text-black font-ancizar font-[900] text-[clamp(1rem,2vw,1.1rem)] border xsm:items-center xsm:min-w-[24rem] xsm:max-w-auto min-h-screen max-h-auto  py-2 ">
-        <div className=" flex justify-center items-center lg:max-w-[100rem] mx-auto xsm:px-1 lg:px-4 ">
+        <div className=" flex justify-center items-center lg:max-w-[100rem] mx-auto xsm:px-1 md:px-4 lg:px-4 ">
           <div className="flex flex-col md:flex-col lg:flex-row lg:gap-x-2 -mx-4 w-full">
-            <div className="flex flex-col w-full gap-2 md:flex-1 px-1  ">
+           
+            <div className="flex flex-col w-full gap-2 md:flex-1 px-1 ">
+           {/*for desktop */}
               <div
                 className={`${
                   showMore
                     ? "max-h-[100rem] overflow-scroll"
                     : "max-h-[50rem] overflow-y-hidden"
-                } h-full w-full transition-all duration-500 ease-in-out`}
+                } h-full items-center text-center w-full transition-all duration-500 ease-in-out`}
               >
                 <div
                   className={`hidden h-[clamp(40rem,2vh,auto)] lg:grid lg:grid-cols-[1fr,1fr] lg:grid-rows-[1fr,auto] gap-2 rounded-lg bg-gray-300 p-1 mb-4 `}
@@ -70,9 +73,11 @@ const ProductDetails = () => {
                   </div>
                 </div>
 
-                <div className="w-full h-full md:block xsm:block lg:hidden">
+                {/*for mobile and tablets*/}
+
+                <div className="w-full xsm:h-[30rem] md:h-[40rem] md:block xsm:block lg:hidden ">
                   <img
-                    className="w-full h-full object-cover"
+                    className="w-full h-full"
                     src="https://th.bing.com/th/id/OIP.8fUK2aanMigNbqqnu4TQCQHaJ-?cb=iwp2&rs=1&pid=ImgDetMain"
                     alt="Product Image"
                   />
@@ -88,30 +93,16 @@ const ProductDetails = () => {
                 </button>
               </div>
 
-              <div className="lg:hidden md:flex xsm:flex lg:min-w-[35rem] lg:max-w-[35rem] h-[5rem] border border-black gap-1 overflow-x-scroll">
-                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
+              <div className="lg:hidden md:flex xsm:flex lg:min-w-[35rem] lg:max-w-[35rem] h-[5rem] border border-gray-400 gap-1 overflow-x-scroll">
+              
+                <div className="border border-gray-300 min-w-[4.50rem] max-w-[5rem] h-full ">
                   <img
                     className="w-full h-full"
                     src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
                     alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
                   />
                 </div>
-
-                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
-                  <img
-                    className="w-full h-full"
-                    src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                    alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                  />
-                </div>
-
-                <div className="border border-black min-w-[5rem] max-w-[5rem] h-full ">
-                  <img
-                    className="w-full h-full"
-                    src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                    alt="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                  />
-                </div>
+        
               </div>
 
               <div className=" -mx-2 mb-4 lg:hidden md:flex xsm:flex">

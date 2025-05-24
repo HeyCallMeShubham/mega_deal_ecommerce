@@ -3,7 +3,10 @@ import { FaArrowDown } from "react-icons/fa6";
 
 import { FaChevronLeft } from "react-icons/fa6";
 import { FaChevronRight } from "react-icons/fa6";
+
 import ProductCarousel from "../components/ProductCarousel";
+import { Link } from "react-router-dom";
+ 
 
 const Home = () => {
   const [filterToggle, setFilterToggle] = useState<boolean>(false);
@@ -118,13 +121,14 @@ const Home = () => {
 
   return (
     <>
-      <div className=" min-h-screen max-h-auto w-screen lg:px-32 ">
+      <div className="min-h-screen max-h-auto min-w-full max-w-full xsm:min-w-[24rem] xsm:max-w-auto  lg:px-32">
         <section className="w-full lg:h-[40rem] md:h-[40rem] xsm:h-[18rem] xsm:px-2">
           {/*hero-section*/}
 
           <div className="w-full h-full relative overflow-hidden">
             <img
               src="https://www.thefashionisto.com/wp-content/uploads/2020/05/Man-in-Buttondown-Shirt-and-Jeans-800x534.jpg"
+              alt="https://www.thefashionisto.com/wp-content/uploads/2020/05/Man-in-Buttondown-Shirt-and-Jeans-800x534.jpg"
               className="w-full h-full"
             />
 
@@ -156,26 +160,18 @@ const Home = () => {
         <section className="w-full lg:min-h-[10rem] md:min-h-[10rem] xsm:min-h-[10rem] max-h-auto flex flex-wrap xsm:flex-col md:flex-row lg:flex-row lg:items-start lg:justify-center md:items-start md:justify-center xsm:items-center xsm:justify-start gap-4 p-[clamp(1rem,2vw,1rem)] ">
           {cards.map((card) =>
             !card ? (
-              
               <div
                 className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] text-black"
                 role="status"
               >
-
                 <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
                   Loading...
                 </span>
-
               </div>
-            
-          ) : (
-              
+            ) : (
               <>
-
                 <div className="flex lg:min-h-[10rem] lg:min-w-[18rem] md:min-h-[8rem] md:min-w-[16rem] xsm:h-[9rem] xsm:w-[clamp(16rem,2vw,16rem)] overflow-hidden px-4 border border-gray-300">
-                  
                   <div className="flex flex-col h-full w-[10rem]  items-left justify-center gap-3">
-                    
                     <span className="font-bold text-[clamp(0.80rem,2vw,1.3rem)]">
                       {card.title.split(" ")[0]}
                       <br />
@@ -185,7 +181,6 @@ const Home = () => {
                     <button className="w-[7rem] h-[2rem] p-1 text-[clamp(0.60rem,2vw,12px)] font-bold rounded-[1rem] bg-black text-white">
                       Sale Up To {card.percentOff}%
                     </button>
-
                   </div>
 
                   <img
@@ -231,11 +226,17 @@ const Home = () => {
             } xsm:w-full md:w-[34rem] md:place-self-center items-center text-center `}
           >
             <ul className="font-medium w-full h-full items-center text-center justify-center gap-7">
-              <li className="hover:bg-gray-200  hover:cursor-pointer">All</li>
-              <li className="hover:bg-gray-200  hover:cursor-pointer">Men's</li>
-              <li className="hover:bg-gray-200  hover:cursor-pointer">Woman's</li>
-              <li className="hover:bg-gray-200  hover:cursor-pointer">FootWears</li>
-              <li className="hover:bg-gray-200  hover:cursor-pointer">Accessories</li>
+              <li className="hover:bg-hoverTextBg  hover:cursor-pointer">All</li>
+              <li className="hover:bg-hoverTextBg  hover:cursor-pointer">Men's</li>
+              <li className="hover:bg-hoverTextBg  hover:cursor-pointer">
+                Woman's
+              </li>
+              <li className="hover:bg-hoverTextBg  hover:cursor-pointer">
+                FootWears
+              </li>
+              <li className="hover:bg-hoverTextBg  hover:cursor-pointer">
+                Accessories
+              </li>
             </ul>
           </div>
 
@@ -243,90 +244,92 @@ const Home = () => {
             {/*products cards container*/}
 
             {products.map((product) => (
-              <div className="group rounded-lg relative p-5 px-4 xsm:p-1 shadow-sm lg:min-w-[16rem] lg:max-w-[16rem] md:min-w-[18rem] md:max-w-[18rem] xsm:w-[clamp(16rem,2vw,22rem)]  h-[clamp(24rem,2vw,26rem)] hover:cursor-pointer border border-gray-300 bg-white">
-                <span className="hidden lg:group-hover:flex md:flex xsm:flex rounded-full w-10 h-10 font-semibold items-center justify-center text-black text-[clamp(0.64rem,2vw,0.68rem)] p-4 bg-red-300 absolute lg:left-right md:left-right xsm:left-right lg:top-[0.80rem]">
-                  {product.percentOff}%off
-                </span>
+              <Link to="productdetails">
+                <div className="group rounded-lg relative p-5 px-4 xsm:p-1 shadow-sm lg:min-w-[16rem] lg:max-w-[16rem] md:min-w-[18rem] md:max-w-[18rem] xsm:w-[clamp(18rem,2vw,22rem)] h-[clamp(24rem,2vw,26rem)] hover:cursor-pointer border border-gray-300 bg-white">
+                  <span className="hidden lg:group-hover:flex md:flex xsm:flex rounded-full w-10 h-10 font-semibold items-center justify-center text-black text-[clamp(0.64rem,2vw,0.68rem)] p-4 bg-red-300 absolute lg:left-right md:left-right xsm:left-right lg:top-[0.80rem]">
+                    {product.percentOff}%off
+                  </span>
 
-                <div className="lg:h-56 md:h-56 xsm:h-45 w-full">
-                  <img
-                    className="w-full h-full"
-                    src={product.productImage}
-                    alt={product.productImage}
-                  />
-                </div>
-
-                <div className="lg:pt-6 md:pt-6 xsm:pt-3 flex flex-col gap-1">
-                  <p className="min-h-[2.6rem] max-h-[2.6rem] overflow-hidden  text-[clamp(0.80rem,2vw,1rem) ] font-semibold leading-tight text-gray-900 hover:underline">
-                    {product.title}
-                  </p>
-
-                  <div className="mt-2 flex items-center justify-between gap-4 ">
-                    <span className="text-[0.80rem] flex justify-center items-center text-center font-extrabold leading-tight text-green-400">
-                      <FaArrowDown />
-                      {product.percentOff}%
-                    </span>
-                    <s className="text-[0.80rem] font-bold leading-tight text-gray-600  ">
-                      ${product.price}
-                    </s>
-                    <span className="text-[0.80rem] font-bold leading-tight text-black">
-                      ${product.price}
-                    </span>
+                  <div className="lg:h-56 md:h-56 xsm:h-45 w-full">
+                    <img
+                      className="w-full h-full"
+                      src={product.productImage}
+                      alt={product.productImage}
+                    />
                   </div>
 
-                  <div className="mt-2 flex items-center gap-2">
-                    <div className="flex items-center">
-                      <svg
-                        className="h-4 w-4 text-yellow-400"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M13.8 4.2a2 2 0 0 0-3.6 0L8.4 8.4l-4.6.3a2 2 0 0 0-1.1 3.5l3.5 3-1 4.4c-.5 1.7 1.4 3 2.9 2.1l3.9-2.3 3.9 2.3c1.5 1 3.4-.4 3-2.1l-1-4.4 3.4-3a2 2 0 0 0-1.1-3.5l-4.6-.3-1.8-4.2Z" />
-                      </svg>
-                      <svg
-                        className="h-4 w-4 text-yellow-400"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M13.8 4.2a2 2 0 0 0-3.6 0L8.4 8.4l-4.6.3a2 2 0 0 0-1.1 3.5l3.5 3-1 4.4c-.5 1.7 1.4 3 2.9 2.1l3.9-2.3 3.9 2.3c1.5 1 3.4-.4 3-2.1l-1-4.4 3.4-3a2 2 0 0 0-1.1-3.5l-4.6-.3-1.8-4.2Z" />
-                      </svg>
-                      <svg
-                        className="h-4 w-4 text-yellow-400"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M13.8 4.2a2 2 0 0 0-3.6 0L8.4 8.4l-4.6.3a2 2 0 0 0-1.1 3.5l3.5 3-1 4.4c-.5 1.7 1.4 3 2.9 2.1l3.9-2.3 3.9 2.3c1.5 1 3.4-.4 3-2.1l-1-4.4 3.4-3a2 2 0 0 0-1.1-3.5l-4.6-.3-1.8-4.2Z" />
-                      </svg>
-                      <svg
-                        className="h-4 w-4 text-yellow-400"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M13.8 4.2a2 2 0 0 0-3.6 0L8.4 8.4l-4.6.3a2 2 0 0 0-1.1 3.5l3.5 3-1 4.4c-.5 1.7 1.4 3 2.9 2.1l3.9-2.3 3.9 2.3c1.5 1 3.4-.4 3-2.1l-1-4.4 3.4-3a2 2 0 0 0-1.1-3.5l-4.6-.3-1.8-4.2Z" />
-                      </svg>
-                      <svg
-                        className="h-4 w-4 text-yellow-400"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M13.8 4.2a2 2 0 0 0-3.6 0L8.4 8.4l-4.6.3a2 2 0 0 0-1.1 3.5l3.5 3-1 4.4c-.5 1.7 1.4 3 2.9 2.1l3.9-2.3 3.9 2.3c1.5 1 3.4-.4 3-2.1l-1-4.4 3.4-3a2 2 0 0 0-1.1-3.5l-4.6-.3-1.8-4.2Z" />
-                      </svg>
+                  <div className="lg:pt-6 md:pt-6 xsm:pt-3 flex flex-col gap-1">
+                    <p className="min-h-[2.6rem] max-h-[2.6rem] overflow-hidden  text-[clamp(0.80rem,2vw,1rem) ] font-semibold leading-tight text-gray-900 hover:underline">
+                      {product.title}
+                    </p>
+
+                    <div className="mt-2 flex items-center justify-between gap-4 ">
+                      <span className="text-[0.80rem] flex justify-center items-center text-center font-extrabold leading-tight text-green-400">
+                        <FaArrowDown />
+                        {product.percentOff}%
+                      </span>
+                      <s className="text-[0.80rem] font-bold leading-tight text-gray-600  ">
+                        ${product.price}
+                      </s>
+                      <span className="text-[0.80rem] font-bold leading-tight text-black">
+                        ${product.price}
+                      </span>
                     </div>
-                    <p className="text-sm font-medium text-gray-900">5.0</p>
-                    <p className="text-sm font-medium text-gray-600">(455)</p>
+
+                    <div className="mt-2 flex items-center gap-2">
+                      <div className="flex items-center">
+                        <svg
+                          className="h-4 w-4 text-yellow-400"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M13.8 4.2a2 2 0 0 0-3.6 0L8.4 8.4l-4.6.3a2 2 0 0 0-1.1 3.5l3.5 3-1 4.4c-.5 1.7 1.4 3 2.9 2.1l3.9-2.3 3.9 2.3c1.5 1 3.4-.4 3-2.1l-1-4.4 3.4-3a2 2 0 0 0-1.1-3.5l-4.6-.3-1.8-4.2Z" />
+                        </svg>
+                        <svg
+                          className="h-4 w-4 text-yellow-400"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M13.8 4.2a2 2 0 0 0-3.6 0L8.4 8.4l-4.6.3a2 2 0 0 0-1.1 3.5l3.5 3-1 4.4c-.5 1.7 1.4 3 2.9 2.1l3.9-2.3 3.9 2.3c1.5 1 3.4-.4 3-2.1l-1-4.4 3.4-3a2 2 0 0 0-1.1-3.5l-4.6-.3-1.8-4.2Z" />
+                        </svg>
+                        <svg
+                          className="h-4 w-4 text-yellow-400"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M13.8 4.2a2 2 0 0 0-3.6 0L8.4 8.4l-4.6.3a2 2 0 0 0-1.1 3.5l3.5 3-1 4.4c-.5 1.7 1.4 3 2.9 2.1l3.9-2.3 3.9 2.3c1.5 1 3.4-.4 3-2.1l-1-4.4 3.4-3a2 2 0 0 0-1.1-3.5l-4.6-.3-1.8-4.2Z" />
+                        </svg>
+                        <svg
+                          className="h-4 w-4 text-yellow-400"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M13.8 4.2a2 2 0 0 0-3.6 0L8.4 8.4l-4.6.3a2 2 0 0 0-1.1 3.5l3.5 3-1 4.4c-.5 1.7 1.4 3 2.9 2.1l3.9-2.3 3.9 2.3c1.5 1 3.4-.4 3-2.1l-1-4.4 3.4-3a2 2 0 0 0-1.1-3.5l-4.6-.3-1.8-4.2Z" />
+                        </svg>
+                        <svg
+                          className="h-4 w-4 text-yellow-400"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M13.8 4.2a2 2 0 0 0-3.6 0L8.4 8.4l-4.6.3a2 2 0 0 0-1.1 3.5l3.5 3-1 4.4c-.5 1.7 1.4 3 2.9 2.1l3.9-2.3 3.9 2.3c1.5 1 3.4-.4 3-2.1l-1-4.4 3.4-3a2 2 0 0 0-1.1-3.5l-4.6-.3-1.8-4.2Z" />
+                        </svg>
+                      </div>
+                      <p className="text-sm font-medium text-gray-900">5.0</p>
+                      <p className="text-sm font-medium text-gray-600">(455)</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
@@ -373,7 +376,6 @@ const Home = () => {
                   >
                     1
                   </a>
-              
 
                   <a
                     href="#"
@@ -388,9 +390,7 @@ const Home = () => {
           </div>
         </section>
 
-      <ProductCarousel />
-
-
+        <ProductCarousel />
       </div>
     </>
   );

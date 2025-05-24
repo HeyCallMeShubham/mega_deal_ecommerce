@@ -8,6 +8,7 @@ import Footer from "./components/footer-components/Footer"
  
 import WishListPage from "./pages/wishlist/WishListPage"
 import ProductDetails from "./pages/ProductDetails"
+import UserCart from "./pages/cart/UserCart"
 
 
 
@@ -25,9 +26,12 @@ function App() {
         <Route element={<Header />} >
 
         <Route index path="/" element={<Home />} />
+
         <Route path="/productdetails" element={<ProductDetails />} />
 
         <Route path="/mywishlist" element={<WishListPage />} />
+        
+        <Route path="/cart" element={<UserCart />} />
  
         </Route>
         </Route>
