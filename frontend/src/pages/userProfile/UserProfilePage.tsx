@@ -10,15 +10,21 @@ const UserProfilePage = () => {
     <div className="h-screen w-screen  md:px-2 lg:px-32">
       <div className="lg:grid xsm:flex md:grid xsm:flex-col md:grid-cols-[16rem,1fr] lg:grid-cols-[20rem,1fr] h-full w-full min-w-[24rem] max-w-auto justify-center border border-gray-400">
       
-        <div className="w-full h-[100%] bg-white shadow-md col-start-1 col-end-1 p-4 space-y-6 text-sm text-gray-700  ">
+        <div className="w-full lg:h-[100%] md:h-full xsm:min-h-full xsm:max-h-full bg-white shadow-md col-start-1 col-end-1 p-4 space-y-6 text-sm text-gray-700 border border-black ">
+          
           {/* Header */}
+
           <div className="flex items-center space-x-3">
+
             <div className="border overflow-hidden border-black rounded-full w-[3rem] h-[3rem]">
+              
               <img
                 src="https://www.pngmart.com/files/23/Profile-PNG-Photo.png"
                 alt="https://www.pngmart.com/files/23/Profile-PNG-Photo.png"
               />
+              
             </div>
+            
             <div>
               <p className="text-xs">Hello,</p>
               <p className="text-[1rem] font-semibold text-blue-600">
@@ -38,7 +44,7 @@ const UserProfilePage = () => {
               MY ORDERS
             </p>
 
-            <div className=" lg:flex md:flex xsm:hidden justify-between items-center cursor-pointer text-blue-600">  
+            <div className="flex justify-between items-center cursor-pointer text-blue-600">  
               <Link to="/account/orders">
               <div className="flex items-center space-x-2">
                 <span className="text-[1rem] font-lighter hover:underline">

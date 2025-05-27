@@ -3,7 +3,7 @@ import { FaEdit } from "react-icons/fa";
 import { IoIosArrowDropleft } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 const EditUserInfo = () => {
-  const [editable, setEditable] = useState<boolean>(false);
+ 
   const [editPersonalInfo, setEditPersonalInfo] = useState(false);
   const [editGender, setEditGender] = useState(false);
   const [editEmail, setEditEmail] = useState(false);
