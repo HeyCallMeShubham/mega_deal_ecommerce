@@ -66,6 +66,10 @@ const Header = () => {
                     <li className="text-[1.2rem] hover:underline hover:text-blue-500 cursor-pointer">
                       My Wishlist
                     </li>
+                    
+                    <li className="text-[1.2rem] hover:underline hover:text-blue-500 cursor-pointer">
+                      My Wishlist
+                    </li>
 
                     <li className="text-[1.2rem] hover:underline hover:text-blue-500 cursor-pointer">
                       LogOut
