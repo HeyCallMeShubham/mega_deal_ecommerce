@@ -10,6 +10,7 @@ import UserProfilePage from "./pages/userProfile/UserProfilePage";
 import EditUserInfo from "./pages/userProfile/EditUserInfo";
 import MyOrders from "./pages/orders/MyOrders";
 import AdminPanel from "./pages/adminPanel/AdminPanel";
+import PlacedOrders from "./pages/orders/PlacedOrders";
 
 function App() {
   return (
@@ -43,10 +44,15 @@ function App() {
             <Route path="/orders" element={<MyOrders />} />
 
             <Route path="/cart" element={<UserCart />} />
+
           </Route>
+        
         </Route>
 
-            <Route path="/adminpanel" element={<AdminPanel />} />
+        <Route path="/adminpanel" element={<AdminPanel />} />
+
+        <Route path="/adminpanel/orders" element={<PlacedOrders />} />
+
         <Route path="/checkout" element={<CheckoutPage />} />
       </Routes>
     </>
