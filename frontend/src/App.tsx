@@ -11,6 +11,7 @@ import EditUserInfo from "./pages/userProfile/EditUserInfo";
 import MyOrders from "./pages/orders/MyOrders";
 import AdminPanel from "./pages/adminPanel/AdminPanel";
 import PlacedOrders from "./pages/orders/PlacedOrders";
+import SpecificUserOrders from "./pages/orders/SpecificUserOrders";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
         <Route path="/adminpanel" element={<AdminPanel />} />
 
         <Route path="/adminpanel/orders" element={<PlacedOrders />} />
+        <Route path="/adminpanel/orders/:id" element={<SpecificUserOrders />} />
 
         <Route path="/checkout" element={<CheckoutPage />} />
       </Routes>
