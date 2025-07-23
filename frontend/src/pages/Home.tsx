@@ -117,6 +117,9 @@ const Home = () => {
       productImage:
         "https://th.bing.com/th/id/OIP.Imr1IiMBRcFjHYPeanyHBgHaHa?rs=1&pid=ImgDetMain",
     },
+
+
+    
   ];
 
   return (

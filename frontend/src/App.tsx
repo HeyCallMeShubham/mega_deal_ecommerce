@@ -12,6 +12,7 @@ import MyOrders from "./pages/orders/MyOrders";
 import AdminPanel from "./pages/adminPanel/AdminPanel";
 import PlacedOrders from "./pages/orders/PlacedOrders";
 import SpecificUserOrders from "./pages/orders/SpecificUserOrders";
+import UpdateItem from "./pages/adminPanel/Product/UpdateItem";
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
 
         <Route path="/adminpanel/orders" element={<PlacedOrders />} />
         <Route path="/adminpanel/orders/:id" element={<SpecificUserOrders />} />
+        <Route path="/adminpanel/product/updateitem" element={<UpdateItem />} />
 
         <Route path="/checkout" element={<CheckoutPage />} />
       </Routes>

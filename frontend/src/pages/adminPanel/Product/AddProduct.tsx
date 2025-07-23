@@ -23,6 +23,8 @@ const AddProduct = () => {
   const [productImages, setProductImages] = useState<any[] | string[]>([]);
 
 
+ 
+
 
 
   return (
@@ -72,7 +74,7 @@ const AddProduct = () => {
           <input type="file" name="productImage" onChange={(e:any) => setProductImages([...e.target.files])} placeholder="product image" />
         </label>
 
-        <button onClick={}>Add Item</button>
+        <button >Add Item</button>
       </form>
     </div>
   );

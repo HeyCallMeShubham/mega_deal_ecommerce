@@ -143,16 +143,16 @@ const SpecificUserOrders = () => {
                       dropDownToggle ? "flex" : "hidden"
                     } flex-col gap-y-2 `}
                   >
-                    <li className="text-[1.2rem] font-bold cursor-pointer hover:bg-slate-300">
+                    <li className="text-[1.2rem] font-bold cursor-pointer hover:bg-slate-50">
                       Pending
                     </li>
-                    <li className="text-[1.2rem] font-bold cursor-pointer hover:bg-slate-300">
+                    <li className="text-[1.2rem] font-bold cursor-pointer hover:bg-slate-50">
                       Being Dispatched
                     </li>
-                    <li className="text-[1.2rem] font-bold cursor-pointer hover:bg-slate-300">
+                    <li className="text-[1.2rem] font-bold cursor-pointer hover:bg-slate-50">
                       Out For Delivery
                     </li>
-                    <li className="text-[1.2rem] font-bold cursor-pointer hover:bg-slate-300">
+                    <li className="text-[1.2rem] font-bold cursor-pointer hover:bg-slate-50">
                       Successfully delivered
                     </li>
                   </ul>
