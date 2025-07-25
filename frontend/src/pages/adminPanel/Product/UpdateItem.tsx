@@ -189,14 +189,14 @@ const UpdateItem = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 min-w-[24rem] max-w-auto p-4 md:p-8 border border-black">
-      <div className="max-w-5xl mx-auto border border-black items-center flex flex-col justify-center gap-y-4">
+    <div className="min-h-screen max-h-auto min-w-full max-w-full xsm:min-w-[24rem] xsm:max-w-auto bg-gray-100 p-4 md:p-8 border border-green-600">
+      <div className="max-w-5xl mx-auto border border-black items-center flex flex-col justify-center gap-y-4 px-2">
         {products.map((item, index) => (
           <div
             className="w-full h-full flex flex-col items-center justify-center"
             key={index}
           >
-            <div className="flex flex-col md:flex-row justify-around items-start md:items-center gap-4 w-[90%] border border-black py-4">
+            <div className="flex flex-col md:flex-row justify-around items-start md:items-center gap-4 w-[100%] border border-black py-4">
               <div className="flex items-start gap-4">
                 <img
                   src={item.productImage[0]}
@@ -214,7 +214,7 @@ const UpdateItem = () => {
               </div>
 
               <button
-                className="bg-red-500 h-10 w-[5rem] text-[11px] p-1 font-bold rounded-[4px] border border-black"
+                className="bg-gray-200 h-10 w-[5rem] text-[11px] p-1 font-bold rounded-[4px] border border-black"
                 onClick={() => setToggleUpdateItem((prevState) => !prevState)}
               >
                 Update Item
@@ -226,54 +226,66 @@ const UpdateItem = () => {
                 toggleUpdateItem ? "flex" : "hidden"
               } w-full min-h-full max-h-auto border border-black justify-center`}
             >
-              <form className="flex flex-col justify-center text-center gap-y-2 border border-black">
-                <label htmlFor="productTitle">
-                  <input
-                    type="text"
-                    name="productTitle"
-                    placeholder="product title"
-                  />
-                </label>
+              <form className="flex flex-col  justify-center text-center items-center w-full gap-y-6 border border-red-700 p-8">
+                <div className="flex lg:flex-row md:flex-row xsm:flex xsm:flex-col justify-around  gap-y-4 gap-x-2">
+                  <label htmlFor="productTitle">
+                    <input
+                      type="text"
+                      name="productTitle"
+                      placeholder="product title"
+                      className="lg:w-[clamp(14rem,2vw,30rem)] md:w-[clamp(10rem,2vw,20rem)] xsm:w-[clamp(10rem,2vw,16rem)] text-left p-2 flex  h-[2rem] rounded-md border border-black"
+                    />
+                  </label>
 
-                <label htmlFor="productDescription">
-                  <input
-                    type="text"
-                    name="productDescription"
-                    placeholder="product description"
-                  />
-                </label>
+                  <label htmlFor="productPrice">
+                    <input
+                      type="phone"
+                      name="productPrice"
+                      placeholder="product price"
+                      className="lg:w-[clamp(14rem,2vw,30rem)] md:w-[clamp(10rem,2vw,20rem)] xsm:w-[clamp(10rem,2vw,16rem)] text-left p-2 flex  h-[2rem] rounded-md border border-black"
+                    />
+                  </label>
+                </div>
 
-                <label htmlFor="productPrice">
-                  <input
-                    type="phone"
-                    name="productPrice"
-                    placeholder="product price"
-                  />
-                </label>
+                <div className="flex lg:flex-row md:flex-row xsm:flex xsm:flex-col justify-around gap-y-4 gap-x-2">
+                  <label htmlFor="productStrikedPrice">
+                    <input
+                      type="phone"
+                      name="productStrikedPrice"
+                      placeholder="product striked price"
+                      className="lg:w-[clamp(14rem,2vw,30rem)] md:w-[clamp(10rem,2vw,20rem)] xsm:w-[clamp(10rem,2vw,16rem)] text-left p-2 flex  h-[2rem] rounded-md border border-black"
+                    />
+                  </label>
 
-                <label htmlFor="productStrikedPrice">
-                  <input
-                    type="phone"
-                    name="productStrikedPrice"
-                    placeholder="product striked price"
-                  />
-                </label>
+                  <label htmlFor="percentDiscountOnProduct">
+                    <input
+                      type="phone"
+                      name="percentDiscountOnProduct"
+                      placeholder="percent discount on product"
+                      className="lg:w-[clamp(14rem,2vw,30rem)] md:w-[clamp(10rem,2vw,20rem)] xsm:w-[clamp(10rem,2vw,16rem)] text-left p-2 flex  h-[2rem] rounded-md border border-black"
+                    />
+                  </label>
+                </div>
 
-                <label htmlFor="percentDiscountOnProduct">
-                  <input
-                    type="phone"
-                    name="percentDiscountOnProduct"
-                    placeholder="percent discount on product"
-                  />
-                </label>
+                <div className="flex lg:flex-row md:flex-row xsm:flex xsm:flex-col justify-around gap-y-4 gap-x-2">
+                  <label htmlFor="productInStock">
+                    <input
+                      type="tel"
+                      name="productInStock"
+                      placeholder="how much product in stock"
+                      className="lg:w-[clamp(14rem,2vw,30rem)] md:w-[clamp(10rem,2vw,20rem)] xsm:w-[clamp(10rem,2vw,16rem)] text-left p-2 flex  h-[2rem] rounded-md border border-black"
+                    />
+                  </label>
 
-                <label htmlFor="productInStock">
-                  <input
-                    type="tel"
-                    name="productInStock"
-                    placeholder="how much product in stock"
-                  />
-                </label>
+                  <label htmlFor="productDescription">
+                    <input
+                      type="text"
+                      name="productDescription"
+                      placeholder="product description"
+                      className="lg:w-[clamp(14rem,2vw,30rem)] md:w-[clamp(10rem,2vw,20rem)] xsm:w-[clamp(10rem,2vw,16rem)] text-left p-2 flex  h-[2rem] rounded-md border border-black"
+                    />
+                  </label>
+                </div>
 
                 <label htmlFor="productImage">
                   <input
@@ -284,7 +296,44 @@ const UpdateItem = () => {
                   />
                 </label>
 
-                <button>Add Item</button>
+                {products[0].productImage.map((image, index) => (
+                  <div className="w-[clamp(14rem,2vw,14rem)] h-[10rem] border border-black hover:relative group">
+                    <img src={image} alt={image} className="w-full h-full" />
+
+                    <span
+                      className="
+    hidden
+    group-hover:block
+    absolute
+    top-0
+    left-[101%]
+    bg-red-500
+    rounded-md
+    font-semibold
+    cursor-pointer
+    w-16
+    h-8
+    flex
+    items-center
+    items-center
+    justify-center
+    text-white
+  "
+                    >
+                      Delete
+                    </span>
+                  </div>
+                ))}
+
+                <button
+                  className="
+                  px-3 py-2 md:px-6 md:py-3 lg:px-2.5 lg:py-1 text-sm md:text-base 
+                  lg:text-lg font-medium rounded-lg shadow-md transition-all duration-200 ease-in-out bg-blue-600
+                   hover:bg-blue-700 focus:bg-blue-700 active:bg-blue-800 text-white hover:text-blue-50 focus:ring-2
+                    focus:ring-blue-400 focus:ring-opacity-75transform hover:-translate-y-0.5 hover:shadow-lgactive:translate-y-0 lg:place-self-start md:place-self-center xsm:place-self-end"
+                >
+                  Save Changes
+                </button>
               </form>
             </div>
           </div>
