@@ -303,7 +303,9 @@ const UpdateItem = () => {
                     <span
                       className="
     hidden
-    group-hover:block
+    lg:group-hover:flex
+    xsm:flex
+    md:flex
     absolute
     top-0
     left-[101%]
@@ -313,8 +315,6 @@ const UpdateItem = () => {
     cursor-pointer
     w-16
     h-8
-    flex
-    items-center
     items-center
     justify-center
     text-white
