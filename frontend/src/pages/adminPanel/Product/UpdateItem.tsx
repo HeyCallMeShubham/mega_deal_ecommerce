@@ -297,43 +297,37 @@ const UpdateItem = () => {
                 </label>
 
                 {products[0].productImage.map((image, index) => (
-                  <div className="w-[clamp(14rem,2vw,14rem)] h-[10rem] border border-black hover:relative group">
+                  <div className="w-[clamp(14rem,2vw,14rem)] h-[10rem] border border-black relative group">
                     <img src={image} alt={image} className="w-full h-full" />
 
-                    <span
-                      className="
-    hidden
-    lg:group-hover:flex
-    xsm:flex
-    md:flex
-    absolute
-    top-0
-    left-[101%]
-    bg-red-500
-    rounded-md
-    font-semibold
-    cursor-pointer
-    w-16
-    h-8
-    items-center
-    justify-center
-    text-white
-  "
-                    >
+                    <span className="lg:hidden lg:group-hover:flex xsm:flex md:flex absolute lg:group-hover:top-0 lg:group-hover:left-[101%] xsm:top-0 xsm:left-[101%] md:top-0 md:left-[101%] bg-red-500 rounded-md font-semibold cursor-pointer text-[0.90rem] w-[clamp(3.5rem,2vw,4rem)] h-[clamp(2rem,2vw,2rem)] items-center justify-center text-white">
                       Delete
                     </span>
                   </div>
                 ))}
 
-                <button
-                  className="
+                <div className="flex justify-between w-full">
+
+                  <button
+                    className="
                   px-3 py-2 md:px-6 md:py-3 lg:px-2.5 lg:py-1 text-sm md:text-base 
                   lg:text-lg font-medium rounded-lg shadow-md transition-all duration-200 ease-in-out bg-blue-600
                    hover:bg-blue-700 focus:bg-blue-700 active:bg-blue-800 text-white hover:text-blue-50 focus:ring-2
                     focus:ring-blue-400 focus:ring-opacity-75transform hover:-translate-y-0.5 hover:shadow-lgactive:translate-y-0 lg:place-self-start md:place-self-center xsm:place-self-end"
-                >
-                  Save Changes
-                </button>
+                  >
+                    Save Changes
+                  </button>
+
+                  <button
+                    className="px-3 py-2 md:px-6 md:py-3 lg:px-2.5 lg:py-1 text-sm md:text-base 
+                  lg:text-lg font-medium rounded-lg shadow-md transition-all duration-200
+                  ease-in-out bg-red-600 focus:ring-opacity-75 transform hover:-translate-y-0.5 
+                  hover:shadow-lg text-white active:translate-y-0 lg:place-self-end md:place-self-end xsm:place-self-end"
+                  >
+                    Delete Item
+                  </button>
+
+                </div>
               </form>
             </div>
           </div>
