@@ -11,7 +11,6 @@ const PlacedOrders = () => {
         {
           orderId: "747792038282120",
           name: "Milly Thomas",
-
           email: "shubhamkumarin2022@gmail.com",
           contactNumber: 9877503964,
           image:
@@ -62,7 +61,7 @@ const PlacedOrders = () => {
                   <img
                     src={user?.image ? user?.image : userLogo}
                     alt={userLogo}
-                    className="w-[auto] h-20 object-cover rounded-full border border-black"
+                    className="w-[4rem] aspect-square object-cover rounded-full border border-black"
                   />
                   <div className="flex flex-col gap-1 justify-between">
                     <h3 className="font-bold text-lg">
@@ -77,11 +76,11 @@ const PlacedOrders = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-col text-center">
-                  <span className="text-[clamp(0.70rem,2vw,1rem)] font-bold">
+                <div className="flex flex-col text-center lg:place-self-center md:place-self-center xsm:self-center">
+                  <span className="text-[clamp(0.90rem,2vw,1rem)] font-bold">
                     payment method
                   </span>
-                  <span className="text-[clamp(0.50rem,2vw,1rem)] font-semibold">
+                  <span className="text-[clamp(0.90rem,2vw,1rem)] font-semibold">
                     payment Status: {"Done"}
                   </span>
                 </div>

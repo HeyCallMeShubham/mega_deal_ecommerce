@@ -16,11 +16,16 @@ import UpdateItem from "./pages/adminPanel/Product/UpdateItem";
 import AddProduct from "./pages/adminPanel/Product/AddProduct";
 
 function App() {
+
   return (
-    <>
+  
+  <>
       <Routes>
+
         <Route element={<Footer />}>
+        
           <Route element={<Header />}>
+        
             <Route index path="/" element={<Home />} />
 
             <Route path="/productdetails" element={<ProductDetails />} />
@@ -28,13 +33,12 @@ function App() {
             <Route path="/mywishlist" element={<WishListPage />} />
 
             <Route path="/account" element={<UserProfilePage />}>
+           
               <Route index element={<EditUserInfo />} />
 
               {/* Default visible child */}
 
               <Route path="/account/edituserinfo" element={<EditUserInfo />} />
-
-              <Route path="/account/orders" element={<div>Hello hello</div>} />
 
               {/* /account/edituserinfo */}
             </Route>
@@ -55,11 +59,15 @@ function App() {
         <Route path="/adminpanel" element={<AdminPanel />} />
 
         <Route path="/adminpanel/orders" element={<PlacedOrders />} />
+
         <Route path="/adminpanel/orders/:id" element={<SpecificUserOrders />} />
+
         <Route path="/adminpanel/additem" element={<AddProduct />} />
+
         <Route path="/adminpanel/product/updateitem" element={<UpdateItem />} />
 
         <Route path="/checkout" element={<CheckoutPage />} />
+
       </Routes>
     </>
   );
